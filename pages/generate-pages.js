@@ -502,7 +502,7 @@ const pagesDir = path.join(__dirname);
 let count = 0;
 for (const page of pages) {
   // Skip custom pages that are maintained manually
-  if (page.file === 'locations.html' || page.file === 'privacy.html') continue;
+  if (['locations.html', 'privacy.html', 'terms.html'].includes(page.file)) continue;
   const html = generatePage(page);
   fs.writeFileSync(path.join(pagesDir, page.file), html, 'utf8');
   count++;
