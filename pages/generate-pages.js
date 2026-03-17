@@ -485,7 +485,7 @@ ${sectionsHtml}
       <div class="page-cta">
         <h2>Ready to get started?</h2>
         <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
-        <a href="locations.html" class="btn btn--teal btn--lg">Contact Us Today</a>
+        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
       </div>
     </div>
   </main>
@@ -501,6 +501,8 @@ ${sectionsHtml}
 const pagesDir = path.join(__dirname);
 let count = 0;
 for (const page of pages) {
+  // Skip locations.html - it's a custom page with inquiry modal
+  if (page.file === 'locations.html') continue;
   const html = generatePage(page);
   fs.writeFileSync(path.join(pagesDir, page.file), html, 'utf8');
   count++;
