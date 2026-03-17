@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <div class="footer__bottom">
-        <span>Copyright 2025, Intelligentitnyc. All Rights Reserved.</span>
+        <span>Copyright 2025, Intelligent Group. All Rights Reserved.</span>
         <div class="footer__legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms and Conditions</a>
