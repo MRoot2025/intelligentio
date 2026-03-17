@@ -501,8 +501,8 @@ ${sectionsHtml}
 const pagesDir = path.join(__dirname);
 let count = 0;
 for (const page of pages) {
-  // Skip locations.html - it's a custom page with inquiry modal
-  if (page.file === 'locations.html') continue;
+  // Skip custom pages that are maintained manually
+  if (page.file === 'locations.html' || page.file === 'privacy.html') continue;
   const html = generatePage(page);
   fs.writeFileSync(path.join(pagesDir, page.file), html, 'utf8');
   count++;
