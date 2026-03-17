@@ -770,25 +770,53 @@ ul { list-style: none; }
   .section__header--row { flex-direction: column; gap: 16px; }
 }
 
+@media (max-width: 768px) {
+  /* Inline 2-column comparison grids → single column */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Dashboard mockup grid → single column */
+  .dashboard-mockup__grid { grid-template-columns: 1fr; }
+  /* Calculator form padding */
+  .calculator__form-inner { padding: 28px 20px; }
+  .calculator__quotemark { font-size: 80px; right: 16px; }
+  .calculator__form-inner h3 { font-size: 22px; }
+  /* Mobile nav max-height */
+  .header__nav.open { max-height: calc(100vh - 80px); }
+  /* Mega dropdown on tablet */
+  .header__nav.open .dropdown--mega { grid-template-columns: 1fr; }
+  /* Footer single column for very small tablets */
+  .footer__columns { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 640px) {
+  .container { padding: 0 16px; }
   .section { padding: 60px 0; }
-  .section__header h2 { font-size: 32px; }
-  .hero__content h1 { font-size: 32px; }
-  .hero__subtitle { font-size: 17px; }
+  .section__header h2 { font-size: 28px; }
+  .section__header p { font-size: 16px; }
+  .hero__content h1 { font-size: 28px; }
+  .hero__subtitle { font-size: 16px; }
   .hero__actions { flex-direction: column; }
-  .btn--lg { padding: 14px 28px; font-size: 17px; }
+  .hero__trust-badges { flex-direction: column; gap: 8px; }
+  .btn--lg { padding: 14px 28px; font-size: 17px; min-height: 48px; }
+  .btn--sm { padding: 12px 24px; font-size: 16px; min-height: 44px; }
   .services__grid { grid-template-columns: 1fr; }
-  .tabs__text h3 { font-size: 28px; }
-  .intelligentview__content h2 { font-size: 36px; }
+  .tabs__text h3 { font-size: 24px; }
+  .tabs__nav { flex-wrap: wrap; }
+  .intelligentview__content h2 { font-size: 28px; }
   .intelligentview__actions { flex-direction: column; }
   .numbers__grid { grid-template-columns: repeat(2, 1fr); }
-  .number-card__value { font-size: 36px; }
+  .number-card__value { font-size: 32px; }
   .partners__grid { grid-template-columns: 1fr; }
   .insights__grid { grid-template-columns: 1fr; }
   .articles__grid { grid-template-columns: 1fr; }
-  .footer__columns { grid-template-columns: 1fr 1fr; }
+  .footer__columns { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .cta__inner h2 { font-size: 32px; }
-  .calculator__content h2 { font-size: 32px; }
-  .section__title--secondary { font-size: 32px; }
+  .cta__inner h2 { font-size: 28px; }
+  .cta__inner p { font-size: 16px; }
+  .calculator__content h2 { font-size: 28px; }
+  .calculator__content p { font-size: 16px; }
+  .section__title--secondary { font-size: 28px; }
+  .ai-support__content h2 { font-size: 28px; }
+  .ai-support__content p { font-size: 16px; }
 }

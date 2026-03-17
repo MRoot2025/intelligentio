@@ -42,8 +42,8 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
@@ -147,14 +147,25 @@
       color: #bcbfcc;
     }
     @media (max-width: 640px) {
+      .modal-overlay { padding: 12px; }
       .modal {
-        padding: 32px 24px;
+        padding: 28px 20px;
+        border-radius: 16px;
+        max-height: 95vh;
       }
       .modal h2 {
-        font-size: 24px;
+        font-size: 22px;
+        padding-right: 40px;
       }
+      .modal__subtitle { font-size: 14px; margin-bottom: 24px; }
       .form-actions {
         flex-direction: column;
+      }
+      .inquiry-form input,
+      .inquiry-form textarea,
+      .inquiry-form select {
+        font-size: 16px; /* prevents iOS zoom on focus */
+        padding: 12px 14px;
       }
     }
   </style>
