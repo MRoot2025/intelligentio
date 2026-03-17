@@ -526,47 +526,51 @@
         <p>Tell us about your business and we'll build a custom action plan tailored to your industry, role, and biggest challenge. No sales pitch&mdash;just actionable recommendations.</p>
       </div>
       <div class="calculator__form">
-        <div class="calculator__form-inner">
+        <form class="calculator__form-inner" action="https://formsubmit.co/marketing@intelligentitnyc.com" method="POST">
+          <input type="hidden" name="_subject" value="New Custom Action Plan Request from Intelligent iT Website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_honey" style="display:none">
           <h3>Get Your Custom Action Plan</h3>
           <div class="form-group">
-            <select class="form-select">
+            <select class="form-select" name="Role" required>
               <option value="" disabled selected>I am a...</option>
-              <option>CEO / Business Owner</option>
-              <option>IT Director / CTO</option>
-              <option>Operations Manager</option>
-              <option>CFO / Finance Director</option>
+              <option value="CEO / Business Owner">CEO / Business Owner</option>
+              <option value="IT Director / CTO">IT Director / CTO</option>
+              <option value="Operations Manager">Operations Manager</option>
+              <option value="CFO / Finance Director">CFO / Finance Director</option>
             </select>
           </div>
           <div class="form-group">
-            <select class="form-select">
+            <select class="form-select" name="Industry" required>
               <option value="" disabled selected>In the... industry</option>
-              <option>Healthcare &amp; Life Sciences</option>
-              <option>Finance &amp; Accounting</option>
-              <option>Manufacturing</option>
-              <option>Professional Services</option>
-              <option>Marketing &amp; Creative</option>
-              <option>Construction &amp; Real Estate</option>
-              <option>Other</option>
+              <option value="Healthcare &amp; Life Sciences">Healthcare &amp; Life Sciences</option>
+              <option value="Finance &amp; Accounting">Finance &amp; Accounting</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Marketing &amp; Creative">Marketing &amp; Creative</option>
+              <option value="Construction &amp; Real Estate">Construction &amp; Real Estate</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div class="form-group">
-            <select class="form-select">
+            <select class="form-select" name="Biggest Challenge" required>
               <option value="" disabled selected>My biggest challenge is...</option>
-              <option>Slow IT Support &amp; Response Times</option>
-              <option>Compliance &amp; Audit Readiness</option>
-              <option>Cybersecurity &amp; Data Protection</option>
-              <option>Cloud Migration &amp; Modernization</option>
-              <option>Scaling IT with Business Growth</option>
+              <option value="Slow IT Support &amp; Response Times">Slow IT Support &amp; Response Times</option>
+              <option value="Compliance &amp; Audit Readiness">Compliance &amp; Audit Readiness</option>
+              <option value="Cybersecurity &amp; Data Protection">Cybersecurity &amp; Data Protection</option>
+              <option value="Cloud Migration &amp; Modernization">Cloud Migration &amp; Modernization</option>
+              <option value="Scaling IT with Business Growth">Scaling IT with Business Growth</option>
             </select>
           </div>
           <div class="form-group">
-            <input type="email" class="form-select" placeholder="Your work email" style="color: #fff;">
+            <input type="email" class="form-select" name="Email" placeholder="Your work email" style="color: #fff;" required>
           </div>
           <p class="form-helper">We'll send your personalized IT roadmap within 24 hours.</p>
           <div class="calculator__nav">
-            <button class="btn btn--teal btn--lg" style="width: 100%;">Get My Custom Action Plan</button>
+            <button type="submit" class="btn btn--teal btn--lg" style="width: 100%;">Get My Custom Action Plan</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
