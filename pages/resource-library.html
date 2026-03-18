@@ -3,198 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT Checklists, Templates & Tools | Intelligent iT</title>
-  <meta name="description" content="Download free IT checklists, planning templates, and assessment tools built for mid-sized businesses. Practical, ready-to-use resources covering cybersecurity, compliance, cloud migration, and IT strategy from Intelligent iT.">
+  <title>Resource Library | Intelligent iT</title>
+  <meta name="description" content="Access our exclusive, AI-curated library of 50+ playbooks, checklists, and ROI calculators. Eliminate compliance headaches, secure your operations, and get the data you need to make smarter technology decisions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="icon" href="../assets/logo.png" type="image/png">
-  <style>
-    /* ===== RESOURCE LIBRARY PAGE STYLES ===== */
-    .resource-library .container {
-      max-width: 1280px;
-    }
-
-    .resource-filter {
-      margin-bottom: 48px;
-    }
-
-    .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .resource-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-    .resource-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(118, 230, 216, 0.25);
-    }
-
-    .resource-card__header {
-      position: relative;
-      padding: 32px 24px 28px;
-      min-height: 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    .resource-card__header--cybersecurity {
-      background: linear-gradient(135deg, #1b3a6b 0%, #0f4c5c 100%);
-    }
-    .resource-card__header--compliance {
-      background: linear-gradient(135deg, #4a1942 0%, #6b2fa0 100%);
-    }
-    .resource-card__header--cloud {
-      background: linear-gradient(135deg, #155065 0%, #00b19b 100%);
-    }
-    .resource-card__header--strategy {
-      background: linear-gradient(135deg, #1a3c34 0%, #2d8659 100%);
-    }
-    .resource-card__header--operations {
-      background: linear-gradient(135deg, #3b3014 0%, #b08c2a 100%);
-    }
-
-    .resource-card__watermark {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      opacity: 0.15;
-      object-fit: contain;
-    }
-
-    .resource-card__category {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 8px;
-    }
-
-    .resource-card__title {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.35;
-      color: #ffffff;
-    }
-
-    .resource-card__body {
-      padding: 20px 24px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .resource-card__desc {
-      font-size: 14px;
-      color: #bcbfcc;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      flex: 1;
-    }
-
-    .resource-card__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .resource-card__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 50px;
-      letter-spacing: 0.3px;
-    }
-    .resource-card__badge--checklist {
-      background: rgba(118, 230, 216, 0.12);
-      color: #76e6d8;
-    }
-    .resource-card__badge--template {
-      background: rgba(139, 92, 246, 0.12);
-      color: #a78bfa;
-    }
-    .resource-card__badge--assessment {
-      background: rgba(59, 130, 246, 0.12);
-      color: #60a5fa;
-    }
-    .resource-card__badge--scorecard {
-      background: rgba(251, 191, 36, 0.12);
-      color: #fbbf24;
-    }
-    .resource-card__badge--quickguide {
-      background: rgba(244, 114, 182, 0.12);
-      color: #f472b6;
-    }
-
-    .resource-card__badge svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .resource-card__download {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #76e6d8;
-      transition: color 0.3s;
-    }
-    .resource-card__download:hover {
-      color: #5dd2c3;
-    }
-    .resource-card__download svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .resource-count {
-      font-size: 15px;
-      color: #bcbfcc;
-      margin-bottom: 24px;
-    }
-    .resource-count span {
-      color: #76e6d8;
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .resource-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 640px) {
-      .resource-grid {
-        grid-template-columns: 1fr;
-      }
-      .resource-card__header {
-        min-height: 100px;
-        padding: 24px 20px 20px;
-      }
-      .resource-card__body {
-        padding: 16px 20px 20px;
-      }
-    }
-  </style>
   <!-- HubSpot Tracking Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
 </head>
@@ -204,296 +20,46 @@
   <section class="page-hero">
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
-      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Resources</a> / Resource Library</span>
-      <h1>IT Checklists, Templates & Tools</h1>
-      <p>Practical, downloadable resources you can put to work today. From cybersecurity checklists and compliance assessments to budget templates and disaster recovery plans, our library gives you the tools to take action on your IT priorities.</p>
+      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Insights</a> / Resource Library</span>
+      <h1>Stop Guessing on IT Strategy: The Mid-Market Leader's Resource Center</h1>
+      <p>Access our exclusive, AI-curated library of 50+ playbooks, checklists, and ROI calculators. Eliminate compliance headaches, secure your operations, and get the data you need to make smarter technology decisions.</p>
+      <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
     </div>
   </section>
 
-  <main class="page-content resource-library">
+  <main class="page-content">
     <div class="container">
 
-      <!-- Filter Tabs -->
-      <div class="resource-filter animate-on-scroll">
-        <nav class="tabs__nav tabs__nav--pills" id="resource-filters">
-          <button class="tabs__btn active" data-filter="all">All</button>
-          <button class="tabs__btn" data-filter="cybersecurity">Cybersecurity</button>
-          <button class="tabs__btn" data-filter="compliance">Compliance</button>
-          <button class="tabs__btn" data-filter="cloud">Cloud</button>
-          <button class="tabs__btn" data-filter="strategy">IT Strategy</button>
-          <button class="tabs__btn" data-filter="operations">Operations</button>
-        </nav>
-        <p class="resource-count"><span id="resource-count">10</span> resources available</p>
+      <div class="page-section animate-on-scroll">
+        <h2>The Challenge: Making Smarter IT Decisions</h2>
+        <p>You are tired of making six-figure technology bets based on vendor sales pitches and a gut feeling. You suspect you are overspending on IT, but you lack the objective data to prove it and find the waste. The board is asking tough questions about cybersecurity and compliance, and you do not have the clear, confident answers they need.</p>
       </div>
 
-      <!-- Resource Cards Grid -->
-      <div class="resource-grid" id="resource-grid">
-
-        <!-- RL01: Cybersecurity Risk Assessment Checklist -->
-        <div class="resource-card animate-on-scroll" data-category="cybersecurity">
-          <div class="resource-card__header resource-card__header--cybersecurity">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Cybersecurity</span>
-            <h3 class="resource-card__title">Cybersecurity Risk Assessment Checklist</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Identify vulnerabilities across your network, endpoints, and user practices before attackers do. This step-by-step checklist walks your team through a thorough risk assessment you can run quarterly.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--checklist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                Checklist
-              </span>
-              <a href="../assets/resources/rl01-cybersecurity-risk-checklist.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL02: Annual IT Budget Planning Template -->
-        <div class="resource-card animate-on-scroll" data-category="strategy">
-          <div class="resource-card__header resource-card__header--strategy">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">IT Strategy</span>
-            <h3 class="resource-card__title">Annual IT Budget Planning Template</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Take the guesswork out of IT spending with a structured budget template built for mid-sized businesses. Covers hardware, software, staffing, security, and cloud line items so nothing gets overlooked.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--template">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Template
-              </span>
-              <a href="../assets/resources/rl02-it-budget-planning-template.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL03: IT Onboarding & Offboarding Checklist -->
-        <div class="resource-card animate-on-scroll" data-category="operations">
-          <div class="resource-card__header resource-card__header--operations">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Operations</span>
-            <h3 class="resource-card__title">IT Onboarding & Offboarding Checklist</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Ensure every new hire is productive on day one and every departure is secure. This checklist covers account provisioning, device setup, access revocation, and data handoff procedures.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--checklist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                Checklist
-              </span>
-              <a href="../assets/resources/rl03-employee-onboarding-checklist.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL04: Cloud Migration Readiness Assessment -->
-        <div class="resource-card animate-on-scroll" data-category="cloud">
-          <div class="resource-card__header resource-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Cloud</span>
-            <h3 class="resource-card__title">Cloud Migration Readiness Assessment</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Determine whether your infrastructure, applications, and team are ready for the cloud before committing resources. This assessment scores your readiness across security, performance, and cost dimensions.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--assessment">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Assessment
-              </span>
-              <a href="../assets/resources/rl04-cloud-migration-readiness.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL05: Cyber Incident Response Plan Template -->
-        <div class="resource-card animate-on-scroll" data-category="cybersecurity">
-          <div class="resource-card__header resource-card__header--cybersecurity">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Cybersecurity</span>
-            <h3 class="resource-card__title">Cyber Incident Response Plan Template</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Do not wait for a breach to figure out your response plan. This template gives you a ready-made framework for detection, containment, eradication, and recovery that you can customize to your organization.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--template">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Template
-              </span>
-              <a href="../assets/resources/rl05-incident-response-plan-template.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL06: IT Vendor Evaluation Scorecard -->
-        <div class="resource-card animate-on-scroll" data-category="strategy">
-          <div class="resource-card__header resource-card__header--strategy">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">IT Strategy</span>
-            <h3 class="resource-card__title">IT Vendor Evaluation Scorecard</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Compare IT vendors objectively instead of relying on sales presentations. This scorecard grades providers across security posture, SLA commitments, scalability, and total cost of ownership.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--scorecard">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Scorecard
-              </span>
-              <a href="../assets/resources/rl06-vendor-evaluation-scorecard.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL07: SOC 2 Type II Readiness Checklist -->
-        <div class="resource-card animate-on-scroll" data-category="compliance">
-          <div class="resource-card__header resource-card__header--compliance">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Compliance</span>
-            <h3 class="resource-card__title">SOC 2 Type II Readiness Checklist</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Preparing for a SOC 2 audit can feel overwhelming. This checklist breaks the process into manageable steps across all five Trust Services Criteria so you know exactly where you stand before the auditor arrives.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--checklist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                Checklist
-              </span>
-              <a href="../assets/resources/rl07-soc2-readiness-checklist.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL08: Remote Work Security Best Practices -->
-        <div class="resource-card animate-on-scroll" data-category="cybersecurity">
-          <div class="resource-card__header resource-card__header--cybersecurity">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Cybersecurity</span>
-            <h3 class="resource-card__title">Remote Work Security Best Practices</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Distributed teams introduce new attack surfaces. This quick guide covers the essential policies, tools, and employee training needed to keep your data safe when your workforce operates outside the office.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--quickguide">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Quick Guide
-              </span>
-              <a href="../assets/resources/rl08-remote-work-security-guide.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL09: HIPAA Compliance Quick-Start Checklist -->
-        <div class="resource-card animate-on-scroll" data-category="compliance">
-          <div class="resource-card__header resource-card__header--compliance">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Compliance</span>
-            <h3 class="resource-card__title">HIPAA Compliance Quick-Start Checklist</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">Get a clear starting point for HIPAA compliance with this actionable checklist. Covers administrative, physical, and technical safeguards so your organization can protect patient data and avoid costly penalties.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--checklist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                Checklist
-              </span>
-              <a href="../assets/resources/rl09-hipaa-compliance-checklist.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RL10: Business Continuity & Disaster Recovery Plan Template -->
-        <div class="resource-card animate-on-scroll" data-category="cloud">
-          <div class="resource-card__header resource-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="resource-card__watermark">
-            <span class="resource-card__category">Cloud</span>
-            <h3 class="resource-card__title">Business Continuity & Disaster Recovery Plan Template</h3>
-          </div>
-          <div class="resource-card__body">
-            <p class="resource-card__desc">When disaster strikes, your recovery speed depends on the plan you already have in place. This template helps you define RTOs, RPOs, communication chains, and failover procedures before you need them.</p>
-            <div class="resource-card__footer">
-              <span class="resource-card__badge resource-card__badge--template">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Template
-              </span>
-              <a href="../assets/resources/rl10-disaster-recovery-plan-template.pdf" target="_blank" class="resource-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /resource-grid -->
-
-      <!-- CTA Section -->
-      <div class="page-cta" style="margin-top: 80px;">
-        <h2>Need Help Putting These Resources to Work?</h2>
-        <p>Our checklists and templates are a great starting point, but every organization is different. Book a free consultation and let our team help you build a tailored IT strategy.</p>
-        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
+      <div class="page-section animate-on-scroll">
+        <h2>Featured Resources</h2>
+        <p>Our featured resources include the most impactful, cornerstone assets in our library: The AI-Powered MSP: A CEO's Guide to Modern IT, The CMMC 2.0 Automation Playbook for mid-market defense contractors, and the Cloud Migration ROI Calculator that models your specific cost savings before you commit. Each resource is designed to deliver a specific, measurable business outcome.</p>
       </div>
 
+      <div class="page-section animate-on-scroll">
+        <h2>Resource Categories</h2>
+        <p>Browse resources organized by the outcome you need: Cybersecurity and Risk Management for threat prevention and incident response, IT Strategy and Budgeting for cost optimization and technology planning, Cloud and Infrastructure Optimization for migration and performance, and Industry Compliance for finance, legal, and healthcare-specific regulatory requirements. Each category provides actionable frameworks you can implement immediately.</p>
+      </div>
+
+      <div class="page-section animate-on-scroll">
+        <h2>The AI Advantage: Your Automated Knowledge Partner</h2>
+        <p>Our resource library is more than a collection of PDFs; it is an active, intelligent partner in your strategic planning. Our AI engine analyzes your industry and company size to recommend the most relevant compliance guides and security playbooks. Instead of you searching for information, our system automatically surfaces new resources based on emerging threats and regulatory changes in your industry. Every resource is built on the same data-driven methodology that powers our managed services, giving you frameworks that are proven in production, not theoretical.</p>
+      </div>
+
+      <div class="page-cta">
+        <h2>Ready to get started?</h2>
+        <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
+        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
+      </div>
     </div>
   </main>
 
   <footer class="footer" id="site-footer"></footer>
 
   <script src="template.js"></script>
-  <script>
-    // ===== Resource Filter Logic =====
-    (function() {
-      const filterBtns = document.querySelectorAll('#resource-filters .tabs__btn');
-      const cards = document.querySelectorAll('.resource-card');
-      const countEl = document.getElementById('resource-count');
-
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          // Update active tab
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-
-          var filter = btn.getAttribute('data-filter');
-          var visibleCount = 0;
-
-          cards.forEach(function(card) {
-            var categories = card.getAttribute('data-category').split(' ');
-            if (filter === 'all' || categories.indexOf(filter) !== -1) {
-              card.style.display = '';
-              visibleCount++;
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          countEl.textContent = visibleCount;
-        });
-      });
-    })();
-  </script>
 </body>
 </html>

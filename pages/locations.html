@@ -4,171 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locations | Intelligent iT</title>
-  <meta name="description" content="Nationwide support with local presence. Headquartered in New York City with offices in Boston and San Diego.">
+  <meta name="description" content="While our AI platform resolves 99% of IT issues remotely within minutes, our local teams are ready to deploy for critical on-site emergencies, getting you back to business faster than any other MSP.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="icon" href="../assets/logo.png" type="image/png">
-  <style>
-    /* Inquiry Form Modal */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(4px);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-overlay.active {
-      display: flex;
-    }
-    .modal {
-      background: #191919;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 48px 40px;
-      max-width: 600px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
-    .modal__close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #bcbfcc;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .modal__close:hover {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-    }
-    .modal h2 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .modal__subtitle {
-      font-size: 16px;
-      color: #bcbfcc;
-      margin-bottom: 32px;
-    }
-    .inquiry-form .form-field {
-      margin-bottom: 20px;
-    }
-    .inquiry-form label {
-      display: block;
-      font-size: 14px;
-      font-weight: 500;
-      color: #dde1ed;
-      margin-bottom: 6px;
-    }
-    .inquiry-form input,
-    .inquiry-form textarea,
-    .inquiry-form select {
-      width: 100%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 16px;
-      color: #ffffff;
-      font-size: 16px;
-      font-family: 'Inter', sans-serif;
-      transition: border-color 0.3s;
-    }
-    .inquiry-form input:focus,
-    .inquiry-form textarea:focus,
-    .inquiry-form select:focus {
-      outline: none;
-      border-color: #76e6d8;
-    }
-    .inquiry-form input::placeholder,
-    .inquiry-form textarea::placeholder {
-      color: #666;
-    }
-    .inquiry-form textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-    .inquiry-form select {
-      appearance: none;
-      cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23bcbfcc' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-    }
-    .inquiry-form select option {
-      background: #191919;
-      color: #ffffff;
-    }
-    .form-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 28px;
-    }
-    .form-actions .btn {
-      flex: 1;
-    }
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 40px 0;
-    }
-    .form-success.active {
-      display: block;
-    }
-    .form-success__icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-    }
-    .form-success h3 {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .form-success p {
-      font-size: 16px;
-      color: #bcbfcc;
-    }
-    @media (max-width: 640px) {
-      .modal-overlay { padding: 12px; }
-      .modal {
-        padding: 28px 20px;
-        border-radius: 16px;
-        max-height: 95vh;
-      }
-      .modal h2 {
-        font-size: 22px;
-        padding-right: 40px;
-      }
-      .modal__subtitle { font-size: 14px; margin-bottom: 24px; }
-      .form-actions {
-        flex-direction: column;
-      }
-      .inquiry-form input,
-      .inquiry-form textarea,
-      .inquiry-form select {
-        font-size: 16px; /* prevents iOS zoom on focus */
-        padding: 12px 14px;
-      }
-    }
-  </style>
   <!-- HubSpot Tracking Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
 </head>
@@ -179,12 +21,9 @@
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
       <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Company</a> / Locations</span>
-      <h1>Our Locations</h1>
-      <p>Nationwide support with local presence. Headquartered in New York City with offices in Boston and San Diego.</p>
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <button class="btn btn--teal btn--lg" onclick="openInquiryForm()">Get Started</button>
-        <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Book a Call</a>
-      </div>
+      <h1>On-Site When You Need Us: 2-Hour On-Site IT Support Guarantee in NYC, Boston & San Diego</h1>
+      <p>While our AI platform resolves 99% of IT issues remotely within minutes, our local teams are ready to deploy for critical on-site emergencies, getting you back to business faster than any other MSP.</p>
+      <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
     </div>
   </section>
 
@@ -192,202 +31,45 @@
     <div class="container">
 
       <div class="page-section animate-on-scroll">
-        <h2>New York City (Headquarters)</h2>
-        <p>📍 Midtown Manhattan, New York, NY
-📞 212-730-1844
-📧 sales@intelligentitnyc.com</p>
+        <h2>2-Hour On-Site IT Support When Remote Isn't Enough</h2>
+        <p>You pay for 24/7 support, but what happens when the problem is a dead server that can't be fixed over the phone? That sinking feeling when your IT provider says they'll have someone out 'sometime tomorrow' while your entire office is offline. Your business doesn't run 'remotely.' Your office, your hardware, and your network are physical. Your IT support should be, too.</p>
       </div>
 
       <div class="page-section animate-on-scroll">
-        <h2>Boston</h2>
-        <p>📍 Boston, MA
-Serving the greater New England region.</p>
+        <h2>Local Expertise in NYC, Boston, and San Diego</h2>
+        <p>New York City: supporting financial services, professional services, and media companies across Manhattan and the five boroughs. Boston: serving healthcare, biotech, and education organizations with specialized lab equipment and compliance expertise. San Diego: supporting defense contractors, telecommunications, and construction firms with CMMC compliance and field-ready IT solutions. Each office is staffed with engineers who understand the industries and regulatory requirements of their local market.</p>
       </div>
 
       <div class="page-section animate-on-scroll">
-        <h2>San Diego</h2>
-        <p>📍 San Diego, CA
-Serving Southern California and the West Coast.</p>
+        <h2>The AI Advantage: Predicting and Preventing On-Site Dispatches</h2>
+        <p>Our AI platform acts as a pre-emptive dispatch system, drastically reducing the need for costly and disruptive on-site visits. We automate the analysis of over 500 endpoint and network health metrics per device, allowing us to predict hardware failure before it occurs. Our system automatically flags servers with predictive disk failure alerts based on S.M.A.R.T. data trends and creates a ticket to replace the drive during off-hours, preventing a catastrophic on-site emergency. When on-site service is required, our AI pre-diagnoses the issue and equips the dispatched engineer with the exact parts, tools, and documentation needed, ensuring a first-visit fix rate above 95%.</p>
       </div>
 
       <div class="page-section animate-on-scroll">
-        <h2>Nationwide Coverage</h2>
-        <p>While we have physical offices in three cities, we provide remote IT support and management to organizations across the United States.</p>
+        <h2>Critical Scenarios We Handle On-Site</h2>
+        <p>Our on-site teams handle server and SAN failures with pre-staged replacement hardware, network switch and firewall replacements with automated configuration deployment, new office build-outs with pre-configured infrastructure, secure e-waste disposal with certified chain-of-custody documentation, and hardware decommissioning with data destruction verification.</p>
+      </div>
+
+      <div class="page-section animate-on-scroll">
+        <h2>Proven Results</h2>
+        <div class="page-stats">
+          <div class="page-stat"><span class="page-stat__value">2min</span><span class="page-stat__label">Avg Response Time</span></div>
+          <div class="page-stat"><span class="page-stat__value">45min</span><span class="page-stat__label">Avg Resolution Time</span></div>
+          <div class="page-stat"><span class="page-stat__value">99.9%</span><span class="page-stat__label">Uptime Guaranteed</span></div>
+          <div class="page-stat"><span class="page-stat__value">90-Day</span><span class="page-stat__label">Money-Back Guarantee</span></div>
+        </div>
       </div>
 
       <div class="page-cta">
         <h2>Ready to get started?</h2>
         <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <button class="btn btn--teal btn--lg" onclick="openInquiryForm()">Contact Us Today</button>
-          <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Book a Call</a>
-        </div>
+        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
       </div>
     </div>
   </main>
 
-  <!-- Inquiry Form Modal -->
-  <div class="modal-overlay" id="inquiryModal">
-    <div class="modal">
-      <button class="modal__close" onclick="closeInquiryForm()" aria-label="Close">&times;</button>
-
-      <div id="inquiryFormContent">
-        <h2>Let's Talk</h2>
-        <p class="modal__subtitle">Tell us about your business and we'll get back to you within one business day.</p>
-
-        <form class="inquiry-form" id="inquiryForm" action="https://formsubmit.co/39f174e55680b887f724f5bca2bd6178" method="POST">
-          <!-- FormSubmit config -->
-          <input type="hidden" name="_subject" value="New Inquiry from Intelligent iT Website">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://intelligentit.io/pages/form-success.html" id="formRedirect">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
-
-          <div class="form-field">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="Name" placeholder="John Smith" required>
-          </div>
-
-          <div class="form-field">
-            <label for="company">Company *</label>
-            <input type="text" id="company" name="Company" placeholder="Your company name" required>
-          </div>
-
-          <div class="form-field">
-            <label for="outcome">What is your desired business outcome? *</label>
-            <textarea id="outcome" name="Desired Business Outcome" placeholder="Tell us what you're looking to achieve..." required></textarea>
-          </div>
-
-          <div class="form-field">
-            <label for="constraint">What is your constraint?</label>
-            <textarea id="constraint" name="Constraint" placeholder="Budget, timeline, technical limitations, etc."></textarea>
-          </div>
-
-          <div class="form-field">
-            <label for="contact-method">Best way to contact you *</label>
-            <select id="contact-method" name="Preferred Contact Method" required>
-              <option value="" disabled selected>Select one</option>
-              <option value="Phone">Phone</option>
-              <option value="Email">Email</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="Phone" placeholder="(555) 123-4567">
-          </div>
-
-          <div class="form-field">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="Email" placeholder="john@company.com" required>
-          </div>
-
-          <div class="form-field">
-            <label for="website">Business Website</label>
-            <input type="url" id="website" name="Business Website" placeholder="https://yourcompany.com">
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn--teal btn--lg">Submit Inquiry</button>
-          </div>
-        </form>
-      </div>
-
-      <div class="form-success" id="formSuccess">
-        <div class="form-success__icon">✓</div>
-        <h3>Thank You!</h3>
-        <p>Your inquiry has been submitted. Our team will get back to you within one business day.</p>
-        <div style="margin-top: 24px;">
-          <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Book a Call Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <footer class="footer" id="site-footer"></footer>
 
   <script src="template.js"></script>
-  <script>
-    // Set redirect URL for FormSubmit to the new splash page
-    document.getElementById('formRedirect').value = window.location.origin + '/pages/form-success.html';
-
-    // Store return page in localStorage before form submission
-    document.getElementById('inquiryForm').addEventListener('submit', function() {
-      localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
-    });
-
-    function openInquiryForm() {
-      document.getElementById('inquiryModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeInquiryForm() {
-      document.getElementById('inquiryModal').classList.remove('active');
-      document.body.style.overflow = '';
-      // If splash overlay is showing, close it too
-      var splash = document.getElementById('successSplash');
-      if (splash) splash.remove();
-    }
-
-    // Close on overlay click
-    document.getElementById('inquiryModal').addEventListener('click', function(e) {
-      if (e.target === this) closeInquiryForm();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeInquiryForm();
-    });
-
-    // Auto-open inquiry form if linked with ?contact=true
-    if (window.location.search.includes('contact=true')) {
-      openInquiryForm();
-      history.replaceState(null, '', window.location.pathname);
-    }
-
-    // Show full-screen splash overlay if redirected back after submission
-    if (window.location.search.includes('submitted=true')) {
-      history.replaceState(null, '', window.location.pathname);
-      showSuccessSplash();
-    }
-
-    function showSuccessSplash() {
-      var overlay = document.createElement('div');
-      overlay.id = 'successSplash';
-      overlay.innerHTML = '\
-        <div style="position:fixed;inset:0;background:#0c0c0c;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px 24px;">\
-          <div style="animation:fadeInUp 0.6s ease-out both;">\
-            <div style="width:120px;height:120px;margin:0 auto 32px;">\
-              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:120px;">\
-                <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(118,230,216,0.15)" stroke-width="3"/>\
-                <circle cx="60" cy="60" r="56" fill="none" stroke="#76e6d8" stroke-width="3" stroke-dasharray="376" stroke-dashoffset="376" stroke-linecap="round" style="animation:circleStroke 0.6s ease-in-out 0.4s forwards;"/>\
-                <path d="M38 62 L52 76 L82 46" fill="none" stroke="#76e6d8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60" stroke-dashoffset="60" style="animation:checkStroke 0.4s ease-in-out 0.9s forwards;"/>\
-              </svg>\
-            </div>\
-            <h1 style="font-size:clamp(28px,5vw,48px);font-weight:700;margin-bottom:16px;line-height:1.2;color:#fff;">Great IT Support <span style="color:#76e6d8;">on the Way!</span></h1>\
-            <p style="font-size:clamp(16px,2.5vw,20px);color:#bcbfcc;max-width:500px;margin:0 auto 40px;line-height:1.6;">Thank you for reaching out. We\'ll be in touch within one business day.</p>\
-            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">\
-              <button onclick="closeSuccessSplash()" style="display:inline-flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-size:16px;font-weight:600;padding:16px 36px;border-radius:50px;border:none;cursor:pointer;background:#76e6d8;color:#0c0c0c;transition:all 0.3s ease;">Close</button>\
-              <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-size:16px;font-weight:600;padding:16px 36px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.2);cursor:pointer;background:transparent;color:#fff;text-decoration:none;transition:all 0.3s ease;">Book a Call Now</a>\
-            </div>\
-          </div>\
-        </div>';
-      // Inject keyframe animations
-      if (!document.getElementById('splashAnimStyles')) {
-        var style = document.createElement('style');
-        style.id = 'splashAnimStyles';
-        style.textContent = '@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes circleStroke{to{stroke-dashoffset:0}}@keyframes checkStroke{to{stroke-dashoffset:0}}';
-        document.head.appendChild(style);
-      }
-      document.body.appendChild(overlay);
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeSuccessSplash() {
-      var splash = document.getElementById('successSplash');
-      if (splash) splash.remove();
-      document.body.style.overflow = '';
-    }
-  </script>
 </body>
 </html>
