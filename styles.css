@@ -1,6 +1,6 @@
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #0c0c0c;
@@ -153,6 +153,10 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 5px;
   padding: 4px;
+  min-height: 44px;
+  min-width: 44px;
+  align-items: center;
+  justify-content: center;
 }
 .header__hamburger span {
   width: 24px;
@@ -268,7 +272,8 @@ ul { list-style: none; }
   border-bottom: none;
   border-radius: 50px;
   border: 1px solid rgba(255,255,255,0.1);
-  padding: 8px 20px;
+  padding: 10px 20px;
+  min-height: 44px;
 }
 .tabs__nav--pills .tabs__btn.active {
   color: #76e6d8;
@@ -795,7 +800,7 @@ ul { list-style: none; }
   /* Grid 2-col at tablet */
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
-  .numbers__grid { grid-template-columns: repeat(3, 1fr); }
+  .numbers__grid { grid-template-columns: repeat(3, 1fr) !important; }
   .insights__grid { grid-template-columns: repeat(2, 1fr); }
   .articles__grid { grid-template-columns: repeat(2, 1fr); }
   /* Card padding reduction */
