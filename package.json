@@ -21,5 +21,8 @@
   "devDependencies": {
     "cheerio": "^1.2.0",
     "jest": "^30.3.0"
+  },
+  "dependencies": {
+    "docx-pdf": "^0.0.1"
   }
 }
