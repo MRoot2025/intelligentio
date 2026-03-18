@@ -340,8 +340,64 @@
           <h2>General Application</h2>
           <p class="form-subtitle">Send us your resume and tell us a bit about yourself. We'll keep your information on file and reach out when there's a match.</p>
 
-          <script src="https://js-na2.hsforms.net/forms/embed/242795522.js" defer></script>
-          <div class="hs-form-frame" data-region="na2" data-form-id="37722e65-fd93-46ec-998b-3a2a55474f8a" data-portal-id="242795522"></div>
+          <form class="application-form" action="https://formsubmit.co/39f174e55680b887f724f5bca2bd6178" method="POST" enctype="multipart/form-data">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New Resume Submission from Intelligent iT Careers Page">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_next" id="formRedirect">
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="Full Name" placeholder="Jane Smith" required>
+              </div>
+              <div class="form-field">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="Email" placeholder="jane@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" placeholder="(555) 123-4567">
+              </div>
+              <div class="form-field">
+                <label for="linkedin">LinkedIn URL</label>
+                <input type="url" id="linkedin" name="LinkedIn" placeholder="https://linkedin.com/in/yourprofile">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="area">Area of Interest *</label>
+              <select id="area" name="Area of Interest" required>
+                <option value="" disabled selected>Select an area</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Security">Security</option>
+                <option value="Support">Support</option>
+                <option value="Sales">Sales</option>
+                <option value="Operations">Operations</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field file-upload-field">
+              <label for="resume">Resume *</label>
+              <input type="file" id="resume" name="Resume" accept=".pdf,.doc,.docx" required>
+              <p class="file-hint">Accepted formats: PDF, DOC, DOCX</p>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Cover Letter / Message</label>
+              <textarea id="message" name="Message" placeholder="Tell us about yourself, your experience, and what you're looking for..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--teal btn--lg" style="width:100%;">Submit Application</button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -358,5 +414,20 @@
   <footer class="footer" id="site-footer"></footer>
 
   <script src="template.js"></script>
+  <script>
+    // Set redirect URL for FormSubmit to the new splash page
+    document.getElementById('formRedirect').value = window.location.origin + '/pages/form-success.html';
+
+    // Store return page in localStorage before form submission
+    document.querySelector('.application-form').addEventListener('submit', function() {
+      localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
+    });
+
+    // Legacy: handle ?submitted=true by redirecting to splash page
+    if (window.location.search.includes('submitted=true')) {
+      history.replaceState(null, '', window.location.pathname);
+      window.location.href = 'form-success.html';
+    }
+  </script>
 </body>
 </html>
