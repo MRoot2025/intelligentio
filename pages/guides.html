@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT Guides, Playbooks & White Papers | Intelligent iT</title>
-  <meta name="description" content="Download free cybersecurity guides, compliance playbooks, and cloud migration white papers built for mid-sized businesses. Actionable resources from Intelligent iT covering Zero Trust, SOC 2, HIPAA, AI automation, and more.">
+  <meta name="description" content="Download free cybersecurity guides, compliance playbooks, and managed IT white papers built for mid-sized businesses. Actionable resources from Intelligent iT covering unified IT management, SOC operations, incident response, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,20 +49,11 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-    .guide-card__header--cyber {
-      background: linear-gradient(135deg, #1b3a6b 0%, #0f4c5c 100%);
-    }
-    .guide-card__header--compliance {
-      background: linear-gradient(135deg, #2d1b69 0%, #1b5ace 100%);
-    }
-    .guide-card__header--cloud {
+    .guide-card__header--managed-it {
       background: linear-gradient(135deg, #155065 0%, #00b19b 100%);
     }
-    .guide-card__header--ai {
-      background: linear-gradient(135deg, #1a1a4e 0%, #6b21a8 100%);
-    }
-    .guide-card__header--industry {
-      background: linear-gradient(135deg, #0f3d3e 0%, #1b5ace 100%);
+    .guide-card__header--cyber {
+      background: linear-gradient(135deg, #1b3a6b 0%, #0f4c5c 100%);
     }
 
     .guide-card__watermark {
@@ -196,7 +187,7 @@
     <div class="container page-hero__inner">
       <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Resources</a> / Guides & Playbooks</span>
       <h1>IT Guides, Playbooks & White Papers</h1>
-      <p>Actionable resources built for growing businesses. From cybersecurity frameworks and compliance checklists to cloud migration plans and AI automation strategies, our library gives you the blueprints to strengthen your IT operations.</p>
+      <p>Actionable resources built for growing businesses. From managed IT frameworks and cybersecurity operations to incident response playbooks and pricing strategies, our library gives you the blueprints to strengthen your IT operations.</p>
     </div>
   </section>
 
@@ -207,342 +198,318 @@
       <div class="guides-filter animate-on-scroll">
         <nav class="tabs__nav tabs__nav--pills" id="guide-filters">
           <button class="tabs__btn active" data-filter="all">All Resources</button>
+          <button class="tabs__btn" data-filter="managed-it">Managed IT</button>
           <button class="tabs__btn" data-filter="cybersecurity">Cybersecurity</button>
-          <button class="tabs__btn" data-filter="compliance">Compliance</button>
-          <button class="tabs__btn" data-filter="cloud">Cloud & Infrastructure</button>
-          <button class="tabs__btn" data-filter="ai">AI & Automation</button>
-          <button class="tabs__btn" data-filter="industry">Industry-Specific</button>
+          <button class="tabs__btn" data-filter="pricing">Pricing & Plans</button>
         </nav>
-        <p class="guides-count"><span id="guide-count">15</span> resources available</p>
+        <p class="guides-count"><span id="guide-count">14</span> resources available</p>
       </div>
 
       <!-- Resource Cards Grid -->
       <div class="guides-grid" id="guides-grid">
 
-        <!-- 1. Cybersecurity Threat Landscape -->
+        <!-- WP01: All-Inclusive IT & Security -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">All-Inclusive IT & Security: Why Bundled Beats Bolted-On</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">Discover why a unified, all-inclusive approach to IT and security consistently outperforms piecemeal solutions. This white paper breaks down the cost, complexity, and coverage gaps that come from bolting on disparate tools after the fact.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--whitepaper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                White Paper
+              </span>
+              <a href="../assets/whitepapers/wp01-bundled-beats-bolted-on.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP02: Right-Size Your IT Investment -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it pricing">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">Bronze, Silver, Gold: How to Right-Size Your IT and Security Investment</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">Not every business needs the same level of IT coverage. This guide walks you through tiered service models so you can match your investment to your actual risk profile, growth stage, and operational requirements.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--guide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Guide
+              </span>
+              <a href="../assets/whitepapers/wp02-right-size-it-investment.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP03: The Unified Core Difference -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">What 'Fully Managed' Actually Means: The Unified Core Difference</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">The term "fully managed" is used loosely across the industry. This white paper defines what a true Unified Core model looks like, how it eliminates finger-pointing between vendors, and why it delivers better outcomes for mid-sized organizations.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--whitepaper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                White Paper
+              </span>
+              <a href="../assets/whitepapers/wp03-unified-core-difference.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP04: Hidden Costs of IT Stack -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">The Hidden Costs of Piecing Together Your Own IT Stack</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">From integration overhead and vendor management to security gaps and staff burnout, assembling your own IT stack carries costs that rarely show up on a spreadsheet. This white paper exposes the true price of the DIY approach.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--whitepaper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                White Paper
+              </span>
+              <a href="../assets/whitepapers/wp04-hidden-costs-it-stack.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP05: From Reactive to Proactive -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">From Reactive to Proactive: How Unified Core Changes the IT Conversation</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">Most IT support is reactive -- waiting for things to break before fixing them. This guide shows how a Unified Core model shifts the conversation toward prevention, strategic planning, and measurable business outcomes.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--guide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Guide
+              </span>
+              <a href="../assets/whitepapers/wp05-reactive-to-proactive.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP06: Over-Paying for Under-Protection -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">Why Most Businesses Are Over-Paying for Under-Protection</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">Many organizations spend more than they should on IT while still leaving critical gaps in their security posture. This white paper identifies the most common spending traps and shows how to get better protection for less.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--whitepaper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                White Paper
+              </span>
+              <a href="../assets/whitepapers/wp06-overpaying-underprotection.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP07: Scaling Bronze to Gold -->
+        <div class="guide-card animate-on-scroll" data-category="managed-it pricing">
+          <div class="guide-card__header guide-card__header--managed-it">
+            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
+            <span class="guide-card__category">Managed IT</span>
+            <h3 class="guide-card__title">Scaling With Your Business: When to Move from Bronze to Gold</h3>
+          </div>
+          <div class="guide-card__body">
+            <p class="guide-card__desc">Growth changes your IT needs. This guide outlines the key signals that indicate it is time to upgrade your service tier, from headcount thresholds and compliance triggers to security maturity milestones.</p>
+            <div class="guide-card__footer">
+              <span class="guide-card__badge guide-card__badge--guide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Guide
+              </span>
+              <a href="../assets/whitepapers/wp07-scaling-bronze-to-gold.pdf" target="_blank" class="guide-card__download">
+                Download PDF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- WP08: 24/7 SOC vs Business Hours -->
         <div class="guide-card animate-on-scroll" data-category="cybersecurity">
           <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
             <span class="guide-card__category">Cybersecurity</span>
-            <h3 class="guide-card__title">The 2026 Cybersecurity Threat Landscape: What Every Mid-Sized Business Must Know</h3>
+            <h3 class="guide-card__title">24/7 SOC vs Business Hours Security</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">An analysis of the most critical cyber threats targeting 50-500 employee companies in 2026, including AI-powered phishing, supply chain attacks, and identity-based breaches. Includes actionable mitigation strategies and budget benchmarks.</p>
+            <p class="guide-card__desc">Cyberattacks do not wait for office hours. This white paper compares round-the-clock SOC monitoring against business-hours-only coverage, quantifying the risk exposure, response time differences, and real cost of after-hours breaches.</p>
             <div class="guide-card__footer">
               <span class="guide-card__badge guide-card__badge--whitepaper">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 White Paper
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp08-247-soc-vs-business-hours.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 2. Zero Trust Guide -->
+        <!-- WP09: Beyond Endpoint Isolation -->
         <div class="guide-card animate-on-scroll" data-category="cybersecurity">
           <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
             <span class="guide-card__category">Cybersecurity</span>
-            <h3 class="guide-card__title">The Complete Guide to Zero Trust Security for 50-500 Employee Companies</h3>
+            <h3 class="guide-card__title">Beyond Endpoint Isolation</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">A step-by-step guide to implementing a Zero Trust architecture without the enterprise complexity. Covers identity verification, micro-segmentation, least-privilege access, and phased rollout timelines tailored for growing organizations.</p>
+            <p class="guide-card__desc">Endpoint isolation is only the first step. This white paper explores the layered defense strategies -- from network segmentation to identity-based controls -- that modern SOC teams deploy to contain threats before they spread.</p>
             <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--guide">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Guide
+              <span class="guide-card__badge guide-card__badge--whitepaper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                White Paper
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp09-beyond-endpoint-isolation.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 3. Ransomware Prevention Playbook -->
+        <!-- WP10: Run Books and Defined Response -->
         <div class="guide-card animate-on-scroll" data-category="cybersecurity">
           <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
             <span class="guide-card__category">Cybersecurity</span>
-            <h3 class="guide-card__title">Ransomware Prevention Playbook: 7 Steps to Protect Your Business</h3>
+            <h3 class="guide-card__title">Run Books and Defined Response</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">A practical seven-step playbook covering endpoint detection, network segmentation, backup validation, employee training, and incident response planning. Built from real-world ransomware recovery engagements.</p>
+            <p class="guide-card__desc">When a security incident strikes, improvisation is the enemy. This playbook explains how pre-defined runbooks and response procedures reduce mean time to containment, eliminate guesswork, and keep your team executing under pressure.</p>
             <div class="guide-card__footer">
               <span class="guide-card__badge guide-card__badge--playbook">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 Playbook
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp10-runbooks-defined-response.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 4. SOC 2 Compliance Checklist -->
-        <div class="guide-card animate-on-scroll" data-category="compliance">
-          <div class="guide-card__header guide-card__header--compliance">
+        <!-- WP11: What Happens During a Cyber Incident -->
+        <div class="guide-card animate-on-scroll" data-category="cybersecurity">
+          <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Compliance</span>
-            <h3 class="guide-card__title">SOC 2 Type II Compliance Checklist: From Zero to Audit-Ready</h3>
+            <span class="guide-card__category">Cybersecurity</span>
+            <h3 class="guide-card__title">What Actually Happens During a Cyber Incident</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">A comprehensive checklist covering all five Trust Service Criteria. Includes policy templates, evidence collection workflows, and a 90-day readiness timeline so your team can approach the audit with confidence.</p>
+            <p class="guide-card__desc">Most businesses have never experienced a major cyber incident -- until they do. This guide walks through the real timeline of an attack, from initial detection through containment, eradication, and recovery, so you know exactly what to expect.</p>
             <div class="guide-card__footer">
               <span class="guide-card__badge guide-card__badge--guide">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 Guide
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp11-during-cyber-incident.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 5. HIPAA Compliance Guide -->
-        <div class="guide-card animate-on-scroll" data-category="compliance">
-          <div class="guide-card__header guide-card__header--compliance">
+        <!-- WP12: Identity Is the New Perimeter -->
+        <div class="guide-card animate-on-scroll" data-category="cybersecurity">
+          <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Compliance</span>
-            <h3 class="guide-card__title">HIPAA Compliance for Growing Healthcare Organizations</h3>
+            <span class="guide-card__category">Cybersecurity</span>
+            <h3 class="guide-card__title">Identity Is the New Perimeter</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">Navigate the HIPAA Security Rule, Privacy Rule, and Breach Notification requirements with this practical guide. Covers risk assessments, Business Associate Agreements, encryption standards, and staff training protocols.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--guide">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Guide
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. NYDFS 500 Roadmap -->
-        <div class="guide-card animate-on-scroll" data-category="compliance">
-          <div class="guide-card__header guide-card__header--compliance">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Compliance</span>
-            <h3 class="guide-card__title">NYDFS 500 & Financial Services Compliance Roadmap</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">A detailed roadmap for meeting the New York Department of Financial Services cybersecurity regulation. Covers the 2025 amendments, MFA requirements, access controls, penetration testing, and CISO reporting obligations.</p>
+            <p class="guide-card__desc">With remote work and cloud adoption, the traditional network perimeter has dissolved. This white paper explains why identity-centric security -- MFA, conditional access, and privilege management -- is now the front line of defense.</p>
             <div class="guide-card__footer">
               <span class="guide-card__badge guide-card__badge--whitepaper">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 White Paper
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp12-identity-new-perimeter.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 7. CMMC 2.0 Readiness Guide -->
-        <div class="guide-card animate-on-scroll" data-category="compliance">
-          <div class="guide-card__header guide-card__header--compliance">
+        <!-- WP13: Detecting vs Stopping a Threat -->
+        <div class="guide-card animate-on-scroll" data-category="cybersecurity">
+          <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Compliance</span>
-            <h3 class="guide-card__title">CMMC 2.0 Readiness Guide for Defense Contractors</h3>
+            <span class="guide-card__category">Cybersecurity</span>
+            <h3 class="guide-card__title">The Difference Between Detecting a Threat and Stopping One</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">Prepare for Cybersecurity Maturity Model Certification with this practical guide. Covers the three CMMC 2.0 levels, NIST SP 800-171 control mapping, Plan of Action & Milestones creation, and C3PAO assessment preparation.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--guide">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Guide
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. M365 Security Playbook -->
-        <div class="guide-card animate-on-scroll" data-category="cloud">
-          <div class="guide-card__header guide-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Cloud & Infrastructure</span>
-            <h3 class="guide-card__title">The Complete Microsoft 365 Security & Optimization Playbook</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">Harden your Microsoft 365 tenant from day one. This playbook covers Conditional Access policies, DLP configuration, SharePoint permissions, Teams governance, Defender tuning, and Secure Score improvement strategies.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--playbook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Playbook
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9. Cloud Migration Guide -->
-        <div class="guide-card animate-on-scroll" data-category="cloud">
-          <div class="guide-card__header guide-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Cloud & Infrastructure</span>
-            <h3 class="guide-card__title">Cloud Migration Planning Guide: Moving from On-Premises to Azure/AWS</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">Plan a successful cloud migration with this structured guide. Covers workload assessment, TCO analysis, migration wave planning, hybrid architecture options, security controls, and post-migration optimization checklists.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--guide">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Guide
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 10. BCDR Planning Template -->
-        <div class="guide-card animate-on-scroll" data-category="cloud">
-          <div class="guide-card__header guide-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Cloud & Infrastructure</span>
-            <h3 class="guide-card__title">Business Continuity & Disaster Recovery Planning Template</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">A ready-to-use BCDR template covering Business Impact Analysis, RTO/RPO definitions, failover procedures, communication plans, and tabletop exercise scenarios. Designed for organizations that cannot afford extended downtime.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--playbook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Playbook
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 11. AI for IT Operations -->
-        <div class="guide-card animate-on-scroll" data-category="ai">
-          <div class="guide-card__header guide-card__header--ai">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">AI & Automation</span>
-            <h3 class="guide-card__title">AI for IT Operations: How to Cut Support Tickets by 40%</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">Explore how AI-powered chatbots, automated triage, self-healing scripts, and predictive monitoring can dramatically reduce ticket volume. Includes ROI models, vendor evaluation criteria, and a phased implementation roadmap.</p>
+            <p class="guide-card__desc">Detection without response is just expensive logging. This white paper examines the critical gap between knowing about a threat and actually neutralizing it, and why automated response capabilities are essential for modern security operations.</p>
             <div class="guide-card__footer">
               <span class="guide-card__badge guide-card__badge--whitepaper">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 White Paper
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp13-detecting-vs-stopping.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- 12. Automated Onboarding/Offboarding Playbook -->
-        <div class="guide-card animate-on-scroll" data-category="ai">
-          <div class="guide-card__header guide-card__header--ai">
+        <!-- WP14: IR Retainer vs Managed SOC -->
+        <div class="guide-card animate-on-scroll" data-category="cybersecurity">
+          <div class="guide-card__header guide-card__header--cyber">
             <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">AI & Automation</span>
-            <h3 class="guide-card__title">The Automated Employee Onboarding & Offboarding Playbook</h3>
+            <span class="guide-card__category">Cybersecurity</span>
+            <h3 class="guide-card__title">Incident Response Retainer vs. Managed SOC</h3>
           </div>
           <div class="guide-card__body">
-            <p class="guide-card__desc">Eliminate manual provisioning errors and security gaps with automated lifecycle workflows. Covers identity creation, license assignment, device enrollment, access revocation, and compliance-grade audit logging.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--playbook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Playbook
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 13. IT Security for Financial Services -->
-        <div class="guide-card animate-on-scroll" data-category="industry">
-          <div class="guide-card__header guide-card__header--industry">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Industry-Specific</span>
-            <h3 class="guide-card__title">IT Security Essentials for Financial Services Firms</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">A targeted guide for RIAs, broker-dealers, and fintech firms covering SEC/FINRA cybersecurity expectations, NYDFS 500 controls, client data protection, vendor risk management, and incident reporting requirements.</p>
+            <p class="guide-card__desc">Should you pay for an incident response retainer or invest in a managed SOC? This guide compares the two models head-to-head -- cost structure, response speed, coverage scope -- so you can choose the right fit for your risk tolerance and budget.</p>
             <div class="guide-card__footer">
               <span class="guide-card__badge guide-card__badge--guide">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                 Guide
               </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 14. Healthcare IT Compliance Handbook -->
-        <div class="guide-card animate-on-scroll" data-category="industry">
-          <div class="guide-card__header guide-card__header--industry">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Industry-Specific</span>
-            <h3 class="guide-card__title">Healthcare IT Compliance: A Complete HIPAA & HITECH Handbook</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">A comprehensive handbook for healthcare providers and health-tech companies covering ePHI safeguards, EHR system security, telehealth compliance, breach notification procedures, and annual risk assessment workflows.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--guide">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Guide
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 15. Managed IT for Professional Services -->
-        <div class="guide-card animate-on-scroll" data-category="industry">
-          <div class="guide-card__header guide-card__header--industry">
-            <img src="../assets/logo-green.png" alt="" class="guide-card__watermark">
-            <span class="guide-card__category">Industry-Specific</span>
-            <h3 class="guide-card__title">Managed IT for Professional Services: Maximizing Billable Hours</h3>
-          </div>
-          <div class="guide-card__body">
-            <p class="guide-card__desc">Built for law firms, accounting practices, and consulting firms. Learn how proactive IT management, document management optimization, and secure remote access translate directly into more billable hours and fewer costly disruptions.</p>
-            <div class="guide-card__footer">
-              <span class="guide-card__badge guide-card__badge--whitepaper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                White Paper
-              </span>
-              <a href="locations.html?contact=true" class="guide-card__download">
-                Download
+              <a href="../assets/whitepapers/wp14-ir-retainer-vs-soc.pdf" target="_blank" class="guide-card__download">
+                Download PDF
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </div>
@@ -581,7 +548,8 @@
           var visibleCount = 0;
 
           cards.forEach(function(card) {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            var categories = card.getAttribute('data-category').split(' ');
+            if (filter === 'all' || categories.indexOf(filter) !== -1) {
               card.style.display = '';
               visibleCount++;
             } else {
