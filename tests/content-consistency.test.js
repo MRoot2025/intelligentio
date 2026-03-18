@@ -108,9 +108,11 @@ describe('Testimonial fixes', () => {
     expect(content).toContain('Thomas Oommen');
   });
 
-  test('Sephora testimonial has "(NYC Office)" context', () => {
+  test('Erica Doswell testimonial uses generic company description (no Sephora brand name)', () => {
     const content = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf8');
-    expect(content).toContain('Sephora (NYC Office)');
+    expect(content).toContain('Erica Doswell');
+    expect(content).toContain('National Retail Company');
+    expect(content).not.toMatch(/Sephora/);
   });
 });
 
