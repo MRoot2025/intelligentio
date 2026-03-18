@@ -189,11 +189,17 @@
   .page-content { padding: 32px 0; }
 }
 
-@media (max-width: 380px) {
-  .page-hero { padding: 88px 0 32px; }
+@media (max-width: 480px) {
+  .page-hero { padding: 92px 0 36px; min-height: auto; }
   .page-hero h1 { font-size: 22px; }
   .page-hero p { font-size: 14px; }
   .page-hero__breadcrumb { font-size: 10px; }
-  .page-stat__value { font-size: 22px; }
   .page-stats { grid-template-columns: 1fr; gap: 10px; }
+  .page-stat__value { font-size: 22px; }
+}
+
+@media (max-width: 380px) {
+  .page-hero { padding: 88px 0 32px; }
+  .page-hero h1 { font-size: 20px; }
+  .page-hero p { font-size: 13px; }
 }

@@ -239,6 +239,9 @@ describe('Cross-site consistency', () => {
   const pagesDir = path.join(__dirname, '..', 'pages');
   const htmlFiles = fs.readdirSync(pagesDir).filter(f => f.endsWith('.html'));
 
+  // Standalone splash pages that don't use the standard layout
+  const standaloneSplashPages = ['form-success.html'];
+
   test('all subpages are valid HTML5', () => {
     htmlFiles.forEach(file => {
       const content = fs.readFileSync(path.join(pagesDir, file), 'utf8');
@@ -249,7 +252,7 @@ describe('Cross-site consistency', () => {
   });
 
   test('all subpages reference required CSS files', () => {
-    htmlFiles.forEach(file => {
+    htmlFiles.filter(f => !standaloneSplashPages.includes(f)).forEach(file => {
       const content = fs.readFileSync(path.join(pagesDir, file), 'utf8');
       expect(content).toContain('styles.css');
       expect(content).toContain('pages.css');
