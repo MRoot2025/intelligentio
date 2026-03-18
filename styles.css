@@ -65,11 +65,9 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(12, 12, 12, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(12, 12, 12, 0.98);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   height: 80px;
-  overflow: visible;
 }
 .header__inner {
   display: flex;
