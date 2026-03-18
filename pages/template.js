@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="guides.html" class="dropdown__link">Guides &amp; Playbooks</a>
               <a href="case-studies.html" class="dropdown__link">Case Studies</a>
               <a href="webinars.html" class="dropdown__link">Webinars</a>
-              <a href="overview-video.html" class="dropdown__link">90-Second Overview Video</a>
+              <a href="overview-video.html" class="dropdown__link">Overview Video</a>
               <a href="resource-library.html" class="dropdown__link">Resource Library</a>
             </div>
           </div>
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="guides.html">Guides &amp; Playbooks</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="webinars.html">Webinars</a>
-            <a href="overview-video.html">90-Second Overview Video</a>
+            <a href="overview-video.html">Overview Video</a>
             <a href="resource-library.html">Resource Library</a>
           </div>
         </div>
