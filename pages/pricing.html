@@ -204,14 +204,25 @@
     }
 
     @media (max-width: 1024px) {
-      .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
       .pricing-card--featured { order: -1; }
     }
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-card { padding: 36px 28px; }
+      .pricing-card__name { font-size: 28px; }
+      .table-wrapper { -webkit-overflow-scrolling: touch; }
+      .comparison-table th,
+      .comparison-table td { padding: 14px 16px; font-size: 14px; }
+      .comparison-table td:first-child { min-width: 140px; }
+    }
     @media (max-width: 640px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
       .pricing-card { padding: 32px 24px; }
       .pricing-card__name { font-size: 26px; }
       .comparison-table th,
-      .comparison-table td { padding: 12px 14px; font-size: 14px; }
+      .comparison-table td { padding: 12px 14px; font-size: 13px; white-space: nowrap; }
+      .comparison-table td:first-child { white-space: normal; }
     }
   </style>
   <!-- HubSpot Tracking Code -->

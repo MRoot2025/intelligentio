@@ -173,6 +173,16 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    @media (max-width: 768px) {
+      .cases-filter .tabs__nav--pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        scrollbar-width: none;
+      }
+      .cases-filter .tabs__nav--pills::-webkit-scrollbar { display: none; }
+    }
     @media (max-width: 640px) {
       .cases-grid {
         grid-template-columns: 1fr;
@@ -183,6 +193,9 @@
       }
       .case-card__body {
         padding: 16px 20px 20px;
+      }
+      .case-card__metric {
+        font-size: 18px;
       }
     }
   </style>

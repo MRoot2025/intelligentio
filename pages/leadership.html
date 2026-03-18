@@ -120,6 +120,13 @@
     @media (max-width: 1024px) {
       .leader-profile { grid-template-columns: 1fr; max-width: 600px; }
       .leader-photo { max-width: 320px; }
+      .leader-highlights { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .leader-profile { grid-template-columns: 1fr; max-width: 100%; }
+      .leader-highlights { grid-template-columns: repeat(2, 1fr); }
+      .vision-section { padding: 36px 28px; }
+      .leader-name { font-size: 32px; }
     }
     @media (max-width: 640px) {
       .leader-profile { gap: 32px; }

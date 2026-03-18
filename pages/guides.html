@@ -164,6 +164,19 @@
       .guides-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .guide-card__header {
+        min-height: 110px;
+      }
+    }
+    @media (max-width: 768px) {
+      .guides-filter .tabs__nav--pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        scrollbar-width: none;
+      }
+      .guides-filter .tabs__nav--pills::-webkit-scrollbar { display: none; }
     }
     @media (max-width: 640px) {
       .guides-grid {

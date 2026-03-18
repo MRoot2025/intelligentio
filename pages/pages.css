@@ -144,11 +144,14 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .page-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
   .page-hero { padding: 120px 0 60px; min-height: 320px; }
   .page-hero h1 { font-size: 32px; }
-  .page-hero p { font-size: 18px; }
-  .page-stats { grid-template-columns: repeat(2, 1fr); }
+  .page-hero p { font-size: 18px; padding: 0; }
   .page-cta { padding: 40px 24px; }
   .page-cta h2 { font-size: 28px; }
   .page-section h2 { font-size: 26px; }
@@ -156,7 +159,7 @@
   .page-content { padding: 60px 0; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .page-hero { padding: 100px 0 48px; min-height: 280px; }
   .page-hero h1 { font-size: 26px; }
   .page-hero p { font-size: 16px; margin-bottom: 24px; }
