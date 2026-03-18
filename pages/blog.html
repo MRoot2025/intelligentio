@@ -4,13 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Intelligent iT</title>
-  <meta name="description" content="Proven frameworks and data-driven guides to help you reduce IT overhead by up to 30% and eliminate 99% of common cybersecurity threats through strategic automation.">
+  <meta name="description" content="Actionable insights on cybersecurity, IT automation, compliance, and cloud strategy for mid-market companies. Expert guidance from the Intelligent iT team.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="icon" href="../assets/logo.png" type="image/png">
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .blog-card {
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.12);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(118, 230, 216, 0.3);
+    }
+    .blog-card__tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #76e6d8;
+      background: rgba(118, 230, 216, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .blog-card__date {
+      font-size: 13px;
+      color: #8a8ea0;
+      margin-bottom: 8px;
+    }
+    .blog-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .blog-card p {
+      font-size: 15px;
+      color: #bcbfcc;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .blog-card .link--teal-sm {
+      font-size: 14px;
+      font-weight: 600;
+      color: #76e6d8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .blog-card .link--teal-sm:hover {
+      color: #a0f0e4;
+    }
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- HubSpot Tracking Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
 </head>
 <body>
   <header class="header" id="site-header"></header>
@@ -19,9 +83,8 @@
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
       <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Insights</a> / Blog</span>
-      <h1>Beyond Break-Fix: Actionable IT & Cybersecurity Insights for Mid-Market Companies</h1>
-      <p>Proven frameworks and data-driven guides to help you reduce IT overhead by up to 30% and eliminate 99% of common cybersecurity threats through strategic automation.</p>
-      <a href="locations.html" class="btn btn--teal btn--lg">Get Started</a>
+      <h1>Insights &amp; Thought Leadership</h1>
+      <p>Actionable frameworks, data-driven guides, and expert perspectives on cybersecurity, compliance, AI automation, and IT strategy for mid-market companies.</p>
     </div>
   </section>
 
@@ -29,34 +92,80 @@
     <div class="container">
 
       <div class="page-section animate-on-scroll">
-        <h2>Hero Section</h2>
-        <p>You're tired of generic IT advice that doesn't apply to the complex reality of your 100-person firm. You read about AI and automation but feel powerless to actually implement it in your own business. You suspect your current IT provider is stuck in the past, but you don't know what to demand from a modern, forward-thinking partner.</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>Featured Articles</h2>
-        <p>A curated selection of the three most impactful, cornerstone articles. Each article should be displayed with its title, a brief 1-2 sentence summary, and a compelling image. This section establishes immediate authority.</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>Explore by Topic</h2>
-        <p>A set of interactive filter buttons for key categories: Cybersecurity, AI Automation, IT Compliance (CMMC & HIPAA), and Cloud Strategy. This allows users to self-segment and find relevant content quickly.</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
         <h2>Latest Articles</h2>
-        <p>A reverse-chronological grid of the 6-9 most recent blog posts. Each entry should show the title, publication date, and a short excerpt. This section demonstrates that the blog is active and current.</p>
-      </div>
+        <div class="blog-grid">
 
-      <div class="page-section animate-on-scroll">
-        <h2>The AI Advantage</h2>
-        <p>The AI Advantage: Data-Driven Insights, Not Just Opinions Our insights aren't just theory; they're forged from data. We leverage our proprietary AI platform to analyze over 500,000 weekly security events and operational alerts across our entire client base. This automation allows us to identify emerging threat patterns, pinpoint systemic risks, and validate cost-saving automation opportunities before they become mainstream news. The strategies you read on this blog are the direct result of th...</p>
+          <div class="blog-card">
+            <span class="blog-card__tag">Cybersecurity</span>
+            <div class="blog-card__date">March 10, 2026</div>
+            <h3>Zero Trust Is Not Optional: A Practical Roadmap for Mid-Market Firms</h3>
+            <p>The perimeter-based security model is dead. Learn how to implement a Zero Trust framework across your organization without disrupting daily operations or blowing your budget.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">Compliance</span>
+            <div class="blog-card__date">February 24, 2026</div>
+            <h3>SOC 2 Readiness in 90 Days: The Automation-First Approach</h3>
+            <p>Manual compliance tracking is a losing game. Discover how automated evidence collection and continuous monitoring can cut your SOC 2 preparation timeline in half.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">AI &amp; Automation</span>
+            <div class="blog-card__date">February 11, 2026</div>
+            <h3>How AI-Driven Ticket Routing Reduced Our Average Resolution Time to 45 Minutes</h3>
+            <p>We analyzed 50,000 support tickets to build an AI model that pre-diagnoses issues and routes them to the right engineer instantly. Here is what we learned and the results we measured.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">IT Strategy</span>
+            <div class="blog-card__date">January 28, 2026</div>
+            <h3>The True Cost of Reactive IT: Why Break-Fix Is Bleeding Your Budget</h3>
+            <p>Most companies underestimate what reactive IT really costs. We break down the hidden expenses — lost productivity, emergency vendor fees, and employee turnover — and show a better path forward.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">Cybersecurity</span>
+            <div class="blog-card__date">January 14, 2026</div>
+            <h3>Phishing Attacks Are Getting Smarter: 5 Defenses That Actually Work in 2026</h3>
+            <p>AI-generated phishing emails now bypass traditional filters at alarming rates. Learn the five layered defenses — from DNS filtering to security awareness training — that stop them cold.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">Cloud Strategy</span>
+            <div class="blog-card__date">December 18, 2025</div>
+            <h3>Azure vs. AWS for Regulated Industries: Making the Right Choice</h3>
+            <p>Choosing a cloud platform is a long-term commitment. We compare Azure and AWS through the lens of compliance, cost, and operational complexity for financial services and healthcare firms.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">Compliance</span>
+            <div class="blog-card__date">December 3, 2025</div>
+            <h3>CMMC 2.0 Is Here: What Government Contractors Need to Do Now</h3>
+            <p>The Department of Defense's updated cybersecurity framework is no longer theoretical. We outline the specific controls you need to implement and the timeline you are working against.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+          <div class="blog-card">
+            <span class="blog-card__tag">AI &amp; Automation</span>
+            <div class="blog-card__date">November 19, 2025</div>
+            <h3>Predictive Monitoring Explained: How We Prevent Outages 72 Hours in Advance</h3>
+            <p>Our AI platform tracks over 500 metrics per device to spot failure patterns before they cause downtime. Here is a behind-the-scenes look at how predictive monitoring works in practice.</p>
+            <a href="locations.html?contact=true" class="link--teal-sm">Read More &rarr;</a>
+          </div>
+
+        </div>
       </div>
 
       <div class="page-cta">
-        <h2>Ready to get started?</h2>
-        <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
-        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
+        <h2>Want Insights Tailored to Your Business?</h2>
+        <p>Book a free IT strategy session and get a personalized assessment of your technology environment.</p>
+        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
       </div>
     </div>
   </main>
