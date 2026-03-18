@@ -235,62 +235,8 @@ Serving Southern California and the West Coast.</p>
         <h2>Let's Talk</h2>
         <p class="modal__subtitle">Tell us about your business and we'll get back to you within one business day.</p>
 
-        <form class="inquiry-form" id="inquiryForm" action="https://formsubmit.co/39f174e55680b887f724f5bca2bd6178" method="POST">
-          <!-- FormSubmit config -->
-          <input type="hidden" name="_subject" value="New Inquiry from Intelligent iT Website">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://intelligentit.io/pages/form-success.html" id="formRedirect">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
-
-          <div class="form-field">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="Name" placeholder="John Smith" required>
-          </div>
-
-          <div class="form-field">
-            <label for="company">Company *</label>
-            <input type="text" id="company" name="Company" placeholder="Your company name" required>
-          </div>
-
-          <div class="form-field">
-            <label for="outcome">What is your desired business outcome? *</label>
-            <textarea id="outcome" name="Desired Business Outcome" placeholder="Tell us what you're looking to achieve..." required></textarea>
-          </div>
-
-          <div class="form-field">
-            <label for="constraint">What is your constraint?</label>
-            <textarea id="constraint" name="Constraint" placeholder="Budget, timeline, technical limitations, etc."></textarea>
-          </div>
-
-          <div class="form-field">
-            <label for="contact-method">Best way to contact you *</label>
-            <select id="contact-method" name="Preferred Contact Method" required>
-              <option value="" disabled selected>Select one</option>
-              <option value="Phone">Phone</option>
-              <option value="Email">Email</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="Phone" placeholder="(555) 123-4567">
-          </div>
-
-          <div class="form-field">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="Email" placeholder="john@company.com" required>
-          </div>
-
-          <div class="form-field">
-            <label for="website">Business Website</label>
-            <input type="url" id="website" name="Business Website" placeholder="https://yourcompany.com">
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn--teal btn--lg">Submit Inquiry</button>
-          </div>
-        </form>
+        <script src="https://js-na2.hsforms.net/forms/embed/242795522.js" defer></script>
+        <div class="hs-form-frame" data-region="na2" data-form-id="37722e65-fd93-46ec-998b-3a2a55474f8a" data-portal-id="242795522"></div>
       </div>
 
       <div class="form-success" id="formSuccess">
@@ -308,14 +254,6 @@ Serving Southern California and the West Coast.</p>
 
   <script src="template.js"></script>
   <script>
-    // Set redirect URL for FormSubmit to the new splash page
-    document.getElementById('formRedirect').value = window.location.origin + '/pages/form-success.html';
-
-    // Store return page in localStorage before form submission
-    document.getElementById('inquiryForm').addEventListener('submit', function() {
-      localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
-    });
-
     function openInquiryForm() {
       document.getElementById('inquiryModal').classList.add('active');
       document.body.style.overflow = 'hidden';

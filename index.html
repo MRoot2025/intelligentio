@@ -531,52 +531,9 @@
         <p>Tell us about your business and we'll build a custom action plan tailored to your industry, role, and biggest challenge. No sales pitch&mdash;just actionable recommendations.</p>
       </div>
       <div class="calculator__form">
-        <form class="calculator__form-inner" action="https://formsubmit.co/39f174e55680b887f724f5bca2bd6178" method="POST">
-          <input type="hidden" name="_subject" value="New Custom Action Plan Request from Intelligent iT Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://intelligentit.io/pages/form-success.html">
-          <input type="text" name="_honey" style="display:none">
-          <h3>Get Your Custom Action Plan</h3>
-          <div class="form-group">
-            <select class="form-select" name="Role" required>
-              <option value="" disabled selected>I am a...</option>
-              <option value="CEO / Business Owner">CEO / Business Owner</option>
-              <option value="IT Director / CTO">IT Director / CTO</option>
-              <option value="Operations Manager">Operations Manager</option>
-              <option value="CFO / Finance Director">CFO / Finance Director</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select class="form-select" name="Industry" required>
-              <option value="" disabled selected>In the... industry</option>
-              <option value="Healthcare &amp; Life Sciences">Healthcare &amp; Life Sciences</option>
-              <option value="Finance &amp; Accounting">Finance &amp; Accounting</option>
-              <option value="Manufacturing">Manufacturing</option>
-              <option value="Professional Services">Professional Services</option>
-              <option value="Marketing &amp; Creative">Marketing &amp; Creative</option>
-              <option value="Construction &amp; Real Estate">Construction &amp; Real Estate</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select class="form-select" name="Biggest Challenge" required>
-              <option value="" disabled selected>My biggest challenge is...</option>
-              <option value="Slow IT Support &amp; Response Times">Slow IT Support &amp; Response Times</option>
-              <option value="Compliance &amp; Audit Readiness">Compliance &amp; Audit Readiness</option>
-              <option value="Cybersecurity &amp; Data Protection">Cybersecurity &amp; Data Protection</option>
-              <option value="Cloud Migration &amp; Modernization">Cloud Migration &amp; Modernization</option>
-              <option value="Scaling IT with Business Growth">Scaling IT with Business Growth</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-select" name="Email" placeholder="Your work email" style="color: #fff;" required>
-          </div>
-          <p class="form-helper">We'll send your personalized IT roadmap within 24 hours.</p>
-          <div class="calculator__nav">
-            <button type="submit" class="btn btn--teal btn--lg" style="width: 100%;">Get My Custom Action Plan</button>
-          </div>
-        </form>
+        <h3>Get Your Custom Action Plan</h3>
+        <script src="https://js-na2.hsforms.net/forms/embed/242795522.js" defer></script>
+        <div class="hs-form-frame" data-region="na2" data-form-id="37722e65-fd93-46ec-998b-3a2a55474f8a" data-portal-id="242795522"></div>
       </div>
     </div>
   </section>
@@ -706,14 +663,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // Store return page in localStorage before form submission
-    var calcForm = document.querySelector('.calculator__form-inner');
-    if (calcForm) {
-      calcForm.addEventListener('submit', function() {
-        localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
-      });
-    }
-  </script>
 </body>
 </html>
