@@ -56,12 +56,12 @@ const caseStudies = [
       'Staff members were spending excessive time on IT workarounds rather than patient care, and the practice urgently needed a technology partner who understood healthcare regulations and clinical workflows.'
     ],
     solution: [
-      'Intelligent iT executed a 90-day HIPAA compliance transformation, beginning with a thorough gap analysis against all HIPAA Security Rule requirements. We migrated the practice to a HIPAA-compliant cloud infrastructure with redundant systems ensuring 99.99% uptime.',
+      'Intelligent iT executed a 90-day HIPAA compliance transformation, beginning with a thorough gap analysis against all HIPAA Security Rule requirements. We migrated the practice to a HIPAA-compliant cloud infrastructure with redundant systems ensuring 99.9% uptime.',
       'Our team implemented role-based access controls, encrypted data at rest and in transit, and deployed automated backup systems with 15-minute recovery point objectives. We established a Business Associate Agreement (BAA) framework for all technology vendors.',
       'We also rolled out HIPAA security awareness training for all staff, implemented secure patient communication channels, and established continuous compliance monitoring with real-time alerting for any policy violations.'
     ],
     results: [
-      { metric: '99.99%', description: 'System uptime achieved (up from 96%)' },
+      { metric: '99.9%', description: 'System uptime achieved (up from 96%)' },
       { metric: '90 Days', description: 'To full HIPAA compliance' },
       { metric: '60%', description: 'Fewer IT support tickets' },
       { metric: 'Zero', description: 'HIPAA violations since implementation' }
