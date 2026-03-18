@@ -726,13 +726,15 @@ ul { list-style: none; }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
-  .header { overflow: visible; }
   .header__inner { flex-wrap: nowrap; }
-  .header__nav:not(.open) { display: none; }
+  .header__nav { display: none; visibility: hidden; height: 0; overflow: hidden; }
   .header__actions { display: none; }
   .header__hamburger { display: flex; }
   .header__nav.open {
-    display: flex !important;
+    display: flex;
+    visibility: visible;
+    height: auto;
+    overflow: visible;
     flex-direction: column;
     position: fixed;
     top: 80px; left: 0; right: 0; bottom: 0;
