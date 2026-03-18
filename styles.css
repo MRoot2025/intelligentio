@@ -728,9 +728,9 @@ ul { list-style: none; }
   .container { padding: 0 24px; }
   .header { overflow: visible; }
   .header__inner { flex-wrap: nowrap; }
-  .header__nav { display: none !important; }
-  .header__actions { display: none !important; }
-  .header__hamburger { display: flex !important; }
+  .header__nav:not(.open) { display: none; }
+  .header__actions { display: none; }
+  .header__hamburger { display: flex; }
   .header__nav.open {
     display: flex !important;
     flex-direction: column;
