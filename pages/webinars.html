@@ -4,13 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webinars | Intelligent iT</title>
-  <meta name="description" content="Stop wasting time on generic advice. Access our on-demand library of 30-minute, expert-led blueprints for automating security, guaranteeing compliance, and cutting IT operational costs by up to 30%.">
+  <meta name="description" content="Join our expert-led webinars on Zero Trust security, compliance automation, AI in IT operations, and cloud strategy. Live sessions and on-demand recordings available.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="icon" href="../assets/logo.png" type="image/png">
+  <style>
+    .webinar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 32px;
+    }
+    .webinar-card {
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.12);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: transform 0.3s, border-color 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .webinar-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(118, 230, 216, 0.3);
+    }
+    .webinar-card__badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .webinar-card__badge--upcoming {
+      color: #0b1a2e;
+      background: #76e6d8;
+    }
+    .webinar-card__badge--ondemand {
+      color: #edeff7;
+      background: rgba(118, 230, 216, 0.15);
+    }
+    .webinar-card__date {
+      font-size: 13px;
+      color: #8a8ea0;
+      margin-bottom: 8px;
+    }
+    .webinar-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .webinar-card__presenter {
+      font-size: 14px;
+      color: #76e6d8;
+      margin-bottom: 12px;
+    }
+    .webinar-card p {
+      font-size: 15px;
+      color: #bcbfcc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .webinar-card .btn--sm {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+      width: fit-content;
+    }
+    .btn--teal-outline {
+      color: #76e6d8;
+      border: 1px solid #76e6d8;
+      background: transparent;
+    }
+    .btn--teal-outline:hover {
+      background: rgba(118, 230, 216, 0.1);
+    }
+    @media (max-width: 768px) {
+      .webinar-grid { grid-template-columns: 1fr; }
+    }
+  </style>
   <!-- HubSpot Tracking Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
 </head>
@@ -21,9 +107,8 @@
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
       <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Insights</a> / Webinars</span>
-      <h1>Actionable IT Strategy Briefings for Leaders of 50-500 Employee Firms</h1>
-      <p>Stop wasting time on generic advice. Access our on-demand library of 30-minute, expert-led blueprints for automating security, guaranteeing compliance, and cutting IT operational costs by up to 30%.</p>
-      <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
+      <h1>Webinars &amp; Live Briefings</h1>
+      <p>Expert-led sessions on cybersecurity, compliance, AI automation, and IT strategy — designed for leaders of 50-500 employee companies. Register for upcoming events or watch on demand.</p>
     </div>
   </section>
 
@@ -31,29 +116,77 @@
     <div class="container">
 
       <div class="page-section animate-on-scroll">
-        <h2>Featured Monthly Briefing</h2>
-        <p>You're tired of 'thought leadership' webinars that are just thinly veiled, hour-long sales pitches for a product you don't need. You leave webinars with pages of notes but no clear idea of what to do next or how to turn the ideas into action. You worry that the security advice you're getting is already six months out of date and won't stop a modern, AI-powered cyberattack.</p>
+        <h2>Upcoming Sessions</h2>
+        <div class="webinar-grid">
+
+          <div class="webinar-card">
+            <span class="webinar-card__badge webinar-card__badge--upcoming">Upcoming</span>
+            <div class="webinar-card__date">April 8, 2026 &bull; 1:00 PM ET</div>
+            <h3>Zero Trust for Mid-Market: A Step-by-Step Implementation Blueprint</h3>
+            <div class="webinar-card__presenter">Presented by Michael Torres, Director of Security Operations</div>
+            <p>Most Zero Trust guides are written for enterprises with unlimited budgets. This session delivers a practical, phased roadmap tailored to organizations with 50-500 employees — including quick wins you can implement this quarter.</p>
+            <a href="locations.html?contact=true" class="btn--sm btn--teal-outline">Register Now</a>
+          </div>
+
+          <div class="webinar-card">
+            <span class="webinar-card__badge webinar-card__badge--upcoming">Upcoming</span>
+            <div class="webinar-card__date">April 22, 2026 &bull; 12:00 PM ET</div>
+            <h3>SOC 2 and CMMC Compliance: Automating Evidence Collection</h3>
+            <div class="webinar-card__presenter">Presented by Sarah Chen, Compliance and Risk Lead</div>
+            <p>Manual compliance tracking wastes hundreds of hours per audit cycle. Learn how automated evidence collection, continuous monitoring, and policy-as-code can cut your preparation timeline by 60% while reducing human error.</p>
+            <a href="locations.html?contact=true" class="btn--sm btn--teal-outline">Register Now</a>
+          </div>
+
+        </div>
       </div>
 
       <div class="page-section animate-on-scroll">
-        <h2>The On-Demand Strategy Library</h2>
-        <p>Browse our filterable gallery of past briefings by topic: Cybersecurity, Compliance, AI and Automation, and Cloud and Infrastructure. Each card displays the webinar title, a one-sentence summary, the speaker, and estimated viewing time so you can find the most relevant content in seconds.</p>
-      </div>
+        <h2>On-Demand Library</h2>
+        <div class="webinar-grid">
 
-      <div class="page-section animate-on-scroll">
-        <h2>The AI Advantage: Automated Insights</h2>
-        <p>Other MSPs host webinars; we deliver automated strategic intelligence. Every Intelligent iT briefing is processed by our proprietary AI engine to make you smarter, faster. Instead of just giving you a recording, we provide an Action Pack that includes automated transcription and summaries so you can instantly search the full text of any webinar and get a one-page executive summary of key findings. Our AI also identifies specific workflow automation opportunities discussed in the content, giving you a prioritized implementation checklist instead of just notes. Personalized recommendations surface additional webinars and guides based on the topics you engaged with most.</p>
-      </div>
+          <div class="webinar-card">
+            <span class="webinar-card__badge webinar-card__badge--ondemand">On Demand</span>
+            <div class="webinar-card__date">Recorded February 2026 &bull; 35 min</div>
+            <h3>AI in IT Operations: From Buzzword to Business Impact</h3>
+            <div class="webinar-card__presenter">Presented by David Ramirez, VP of Engineering</div>
+            <p>Cut through the hype. This session breaks down exactly how AI-driven ticket routing, predictive monitoring, and automated patching work in practice — with real metrics from our client base showing 85% auto-resolution rates.</p>
+            <a href="locations.html?contact=true" class="btn--sm btn--teal-outline">Watch Now</a>
+          </div>
 
-      <div class="page-section animate-on-scroll">
-        <h2>Your Expert Instructors</h2>
-        <p>Our webinar hosts are certified practitioners, not sales representatives. Each instructor holds industry-recognized certifications including CMMC-AB, CISSP, and Microsoft Certified AI Engineer credentials. They bring hands-on experience designing and deploying the automation workflows they teach, ensuring every briefing is grounded in real-world implementation, not theory.</p>
+          <div class="webinar-card">
+            <span class="webinar-card__badge webinar-card__badge--ondemand">On Demand</span>
+            <div class="webinar-card__date">Recorded January 2026 &bull; 40 min</div>
+            <h3>Cloud Migration for Regulated Industries: Azure Best Practices</h3>
+            <div class="webinar-card__presenter">Presented by Jennifer Walsh, Cloud Architecture Lead</div>
+            <p>Financial services and healthcare organizations face unique compliance challenges when moving to the cloud. This session covers architecture patterns, data residency requirements, and security configurations for Azure environments.</p>
+            <a href="locations.html?contact=true" class="btn--sm btn--teal-outline">Watch Now</a>
+          </div>
+
+          <div class="webinar-card">
+            <span class="webinar-card__badge webinar-card__badge--ondemand">On Demand</span>
+            <div class="webinar-card__date">Recorded December 2025 &bull; 30 min</div>
+            <h3>Cybersecurity for Financial Firms: Meeting SEC and FINRA Requirements</h3>
+            <div class="webinar-card__presenter">Presented by Michael Torres, Director of Security Operations</div>
+            <p>Regulatory expectations for cybersecurity in financial services are tightening. Learn the specific controls, documentation, and monitoring capabilities regulators expect — and how to implement them without overwhelming your team.</p>
+            <a href="locations.html?contact=true" class="btn--sm btn--teal-outline">Watch Now</a>
+          </div>
+
+          <div class="webinar-card">
+            <span class="webinar-card__badge webinar-card__badge--ondemand">On Demand</span>
+            <div class="webinar-card__date">Recorded November 2025 &bull; 30 min</div>
+            <h3>Ransomware Defense: Building a Recovery Plan That Actually Works</h3>
+            <div class="webinar-card__presenter">Presented by Sarah Chen, Compliance and Risk Lead</div>
+            <p>Hope is not a recovery strategy. This session walks through building an immutable backup architecture, testing your disaster recovery runbook, and the incident response steps that minimize downtime when an attack does occur.</p>
+            <a href="locations.html?contact=true" class="btn--sm btn--teal-outline">Watch Now</a>
+          </div>
+
+        </div>
       </div>
 
       <div class="page-cta">
-        <h2>Ready to get started?</h2>
-        <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
-        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
+        <h2>Want a Private Briefing for Your Team?</h2>
+        <p>We offer customized sessions tailored to your industry, compliance requirements, and technology environment.</p>
+        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
       </div>
     </div>
   </main>

@@ -449,10 +449,21 @@ ${sectionsHtml}
 </html>`;
 }
 
+// Pages with custom content — NEVER overwrite these
+const skipFiles = [
+  'case-studies.html', 'guides.html', 'resource-library.html',
+  'blog.html', 'webinars.html', 'overview-video.html',
+  'careers.html', 'pricing.html', 'locations.html',
+  'leadership.html', 'it-assessments.html', 'about.html',
+  'why-clients-choose-us.html', 'privacy.html', 'terms.html',
+  'form-success.html'
+];
+
 // Generate all pages
 const pagesDir = path.join(__dirname);
 let count = 0;
 for (const page of pages) {
+  if (skipFiles.includes(page.file)) continue;
   const html = generatePage(page);
   fs.writeFileSync(path.join(pagesDir, page.file), html, 'utf8');
   count++;
