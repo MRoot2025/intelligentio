@@ -26,7 +26,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: border-color 0.3s, transform 0.3s;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s, border-width 0.3s;
     }
     .pricing-card:hover {
       border-color: rgba(118, 230, 216, 0.3);
@@ -169,6 +169,40 @@
       border-radius: 12px;
     }
 
+    /* Selected card state */
+    .pricing-card--selected {
+      border-color: #76e6d8;
+      border-width: 2px;
+      box-shadow: 0 0 20px rgba(118, 230, 216, 0.15), 0 0 40px rgba(118, 230, 216, 0.05);
+      transform: translateY(-6px);
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+    }
+    .pricing-card--selected:hover {
+      transform: translateY(-6px);
+    }
+    .pricing-card {
+      cursor: pointer;
+    }
+    .pricing-card__selected-badge {
+      display: none;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      background: #76e6d8;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+    }
+    .pricing-card--selected .pricing-card__selected-badge {
+      display: flex;
+    }
+    .pricing-card__selected-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
     @media (max-width: 1024px) {
       .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
       .pricing-card--featured { order: -1; }
@@ -200,7 +234,8 @@
       <div class="pricing-grid">
 
         <!-- Bronze -->
-        <div class="pricing-card">
+        <div class="pricing-card" data-plan="Bronze">
+          <span class="pricing-card__selected-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#0c0c0c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
           <span class="pricing-card__tier">Bronze</span>
           <h2 class="pricing-card__name">Good (IG1)</h2>
           <p class="pricing-card__subtitle">Essential cyber hygiene for small businesses ready to build a secure IT foundation.</p>
@@ -225,7 +260,8 @@
         </div>
 
         <!-- Silver (Featured) -->
-        <div class="pricing-card pricing-card--featured">
+        <div class="pricing-card pricing-card--featured" data-plan="Silver">
+          <span class="pricing-card__selected-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#0c0c0c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
           <span class="pricing-card__badge">Most Popular</span>
           <span class="pricing-card__tier">Silver</span>
           <h2 class="pricing-card__name">Better (IG2)</h2>
@@ -251,7 +287,8 @@
         </div>
 
         <!-- Gold -->
-        <div class="pricing-card">
+        <div class="pricing-card" data-plan="Gold">
+          <span class="pricing-card__selected-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#0c0c0c" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
           <span class="pricing-card__tier">Gold</span>
           <h2 class="pricing-card__name">Best (IG3)</h2>
           <p class="pricing-card__subtitle">Enterprise-grade resilience for regulated organizations with advanced security and compliance needs.</p>
@@ -393,5 +430,60 @@
   <footer class="footer" id="site-footer"></footer>
 
   <script src="template.js"></script>
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('.pricing-card');
+      var bottomCtaLink = document.querySelector('.page-cta a[href*="locations.html?contact=true"]');
+
+      function selectPlan(card) {
+        var plan = card.getAttribute('data-plan');
+
+        // Remove selected from all cards
+        cards.forEach(function (c) {
+          c.classList.remove('pricing-card--selected');
+          // Reset CTA text
+          var btn = c.querySelector('.pricing-card__cta .btn');
+          if (btn) btn.textContent = 'Get a Quote';
+        });
+
+        // Add selected to clicked card
+        card.classList.add('pricing-card--selected');
+
+        // Update CTA button text and href on the selected card
+        var btn = card.querySelector('.pricing-card__cta .btn');
+        if (btn) {
+          btn.textContent = 'Get a Quote \u2013 ' + plan + ' Plan';
+          btn.href = 'locations.html?contact=true&plan=' + encodeURIComponent(plan);
+        }
+
+        // Update all card hrefs to include plan param
+        cards.forEach(function (c) {
+          var b = c.querySelector('.pricing-card__cta .btn');
+          if (b && c !== card) {
+            b.href = 'locations.html?contact=true&plan=' + encodeURIComponent(c.getAttribute('data-plan'));
+          }
+        });
+
+        // Update bottom CTA
+        if (bottomCtaLink) {
+          bottomCtaLink.textContent = 'Contact Us \u2013 ' + plan + ' Plan';
+          bottomCtaLink.href = 'locations.html?contact=true&plan=' + encodeURIComponent(plan);
+        }
+      }
+
+      // Click handler for each card
+      cards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          // Don't interfere if they clicked a link directly
+          if (e.target.closest('a')) return;
+          selectPlan(card);
+        });
+      });
+
+      // Pre-select Silver on load
+      var silverCard = document.querySelector('.pricing-card[data-plan="Silver"]');
+      if (silverCard) selectPlan(silverCard);
+    })();
+  </script>
 </body>
 </html>

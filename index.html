@@ -530,7 +530,7 @@
           <input type="hidden" name="_subject" value="New Custom Action Plan Request from Intelligent iT Website">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://intelligentit.io/pages/locations.html?submitted=true">
+          <input type="hidden" name="_next" value="https://intelligentit.io/pages/form-success.html">
           <input type="text" name="_honey" style="display:none">
           <h3>Get Your Custom Action Plan</h3>
           <div class="form-group">
@@ -701,5 +701,14 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Store return page in localStorage before form submission
+    var calcForm = document.querySelector('.calculator__form-inner');
+    if (calcForm) {
+      calcForm.addEventListener('submit', function() {
+        localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
+      });
+    }
+  </script>
 </body>
 </html>

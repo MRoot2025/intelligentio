@@ -4,13 +4,267 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers | Intelligent iT</title>
-  <meta name="description" content="Join our AI-first team and help us automate the repetitive tasks that hold other MSPs back. We are hiring engineers who want to build, not just fix, and who believe that a proactive, automated approach is the only way to deliver exceptional IT services.">
+  <meta name="description" content="Join Intelligent iT and build the future of IT. We're an AI-first managed service provider looking for exceptional talent in engineering, security, support, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="pages.css">
   <link rel="icon" href="../assets/logo.png" type="image/png">
+  <style>
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .benefit-card {
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.12);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .benefit-card:hover {
+      border-color: rgba(118, 230, 216, 0.3);
+      transform: translateY(-4px);
+    }
+    .benefit-card__icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .benefit-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .benefit-card p {
+      font-size: 15px;
+      color: #bcbfcc;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* No Positions Card */
+    .no-positions {
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.03) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.15);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .no-positions__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(118, 230, 216, 0.1);
+      border: 1px solid rgba(118, 230, 216, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .no-positions__icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: #76e6d8;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .no-positions h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .no-positions p {
+      font-size: 17px;
+      color: #bcbfcc;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Application Form */
+    .application-form-wrapper {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .application-form-wrapper h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .application-form-wrapper .form-subtitle {
+      font-size: 16px;
+      color: #bcbfcc;
+      margin-bottom: 32px;
+    }
+    .application-form .form-field {
+      margin-bottom: 20px;
+    }
+    .application-form label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #dde1ed;
+      margin-bottom: 6px;
+    }
+    .application-form input[type="text"],
+    .application-form input[type="email"],
+    .application-form input[type="tel"],
+    .application-form input[type="url"],
+    .application-form textarea,
+    .application-form select {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s;
+    }
+    .application-form input:focus,
+    .application-form textarea:focus,
+    .application-form select:focus {
+      outline: none;
+      border-color: #76e6d8;
+    }
+    .application-form input::placeholder,
+    .application-form textarea::placeholder {
+      color: #666;
+    }
+    .application-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .application-form select {
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23bcbfcc' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+    .application-form select option {
+      background: #191919;
+      color: #ffffff;
+    }
+    .application-form .file-upload-field {
+      position: relative;
+    }
+    .application-form input[type="file"] {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px dashed rgba(255,255,255,0.18);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #bcbfcc;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    .application-form input[type="file"]:hover,
+    .application-form input[type="file"]:focus {
+      outline: none;
+      border-color: #76e6d8;
+    }
+    .file-hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: 6px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-actions {
+      margin-top: 28px;
+    }
+
+    /* Bottom CTA */
+    .linkedin-cta {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 16px;
+      color: #bcbfcc;
+    }
+    .linkedin-cta a {
+      color: #76e6d8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .linkedin-cta a:hover {
+      color: #a0f0e6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .benefit-card {
+        padding: 24px 16px;
+      }
+      .application-form-wrapper {
+        padding: 32px 24px;
+      }
+      .no-positions {
+        padding: 36px 24px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .benefit-card h3 {
+        font-size: 16px;
+      }
+      .application-form-wrapper {
+        padding: 24px 16px;
+        border-radius: 16px;
+      }
+      .application-form-wrapper h2 {
+        font-size: 22px;
+      }
+      .no-positions {
+        padding: 28px 20px;
+        border-radius: 16px;
+      }
+      .no-positions h3 {
+        font-size: 20px;
+      }
+      .application-form input[type="text"],
+      .application-form input[type="email"],
+      .application-form input[type="tel"],
+      .application-form input[type="url"],
+      .application-form textarea,
+      .application-form select {
+        font-size: 16px;
+        padding: 12px 14px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="header" id="site-header"></header>
@@ -19,59 +273,159 @@
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
       <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="#">Company</a> / Careers</span>
-      <h1>Stop Closing Tickets. Start Building the Future of IT</h1>
-      <p>Join our AI-first team and help us automate the repetitive tasks that hold other MSPs back. We are hiring engineers who want to build, not just fix, and who believe that a proactive, automated approach is the only way to deliver exceptional IT services.</p>
-      <a href="locations.html" class="btn btn--teal btn--lg">Get Started</a>
+      <h1>Build the Future of IT With Us</h1>
+      <p>We're an AI-first managed service provider on a mission to automate the mundane and elevate the work that matters. If you thrive on solving hard problems, building smart systems, and making a real impact, we want to hear from you.</p>
+      <a href="#apply" class="btn btn--teal btn--lg">Submit Your Resume</a>
     </div>
   </section>
 
   <main class="page-content">
     <div class="container">
 
+      <!-- Why Work Here -->
       <div class="page-section animate-on-scroll">
-        <h2>Hero Section</h2>
-        <p>Are you tired of solving the same problem over and over? Do you believe that most IT issues should be automated, not escalated? Does your current job feel more like a hamster wheel than a career path? Are you ready to stop firefighting and start architecting?</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>Why You Belong Here (Our Manifesto)</h2>
-        <p>A passionate explanation of our mission to automate everything. This section should adopt Ripple IT's emotional, pain-point-driven style, contrasting the frustration of traditional, reactive IT with the excitement of building a smarter, automated future.</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>The AI Advantage: How We Work Smarter</h2>
-        <p>The dedicated AI section for this page. It must detail how AI and automation are core to an engineer's daily work at Intelligent iT, moving beyond buzzwords to concrete examples.</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>What We Look For (Core Values in Action)</h2>
-        <p>Instead of a generic list of values, this section will describe the ideal candidate through action-oriented statements like: "You script everything," "You believe there's always a better way," and "You'd rather prevent a problem than be a hero for fixing it."</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>The AI Advantage</h2>
-        <p>At Intelligent iT, AI isn't a buzzword; it's our core operational methodology. Our engineers don't just respond to alerts—they build the systems that prevent them. You will work with our proprietary automation platform that uses machine learning to predict hardware failures before they happen, automatically remediates common security vulnerabilities, and handles Tier 1 ticket resolution without human intervention. For example, our 'Zero-Touch Patching' workflow automates the entire patch life...</p>
-      </div>
-
-      <div class="page-section animate-on-scroll">
-        <h2>Proven Results</h2>
-        <div class="page-stats">
-          <div class="page-stat"><span class="page-stat__value">80%</span><span class="page-stat__label">of common IT issues before they impact clients.</span></div>
-          <div class="page-stat"><span class="page-stat__value">60%</span><span class="page-stat__label">of their time on proactive development vs. 10% at a typical MSP.</span></div>
-          <div class="page-stat"><span class="page-stat__value">90%</span><span class="page-stat__label">automated).</span></div>
+        <h2>Why Work at Intelligent iT</h2>
+        <p>We believe great work happens when talented people have the right tools, the right culture, and the freedom to do meaningful work. Here's what you can expect.</p>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <span class="benefit-card__icon">&#128176;</span>
+            <h3>Competitive Salary &amp; Benefits</h3>
+            <p>Fair compensation, comprehensive health coverage, and a benefits package designed for your well-being.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-card__icon">&#127968;</span>
+            <h3>Remote &amp; Hybrid Flexibility</h3>
+            <p>Work from where you're most productive. We support remote, hybrid, and in-office arrangements.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-card__icon">&#129302;</span>
+            <h3>Cutting-Edge AI &amp; Automation</h3>
+            <p>Work with the latest in AI, machine learning, and automation tooling to solve real-world IT challenges.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-card__icon">&#127891;</span>
+            <h3>Training &amp; Certification Support</h3>
+            <p>Continuous learning is part of the job. We invest in your certifications, courses, and professional growth.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-card__icon">&#129309;</span>
+            <h3>Collaborative Culture</h3>
+            <p>A supportive team environment where ideas are valued, knowledge is shared, and everyone has a voice.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-card__icon">&#127919;</span>
+            <h3>Make a Real Impact</h3>
+            <p>Your work directly improves how businesses operate. See the results of what you build every day.</p>
+          </div>
         </div>
       </div>
 
-      <div class="page-cta">
-        <h2>Ready to get started?</h2>
-        <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
-        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
+      <!-- Open Positions -->
+      <div class="page-section animate-on-scroll">
+        <h2>Open Positions</h2>
+        <div class="no-positions">
+          <div class="no-positions__icon">
+            <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"/></svg>
+          </div>
+          <h3>We don't have any open positions at this time.</h3>
+          <p>However, we're always looking for exceptional talent. Submit your resume below and we'll reach out when a position matches your skills.</p>
+        </div>
       </div>
+
+      <!-- Resume Upload / General Application -->
+      <div class="page-section animate-on-scroll" id="apply">
+        <div class="application-form-wrapper">
+          <h2>General Application</h2>
+          <p class="form-subtitle">Send us your resume and tell us a bit about yourself. We'll keep your information on file and reach out when there's a match.</p>
+
+          <form class="application-form" action="https://formsubmit.co/39f174e55680b887f724f5bca2bd6178" method="POST" enctype="multipart/form-data">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New Resume Submission from Intelligent iT Careers Page">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_next" id="formRedirect">
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="Full Name" placeholder="Jane Smith" required>
+              </div>
+              <div class="form-field">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="Email" placeholder="jane@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" placeholder="(555) 123-4567">
+              </div>
+              <div class="form-field">
+                <label for="linkedin">LinkedIn URL</label>
+                <input type="url" id="linkedin" name="LinkedIn" placeholder="https://linkedin.com/in/yourprofile">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="area">Area of Interest *</label>
+              <select id="area" name="Area of Interest" required>
+                <option value="" disabled selected>Select an area</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Security">Security</option>
+                <option value="Support">Support</option>
+                <option value="Sales">Sales</option>
+                <option value="Operations">Operations</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field file-upload-field">
+              <label for="resume">Resume *</label>
+              <input type="file" id="resume" name="Resume" accept=".pdf,.doc,.docx" required>
+              <p class="file-hint">Accepted formats: PDF, DOC, DOCX</p>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Cover Letter / Message</label>
+              <textarea id="message" name="Message" placeholder="Tell us about yourself, your experience, and what you're looking for..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--teal btn--lg" style="width:100%;">Submit Application</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="page-cta">
+        <h2>Stay Connected</h2>
+        <p>Not ready to apply? Follow us on LinkedIn for updates on new opportunities and company news.</p>
+        <a href="https://www.linkedin.com/company/intelligent-it" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Follow Us on LinkedIn</a>
+      </div>
+
     </div>
   </main>
 
   <footer class="footer" id="site-footer"></footer>
 
   <script src="template.js"></script>
+  <script>
+    // Set redirect URL for FormSubmit to the new splash page
+    document.getElementById('formRedirect').value = window.location.origin + '/pages/form-success.html';
+
+    // Store return page in localStorage before form submission
+    document.querySelector('.application-form').addEventListener('submit', function() {
+      localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
+    });
+
+    // Legacy: handle ?submitted=true by redirecting to splash page
+    if (window.location.search.includes('submitted=true')) {
+      history.replaceState(null, '', window.location.pathname);
+      window.location.href = 'form-success.html';
+    }
+  </script>
 </body>
 </html>

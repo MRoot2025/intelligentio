@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Intelligent iT</title>
+  <meta name="description" content="Your form has been submitted successfully. Great IT Support is on the way!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/logo.png" type="image/png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0c0c0c;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .splash {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 24px;
+      z-index: 9999;
+    }
+
+    /* Subtle radial glow behind the icon */
+    .splash::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(118, 230, 216, 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .splash__content {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    /* Animated checkmark */
+    .splash__icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 32px;
+      position: relative;
+    }
+
+    .checkmark-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 3;
+      stroke: #76e6d8;
+      stroke-miterlimit: 10;
+      animation: scaleIn 0.4s ease-in-out 0.2s both;
+    }
+
+    .checkmark-circle__bg {
+      fill: none;
+      stroke: rgba(118, 230, 216, 0.15);
+      stroke-width: 3;
+    }
+
+    .checkmark-circle__ring {
+      fill: none;
+      stroke: #76e6d8;
+      stroke-width: 3;
+      stroke-dasharray: 376;
+      stroke-dashoffset: 376;
+      stroke-linecap: round;
+      animation: circleStroke 0.6s ease-in-out 0.4s forwards;
+    }
+
+    .checkmark-circle__check {
+      fill: none;
+      stroke: #76e6d8;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: checkStroke 0.4s ease-in-out 0.9s forwards;
+    }
+
+    .splash__heading {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .splash__heading span {
+      color: #76e6d8;
+    }
+
+    .splash__message {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #bcbfcc;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .splash__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn--teal {
+      background: #76e6d8;
+      color: #0c0c0c;
+    }
+
+    .btn--teal:hover {
+      background: #5fd4c5;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(118, 230, 216, 0.25);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn--outline:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes circleStroke {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes checkStroke {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .splash__icon { width: 90px; height: 90px; margin-bottom: 24px; }
+      .checkmark-circle { width: 90px; height: 90px; }
+      .splash__actions { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash">
+    <div class="splash__content">
+      <!-- Animated SVG Checkmark -->
+      <div class="splash__icon">
+        <svg class="checkmark-circle" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle class="checkmark-circle__bg" cx="60" cy="60" r="56" />
+          <circle class="checkmark-circle__ring" cx="60" cy="60" r="56" />
+          <path class="checkmark-circle__check" d="M38 62 L52 76 L82 46" />
+        </svg>
+      </div>
+
+      <h1 class="splash__heading">Great IT Support <span>on the Way!</span></h1>
+      <p class="splash__message">Thank you for reaching out. We'll be in touch within one business day.</p>
+
+      <div class="splash__actions">
+        <button class="btn btn--teal" id="closeBtn" onclick="goBack()">Close</button>
+        <a class="btn btn--outline" href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener">Book a Call Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      // Try to retrieve the originating page stored before form submission
+      var returnPage = localStorage.getItem('iit_form_return_page');
+      localStorage.removeItem('iit_form_return_page');
+
+      if (returnPage) {
+        window.location.href = returnPage;
+      } else if (document.referrer && document.referrer.indexOf('formsubmit.co') === -1) {
+        // If referrer exists and isn't formsubmit, go there
+        window.location.href = document.referrer;
+      } else {
+        // Default: go to homepage
+        window.location.href = '../index.html';
+      }
+    }
+
+    // Also allow Escape key to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') goBack();
+    });
+  </script>
+</body>
+</html>

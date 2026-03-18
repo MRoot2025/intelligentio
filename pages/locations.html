@@ -237,10 +237,9 @@ Serving Southern California and the West Coast.</p>
           <!-- FormSubmit config -->
           <input type="hidden" name="_subject" value="New Inquiry from Intelligent iT Website">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://intelligentit.io/pages/locations.html?submitted=true">
+          <input type="hidden" name="_next" value="https://intelligentit.io/pages/form-success.html" id="formRedirect">
           <input type="hidden" name="_template" value="table">
           <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_next" id="formRedirect">
 
           <div class="form-field">
             <label for="name">Full Name *</label>
@@ -307,8 +306,13 @@ Serving Southern California and the West Coast.</p>
 
   <script src="template.js"></script>
   <script>
-    // Set redirect URL for FormSubmit
-    document.getElementById('formRedirect').value = window.location.href + '?submitted=true';
+    // Set redirect URL for FormSubmit to the new splash page
+    document.getElementById('formRedirect').value = window.location.origin + '/pages/form-success.html';
+
+    // Store return page in localStorage before form submission
+    document.getElementById('inquiryForm').addEventListener('submit', function() {
+      localStorage.setItem('iit_form_return_page', window.location.href.split('?')[0]);
+    });
 
     function openInquiryForm() {
       document.getElementById('inquiryModal').classList.add('active');
@@ -318,6 +322,9 @@ Serving Southern California and the West Coast.</p>
     function closeInquiryForm() {
       document.getElementById('inquiryModal').classList.remove('active');
       document.body.style.overflow = '';
+      // If splash overlay is showing, close it too
+      var splash = document.getElementById('successSplash');
+      if (splash) splash.remove();
     }
 
     // Close on overlay click
@@ -336,13 +343,48 @@ Serving Southern California and the West Coast.</p>
       history.replaceState(null, '', window.location.pathname);
     }
 
-    // Show success message if redirected back after submission
+    // Show full-screen splash overlay if redirected back after submission
     if (window.location.search.includes('submitted=true')) {
-      openInquiryForm();
-      document.getElementById('inquiryFormContent').style.display = 'none';
-      document.getElementById('formSuccess').classList.add('active');
-      // Clean URL
       history.replaceState(null, '', window.location.pathname);
+      showSuccessSplash();
+    }
+
+    function showSuccessSplash() {
+      var overlay = document.createElement('div');
+      overlay.id = 'successSplash';
+      overlay.innerHTML = '\
+        <div style="position:fixed;inset:0;background:#0c0c0c;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px 24px;">\
+          <div style="animation:fadeInUp 0.6s ease-out both;">\
+            <div style="width:120px;height:120px;margin:0 auto 32px;">\
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:120px;">\
+                <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(118,230,216,0.15)" stroke-width="3"/>\
+                <circle cx="60" cy="60" r="56" fill="none" stroke="#76e6d8" stroke-width="3" stroke-dasharray="376" stroke-dashoffset="376" stroke-linecap="round" style="animation:circleStroke 0.6s ease-in-out 0.4s forwards;"/>\
+                <path d="M38 62 L52 76 L82 46" fill="none" stroke="#76e6d8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60" stroke-dashoffset="60" style="animation:checkStroke 0.4s ease-in-out 0.9s forwards;"/>\
+              </svg>\
+            </div>\
+            <h1 style="font-size:clamp(28px,5vw,48px);font-weight:700;margin-bottom:16px;line-height:1.2;color:#fff;">Great IT Support <span style="color:#76e6d8;">on the Way!</span></h1>\
+            <p style="font-size:clamp(16px,2.5vw,20px);color:#bcbfcc;max-width:500px;margin:0 auto 40px;line-height:1.6;">Thank you for reaching out. We\'ll be in touch within one business day.</p>\
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">\
+              <button onclick="closeSuccessSplash()" style="display:inline-flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-size:16px;font-weight:600;padding:16px 36px;border-radius:50px;border:none;cursor:pointer;background:#76e6d8;color:#0c0c0c;transition:all 0.3s ease;">Close</button>\
+              <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-size:16px;font-weight:600;padding:16px 36px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.2);cursor:pointer;background:transparent;color:#fff;text-decoration:none;transition:all 0.3s ease;">Book a Call Now</a>\
+            </div>\
+          </div>\
+        </div>';
+      // Inject keyframe animations
+      if (!document.getElementById('splashAnimStyles')) {
+        var style = document.createElement('style');
+        style.id = 'splashAnimStyles';
+        style.textContent = '@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes circleStroke{to{stroke-dashoffset:0}}@keyframes checkStroke{to{stroke-dashoffset:0}}';
+        document.head.appendChild(style);
+      }
+      document.body.appendChild(overlay);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSuccessSplash() {
+      var splash = document.getElementById('successSplash');
+      if (splash) splash.remove();
+      document.body.style.overflow = '';
     }
   </script>
 </body>
