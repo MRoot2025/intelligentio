@@ -368,36 +368,6 @@
   <footer class="footer" id="site-footer"></footer>
 
   <script src="template.js"></script>
-  <script>
-    // ===== Guide Filter Logic =====
-    (function() {
-      const filterBtns = document.querySelectorAll('#guide-filters .tabs__btn');
-      const cards = document.querySelectorAll('.guide-card');
-      const countEl = document.getElementById('guide-count');
-
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          // Update active tab
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-
-          var filter = btn.getAttribute('data-filter');
-          var visibleCount = 0;
-
-          cards.forEach(function(card) {
-            var categories = card.getAttribute('data-category').split(' ');
-            if (filter === 'all' || categories.indexOf(filter) !== -1) {
-              card.style.display = '';
-              visibleCount++;
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          countEl.textContent = visibleCount;
-        });
-      });
-    })();
-  </script>
+  <script src="guides-filter.js"></script>
 </body>
 </html>

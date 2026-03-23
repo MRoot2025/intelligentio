@@ -188,9 +188,9 @@ describe('Contact response time consistency', () => {
 
 describe('Leadership page has full team', () => {
   const teamMembers = [
-    'Manuel Ruiz', 'Thomas Atkins', 'Tyler Whittall', 'Maria Molina',
+    'Manuel Ruiz', 'Thomas Atkins', 'Tyler Whittall', 'Maria Luisa',
     'Dan Flaherty', 'Anthony Feliciano', 'Eero Nevaluoto',
-    'Anthony Senior', 'Melvin Rodriguez'
+    'Anthony Senior', 'Melvin Rodriguez', 'Isabella Ruiz', 'Sam'
   ];
 
   test.each(teamMembers)('leadership.html includes %s', (name) => {

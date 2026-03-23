@@ -386,7 +386,7 @@ const categoryUrls = {
   'Cloud & Infrastructure': 'cloud-migrations.html',
   'IT Strategy & Leadership': 'fractional-cio.html',
   'AI & Automation': 'ai-workflow-automation.html',
-  'Industries': 'finance-accounting.html',
+  'Industries': 'industries.html',
   'Company': 'about.html',
   'Insights': 'blog.html',
   'Legal': 'privacy.html'
@@ -439,7 +439,7 @@ function generatePage(page) {
   <section class="page-hero">
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
-      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <span style="color: rgba(255,255,255,0.7);">${page.category}</span> / ${page.title}</span>
+      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / ${page.category === 'Industries' ? '<a href="industries.html">' + page.category + '</a>' : '<span style="color: rgba(255,255,255,0.7);">' + page.category + '</span>'} / ${page.title}</span>
       <h1>${page.hero}</h1>
       <p>${page.subtitle}</p>
       <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
