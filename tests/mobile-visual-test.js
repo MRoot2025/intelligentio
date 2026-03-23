@@ -17,7 +17,7 @@ const devices = {
 const pages = [
   { name: 'homepage', path: '/' },
   { name: 'helpdesk', path: '/pages/helpdesk.html' },
-  { name: 'pricing', path: '/pages/pricing.html' },
+  { name: 'servicetiers', path: '/pages/servicetiers.html' },
   { name: 'guides', path: '/pages/guides.html' },
   { name: 'case-studies', path: '/pages/case-studies.html' },
   { name: 'leadership', path: '/pages/leadership.html' },

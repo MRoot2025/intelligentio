@@ -161,12 +161,12 @@ describe('Overview video page', () => {
 
 describe('Pricing page', () => {
   test('does not claim "Simple, Transparent IT Pricing"', () => {
-    const content = readPage('pricing.html');
+    const content = readPage('servicetiers.html');
     expect(content).not.toContain('Simple, Transparent IT Pricing');
   });
 
   test('Silver plan does not have duplicate "Cloud backup & recovery"', () => {
-    const content = readPage('pricing.html');
+    const content = readPage('servicetiers.html');
     const silverSection = content.split('data-plan="Silver"')[1].split('data-plan="Gold"')[0];
     const matches = silverSection.match(/Cloud backup &amp; recovery/g);
     expect(matches ? matches.length : 0).toBeLessThanOrEqual(1);

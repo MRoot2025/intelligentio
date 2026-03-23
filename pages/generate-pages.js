@@ -472,7 +472,7 @@ ${sectionsHtml}
 const skipFiles = [
   'case-studies.html', 'guides.html', 'resource-library.html',
   'blog.html', 'webinars.html', 'overview-video.html',
-  'careers.html', 'pricing.html', 'locations.html',
+  'careers.html', 'servicetiers.html', 'locations.html',
   'leadership.html', 'it-assessments.html', 'about.html',
   'why-clients-choose-us.html', 'privacy.html', 'terms.html',
   'form-success.html'
