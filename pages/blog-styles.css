@@ -55,6 +55,32 @@
 .blog-card .link--teal-sm:hover {
   color: #a0f0e4;
 }
+.blog-card__byline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.blog-card__byline img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.blog-card__byline-text {
+  font-size: 13px;
+  color: #8a8ea0;
+  line-height: 1.3;
+}
+.blog-card__byline-text a {
+  color: #bcbfcc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.blog-card__byline-text a:hover {
+  color: #76e6d8;
+}
 @media (max-width: 768px) {
   .blog-grid { grid-template-columns: 1fr; }
 }
