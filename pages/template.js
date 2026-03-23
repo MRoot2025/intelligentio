@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer__brand">
           <img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47">
           <div class="footer__contact">
-            <a href="mailto:sales@intelligentitnyc.com">sales@intelligentitnyc.com</a>
+            <a href="mailto:sales@intelligentit.io">sales@intelligentit.io</a>
             <a href="tel:2127301844">212-730-1844</a>
           </div>
           <div class="footer__social">
