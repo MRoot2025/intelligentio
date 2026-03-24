@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 
-const BOOKING_URL = 'https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/';
+const BOOKING_URL = '/book/';
 const CONTACT_PARAM = 'contact=true';
 
 function load(filePath) {

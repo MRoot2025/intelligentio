@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </nav>
       <div class="header__actions">
         <a href="headquarters.html?contact=true" class="btn btn--white btn--sm">Contact Us</a>
-        <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--teal btn--sm">Book a Call</a>
+        <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--sm">Book a Call</a>
       </div>
       <button class="header__hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
