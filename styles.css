@@ -672,9 +672,35 @@ ul { list-style: none; }
 .footer__social { display: flex; gap: 12px; }
 .footer__social a { opacity: 0.7; transition: opacity 0.3s; }
 .footer__social a:hover { opacity: 1; }
+.footer__services-row {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+.footer__services-row h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.footer__services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.footer__services-grid a {
+  display: block;
+  font-size: 14px;
+  color: #dde1ed;
+  padding: 3px 0;
+  transition: color 0.3s;
+}
+.footer__services-grid a:hover { color: #76e6d8; }
 .footer__columns {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 .footer__col h4 {
@@ -772,7 +798,8 @@ ul { list-style: none; }
   .articles__grid { grid-template-columns: repeat(2, 1fr); }
   .cta__inner h2 { font-size: 40px; }
   .footer__top { grid-template-columns: 1fr; }
-  .footer__columns { grid-template-columns: repeat(3, 1fr); }
+  .footer__services-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer__columns { grid-template-columns: repeat(2, 1fr); }
   .section__header--row { flex-direction: column; gap: 16px; }
 }
 
@@ -808,6 +835,7 @@ ul { list-style: none; }
   .testimonial-card { padding: 28px; }
   .solution-card { padding: 28px; }
   /* Footer */
+  .footer__services-grid { grid-template-columns: repeat(2, 1fr); }
   .footer__columns { grid-template-columns: repeat(2, 1fr); }
   /* CTA */
   .cta__inner h2 { font-size: 36px; }
@@ -841,6 +869,7 @@ ul { list-style: none; }
   .partners__grid { grid-template-columns: 1fr; }
   .insights__grid { grid-template-columns: 1fr; }
   .articles__grid { grid-template-columns: 1fr; }
+  .footer__services-grid { grid-template-columns: 1fr; }
   .footer__columns { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
   .cta__inner h2 { font-size: 28px; }
