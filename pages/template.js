@@ -140,91 +140,83 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer__services-row">
           <h4>Services</h4>
           <div class="footer__services-grid">
-            <div class="footer__combined-col">
-              <div class="footer__subcol">
-                <h5>Managed IT Services</h5>
-                <a href="helpdesk.html">24/7 Helpdesk &amp; End-User Support</a>
-                <a href="fully-managed-it.html">Fully Managed IT</a>
-                <a href="co-managed-it.html">Co-Managed IT</a>
-                <a href="hardware-procurement.html">Hardware &amp; Software Procurement</a>
-                <a href="it-projects.html">IT Projects &amp; Migrations</a>
-              </div>
-              <div class="footer__section-below">
-                <h4>Business Outcomes</h4>
-                <a href="reduce-it-costs.html">Reduce IT Costs</a>
-                <a href="improve-security-compliance.html">Improve Security &amp; Compliance</a>
-                <a href="eliminate-downtime.html">Eliminate Downtime</a>
-                <a href="scale-your-team.html">Scale Your Team Efficiently</a>
-                <a href="distributed-workforce.html">Support a Distributed Workforce</a>
-                <a href="automate-workflows.html">Automate Workflows &amp; Processes</a>
-              </div>
+            <div class="footer__subcol">
+              <h5>Managed IT Services</h5>
+              <a href="helpdesk.html">24/7 Helpdesk &amp; End-User Support</a>
+              <a href="fully-managed-it.html">Fully Managed IT</a>
+              <a href="co-managed-it.html">Co-Managed IT</a>
+              <a href="hardware-procurement.html">Hardware &amp; Software Procurement</a>
+              <a href="it-projects.html">IT Projects &amp; Migrations</a>
             </div>
-            <div class="footer__combined-col">
-              <div class="footer__subcol">
-                <h5>Cybersecurity &amp; Compliance</h5>
-                <a href="managed-soc.html">Managed SOC</a>
-                <a href="threat-protection.html">Threat Protection</a>
-                <a href="email-security.html">Email Security</a>
-                <a href="compliance-support.html">Compliance Support</a>
-                <a href="security-awareness.html">Security Awareness &amp; Phishing Testing</a>
-              </div>
-              <div class="footer__section-below">
-                <h4>Industries</h4>
-                <a href="finance-accounting.html">Finance &amp; Accounting</a>
-                <a href="marketing-agencies.html">Marketing &amp; Creative Agencies</a>
-                <a href="professional-services.html">Professional Services</a>
-                <a href="healthcare.html">Healthcare &amp; Life Sciences</a>
-                <a href="construction.html">Construction &amp; Real Estate</a>
-                <a href="transportation.html">Transportation</a>
-                <a href="telecommunications.html">Telecommunications</a>
-              </div>
+            <div class="footer__subcol">
+              <h5>Cybersecurity &amp; Compliance</h5>
+              <a href="managed-soc.html">Managed SOC</a>
+              <a href="threat-protection.html">Threat Protection</a>
+              <a href="email-security.html">Email Security</a>
+              <a href="compliance-support.html">Compliance Support</a>
+              <a href="security-awareness.html">Security Awareness &amp; Phishing Testing</a>
             </div>
-            <div class="footer__combined-col">
-              <div class="footer__subcol">
-                <h5>Cloud &amp; Infrastructure</h5>
-                <a href="microsoft-365.html">Microsoft 365 Management</a>
-                <a href="cloud-migrations.html">Cloud Migrations</a>
-                <a href="backup-disaster-recovery.html">Backup &amp; Disaster Recovery</a>
-                <a href="network-wifi.html">Network Architecture &amp; Wi-Fi</a>
-                <a href="remote-workforce.html">Remote Workforce Enablement</a>
-              </div>
-              <div class="footer__section-below">
-                <h4>Insights</h4>
-                <a href="blog.html">Blog</a>
-                <a href="guides.html">Guides &amp; Playbooks</a>
-                <a href="case-studies.html">Case Studies</a>
-                <a href="webinars.html">Webinars</a>
-                <a href="overview-video.html">Overview Video</a>
-                <a href="resource-library.html">Resource Library</a>
-              </div>
+            <div class="footer__subcol">
+              <h5>Cloud &amp; Infrastructure</h5>
+              <a href="microsoft-365.html">Microsoft 365 Management</a>
+              <a href="cloud-migrations.html">Cloud Migrations</a>
+              <a href="backup-disaster-recovery.html">Backup &amp; Disaster Recovery</a>
+              <a href="network-wifi.html">Network Architecture &amp; Wi-Fi</a>
+              <a href="remote-workforce.html">Remote Workforce Enablement</a>
             </div>
-            <div class="footer__combined-col">
-              <div class="footer__subcol">
-                <h5>IT Strategy &amp; Leadership</h5>
-                <a href="fractional-cio.html">Fractional CIO / Fractional CTO</a>
-                <a href="it-assessments.html">IT Assessments &amp; Roadmapping</a>
-                <a href="technology-budgeting.html">Technology Budgeting &amp; Planning</a>
-                <a href="vendor-management.html">Vendor Management</a>
-              </div>
-              <div class="footer__section-below">
-                <h4>Company</h4>
-                <a href="about.html">About Us</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="careers.html">Careers</a>
-                <a href="headquarters.html">Headquarters</a>
-                <a href="why-clients-choose-us.html">Why Clients Choose Us</a>
-              </div>
+            <div class="footer__subcol">
+              <h5>IT Strategy &amp; Leadership</h5>
+              <a href="fractional-cio.html">Fractional CIO / Fractional CTO</a>
+              <a href="it-assessments.html">IT Assessments &amp; Roadmapping</a>
+              <a href="technology-budgeting.html">Technology Budgeting &amp; Planning</a>
+              <a href="vendor-management.html">Vendor Management</a>
             </div>
-            <div class="footer__combined-col">
-              <div class="footer__subcol">
-                <h5>AI &amp; Automation</h5>
-                <a href="ai-workflow-automation.html">AI Workflow Automation</a>
-                <a href="ai-knowledgebase.html">AI Knowledgebase Agent</a>
-                <a href="automated-onboarding.html">Automated Onboarding / Offboarding</a>
-                <a href="automated-compliance-reports.html">Automated Compliance Reports</a>
-                <a href="ai-ticketing.html">AI for Ticketing &amp; Support</a>
-                <a href="repetitive-task-automation.html">Repetitive Task Automation</a>
-              </div>
+            <div class="footer__subcol">
+              <h5>AI &amp; Automation</h5>
+              <a href="ai-workflow-automation.html">AI Workflow Automation</a>
+              <a href="ai-knowledgebase.html">AI Knowledgebase Agent</a>
+              <a href="automated-onboarding.html">Automated Onboarding / Offboarding</a>
+              <a href="automated-compliance-reports.html">Automated Compliance Reports</a>
+              <a href="ai-ticketing.html">AI for Ticketing &amp; Support</a>
+              <a href="repetitive-task-automation.html">Repetitive Task Automation</a>
+            </div>
+          </div>
+          <div class="footer__bottom-sections">
+            <div class="footer__bottom-section">
+              <h4>Business Outcomes</h4>
+              <a href="reduce-it-costs.html">Reduce IT Costs</a>
+              <a href="improve-security-compliance.html">Improve Security &amp; Compliance</a>
+              <a href="eliminate-downtime.html">Eliminate Downtime</a>
+              <a href="scale-your-team.html">Scale Your Team Efficiently</a>
+              <a href="distributed-workforce.html">Support a Distributed Workforce</a>
+              <a href="automate-workflows.html">Automate Workflows &amp; Processes</a>
+            </div>
+            <div class="footer__bottom-section">
+              <h4>Industries</h4>
+              <a href="finance-accounting.html">Finance &amp; Accounting</a>
+              <a href="marketing-agencies.html">Marketing &amp; Creative Agencies</a>
+              <a href="professional-services.html">Professional Services</a>
+              <a href="healthcare.html">Healthcare &amp; Life Sciences</a>
+              <a href="construction.html">Construction &amp; Real Estate</a>
+              <a href="transportation.html">Transportation</a>
+              <a href="telecommunications.html">Telecommunications</a>
+            </div>
+            <div class="footer__bottom-section">
+              <h4>Insights</h4>
+              <a href="blog.html">Blog</a>
+              <a href="guides.html">Guides &amp; Playbooks</a>
+              <a href="case-studies.html">Case Studies</a>
+              <a href="webinars.html">Webinars</a>
+              <a href="overview-video.html">Overview Video</a>
+              <a href="resource-library.html">Resource Library</a>
+            </div>
+            <div class="footer__bottom-section">
+              <h4>Company</h4>
+              <a href="about.html">About Us</a>
+              <a href="leadership.html">Leadership</a>
+              <a href="careers.html">Careers</a>
+              <a href="headquarters.html">Headquarters</a>
+              <a href="why-clients-choose-us.html">Why Clients Choose Us</a>
             </div>
           </div>
         </div>

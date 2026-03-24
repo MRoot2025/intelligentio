@@ -703,22 +703,34 @@ ul { list-style: none; }
 .footer__services-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto auto;
-  gap: 24px 24px;
+  gap: 24px;
   text-align: left;
 }
-.footer__combined-col {
-  display: contents;
-}
-.footer__combined-col > .footer__subcol {
-  grid-row: 1;
-}
 .footer__section-below {
-  grid-row: 2;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  align-self: start;
+  display: none;
 }
+.footer__bottom-sections {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer__bottom-section h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #76e6d8;
+}
+.footer__bottom-section a {
+  display: block;
+  font-size: 14px;
+  color: #dde1ed;
+  padding: 3px 0;
+  transition: color 0.3s;
+}
+.footer__bottom-section a:hover { color: #76e6d8; }
 .footer__section-below h4 {
   font-size: 14px;
   font-weight: 500;
