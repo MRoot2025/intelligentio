@@ -698,6 +698,33 @@ ul { list-style: none; }
   transition: color 0.3s;
 }
 .footer__services-grid a:hover { color: #76e6d8; }
+.footer__combined-col a {
+  display: block;
+  font-size: 14px;
+  color: #dde1ed;
+  padding: 3px 0;
+  transition: color 0.3s;
+}
+.footer__combined-col a:hover { color: #76e6d8; }
+.footer__section-below {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer__section-below h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+.footer__section-below a {
+  display: block;
+  font-size: 14px;
+  color: #dde1ed;
+  padding: 3px 0;
+  transition: color 0.3s;
+}
+.footer__section-below a:hover { color: #76e6d8; }
 .footer__columns {
   display: flex;
   justify-content: center;
