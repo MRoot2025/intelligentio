@@ -706,8 +706,15 @@ ul { list-style: none; }
   transition: color 0.3s;
 }
 .footer__combined-col a:hover { color: #76e6d8; }
+.footer__combined-col {
+  display: flex;
+  flex-direction: column;
+}
+.footer__combined-col > .footer__subcol {
+  min-height: 220px;
+}
 .footer__section-below {
-  margin-top: 28px;
+  margin-top: auto;
   padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
