@@ -304,7 +304,7 @@ const pages = [
     { heading: 'What We Look For (Core Values in Action)', text: 'You script everything. You believe there is always a better way. You would rather prevent a problem than be a hero for fixing it. You are obsessed with eliminating manual toil and replacing it with elegant automation. You measure success not by tickets closed, but by tickets prevented.' },
     { heading: 'Proven Results', stats: [{ value: '2min', label: 'Avg Response Time' }, { value: '45min', label: 'Avg Resolution Time' }, { value: '85%', label: 'Issues Auto-Resolved' }, { value: '90-Day', label: 'Money-Back Guarantee' }] }
   ]},
-  { file: 'locations.html', title: 'Locations', category: 'Company', hero: 'On-Site When You Need Us: 2-Hour On-Site IT Support Guarantee in NYC, Boston & San Diego', subtitle: 'While our AI platform resolves 99% of IT issues remotely within minutes, our local teams are ready to deploy for critical on-site emergencies, getting you back to business faster than any other MSP.', sections: [
+  { file: 'headquarters.html', title: 'Locations', category: 'Company', hero: 'On-Site When You Need Us: 2-Hour On-Site IT Support Guarantee in NYC, Boston & San Diego', subtitle: 'While our AI platform resolves 99% of IT issues remotely within minutes, our local teams are ready to deploy for critical on-site emergencies, getting you back to business faster than any other MSP.', sections: [
     { heading: '2-Hour On-Site IT Support When Remote Isn\'t Enough', text: 'You pay for 24/7 support, but what happens when the problem is a dead server that can\'t be fixed over the phone? That sinking feeling when your IT provider says they\'ll have someone out \'sometime tomorrow\' while your entire office is offline. Your business doesn\'t run \'remotely.\' Your office, your hardware, and your network are physical. Your IT support should be, too.' },
     { heading: 'Local Expertise in NYC, Boston, and San Diego', text: 'New York City: supporting financial services, professional services, and media companies across Manhattan and the five boroughs. Boston: serving healthcare, biotech, and education organizations with specialized lab equipment and compliance expertise. San Diego: supporting defense contractors, telecommunications, and construction firms with CMMC compliance and field-ready IT solutions. Each office is staffed with engineers who understand the industries and regulatory requirements of their local market.' },
     { heading: 'The AI Advantage: Predicting and Preventing On-Site Dispatches', text: 'Our AI platform acts as a pre-emptive dispatch system, drastically reducing the need for costly and disruptive on-site visits. We automate the analysis of over 500 endpoint and network health metrics per device, allowing us to predict hardware failure before it occurs. Our system automatically flags servers with predictive disk failure alerts based on S.M.A.R.T. data trends and creates a ticket to replace the drive during off-hours, preventing a catastrophic on-site emergency. When on-site service is required, our AI pre-diagnoses the issue and equips the dispatched engineer with the exact parts, tools, and documentation needed, ensuring a first-visit fix rate above 95%.' },
@@ -442,7 +442,7 @@ function generatePage(page) {
       <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / ${page.category === 'Industries' ? '<a href="industries.html">' + page.category + '</a>' : '<span style="color: rgba(255,255,255,0.7);">' + page.category + '</span>'} / ${page.title}</span>
       <h1>${page.hero}</h1>
       <p>${page.subtitle}</p>
-      <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
+      <a href="headquarters.html?contact=true" class="btn btn--teal btn--lg">Book a Free Consultation</a>
     </div>
   </section>
 
@@ -456,7 +456,7 @@ ${sectionsHtml}
       <div class="page-cta">
         <h2>Ready to get started?</h2>
         <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
-        <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
+        <a href="headquarters.html?contact=true" class="btn btn--teal btn--lg">Contact Us Today</a>
       </div>
     </div>
   </main>
@@ -472,7 +472,7 @@ ${sectionsHtml}
 const skipFiles = [
   'case-studies.html', 'guides.html', 'resource-library.html',
   'blog.html', 'webinars.html', 'overview-video.html',
-  'careers.html', 'servicetiers.html', 'locations.html',
+  'careers.html', 'servicetiers.html', 'headquarters.html',
   'leadership.html', 'it-assessments.html', 'about.html',
   'why-clients-choose-us.html', 'privacy.html', 'terms.html',
   'form-success.html'

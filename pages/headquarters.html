@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locations | Intelligent iT</title>
-  <meta name="description" content="Nationwide support with local presence. Headquartered in New York City with offices in Boston and San Diego.">
+  <title>Headquarters | Intelligent iT — Born in NYC, Built for the World</title>
+  <meta name="description" content="Headquartered in Midtown Manhattan since 2000. Founder-led. NYC-built. Serving clients across the Americas, Europe, and Asia with AI-powered managed IT.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +13,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
   <style>
+    /* HQ Page Responsive */
+    @media (max-width: 768px) {
+      .page-section [style*="grid-template-columns: 1fr 1fr"],
+      .page-section [style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: 1fr !important;
+      }
+      .page-section [style*="grid-template-columns: repeat(2"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
     /* Inquiry Form Modal */
     .modal-overlay {
       display: none;
@@ -193,9 +203,9 @@
   <section class="page-hero">
     <div class="page-hero__bg"></div>
     <div class="container page-hero__inner">
-      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <span style="color: rgba(255,255,255,0.7);">Company</span> / Locations</span>
-      <h1>Our Locations</h1>
-      <p>Nationwide support with local presence. Headquartered in New York City with offices in Boston and San Diego.</p>
+      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <span style="color: rgba(255,255,255,0.7);">Company</span> / Headquarters</span>
+      <h1>Born in New York City. Built for the World.</h1>
+      <p>Founded in Midtown Manhattan in 2000 by Manuel Ruiz. 25 years later, we're still founder-led, still NYC-rooted, and now serving clients across the Americas, Europe, and Asia.</p>
       <div style="display: flex; gap: 16px; flex-wrap: wrap;">
         <button class="btn btn--teal btn--lg" onclick="openInquiryForm()">Get Started</button>
         <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Book a Call</a>
@@ -206,38 +216,117 @@
   <main class="page-content">
     <div class="container">
 
+      <!-- NYC Story -->
       <div class="page-section animate-on-scroll">
-        <h2>New York City (Headquarters)</h2>
-        <p>📍 Midtown Manhattan, New York, NY</p>
-        <p>📞 1-833-721-7332</p>
-        <p>📧 sales@intelligentit.io</p>
-        <p style="margin-top: 20px;">Supporting financial services, professional services, media, and technology companies across Manhattan and the five boroughs.</p>
+        <h2>Midtown Manhattan: Where It All Started</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <p style="font-size: 16px; line-height: 1.8; color: #bcbfcc;">In 2000, Manuel Ruiz started Intelligent iT from a small office in Midtown Manhattan with a simple belief: businesses deserve IT that actually works. No jargon. No excuses. Just results.</p>
+            <p style="font-size: 16px; line-height: 1.8; color: #bcbfcc; margin-top: 16px;">New York City doesn't tolerate mediocrity. When a Wall Street firm's network goes down, minutes cost millions. When a healthcare practice loses access to patient records, lives are at stake. We were forged in that pressure — and it shaped everything about how we operate today.</p>
+            <p style="font-size: 16px; line-height: 1.8; color: #bcbfcc; margin-top: 16px;">25 years later, we're still headquartered in Midtown, still founder-led, and still obsessed with the same thing: keeping businesses running.</p>
+          </div>
+          <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&q=80" alt="Manhattan skyline at dusk" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%) brightness(0.85);">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+              <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin: 0;">Midtown Manhattan — the commercial heart of the world's most demanding city</p>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- NYC Tech Legacy -->
       <div class="page-section animate-on-scroll">
-        <h2>Boston</h2>
-        <p>📍 Boston, MA</p>
-        <p>📞 1-833-721-7332</p>
-        <p>📧 sales@intelligentit.io</p>
-        <p style="margin-top: 20px;">Serving healthcare, biotech, education, and professional services organizations across the greater New England region.</p>
+        <h2>Part of New York's Tech Legacy</h2>
+        <p style="font-size: 16px; line-height: 1.8; color: #bcbfcc; max-width: 800px;">NYC is the #2 tech hub in the United States, home to over 25,000 tech companies and 400,000 tech workers. From Bloomberg to MongoDB, Datadog to Etsy — some of the world's most important technology companies were born here. Intelligent iT is part of that tradition: a grassroots company that started small, built real solutions, and grew into something that serves businesses worldwide.</p>
+        <div class="page-stats" style="margin-top: 40px;">
+          <div class="page-stat"><span class="page-stat__value">2000</span><span class="page-stat__label">Founded in Midtown Manhattan</span></div>
+          <div class="page-stat"><span class="page-stat__value">25+</span><span class="page-stat__label">Years of continuous operation</span></div>
+          <div class="page-stat"><span class="page-stat__value">3</span><span class="page-stat__label">Continents with active clients</span></div>
+          <div class="page-stat"><span class="page-stat__value">100%</span><span class="page-stat__label">Founder-led since day one</span></div>
+        </div>
       </div>
 
+      <!-- Global Reach Section -->
       <div class="page-section animate-on-scroll">
-        <h2>San Diego</h2>
-        <p>📍 San Diego, CA</p>
-        <p>📞 1-833-721-7332</p>
-        <p>📧 sales@intelligentit.io</p>
-        <p style="margin-top: 20px;">Serving defense contractors, telecommunications, construction, and technology firms across Southern California and the West Coast.</p>
+        <h2>NYC Roots. Global Reach.</h2>
+        <p style="font-size: 16px; line-height: 1.8; color: #bcbfcc; max-width: 800px; margin-bottom: 40px;">What started as a New York operation has grown into a global capability. We serve clients and maintain teams not only across the United States but in Europe and Asia. Our hub-and-spoke model keeps strategic leadership and innovation in NYC while positioning teams across time zones for follow-the-sun support.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <!-- HQ -->
+          <div style="background: linear-gradient(135deg, rgba(118, 230, 216, 0.08) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(118, 230, 216, 0.2); border-radius: 16px; padding: 32px 24px;">
+            <div style="font-size: 28px; margin-bottom: 12px;">🏙️</div>
+            <h3 style="font-size: 20px; color: #76e6d8; margin-bottom: 4px;">New York City</h3>
+            <p style="font-size: 13px; color: rgba(118, 230, 216, 0.8); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Global Headquarters</p>
+            <p style="font-size: 14px; color: #bcbfcc; line-height: 1.6;">Midtown Manhattan, NY</p>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.6; margin-top: 8px;">Leadership, strategy, engineering, and innovation. The nerve center of everything we build.</p>
+            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);">
+              <p style="font-size: 13px; color: #8a8ea0;">📞 <a href="tel:18337217332" style="color: #bcbfcc;">1-833-721-7332</a></p>
+              <p style="font-size: 13px; color: #8a8ea0;">📧 <a href="mailto:sales@intelligentit.io" style="color: #bcbfcc;">sales@intelligentit.io</a></p>
+            </div>
+          </div>
+
+          <!-- Americas -->
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px 24px;">
+            <div style="font-size: 28px; margin-bottom: 12px;">🌎</div>
+            <h3 style="font-size: 20px; color: #fff; margin-bottom: 4px;">The Americas</h3>
+            <p style="font-size: 13px; color: #8a8ea0; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">National Presence</p>
+            <p style="font-size: 14px; color: #bcbfcc; line-height: 1.6;">Satellite offices and teams across the U.S.</p>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.6; margin-top: 8px;">Regional coverage spanning East Coast, West Coast, and everything in between. Supporting finance, healthcare, legal, construction, and technology sectors coast to coast.</p>
+          </div>
+
+          <!-- International -->
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px 24px;">
+            <div style="font-size: 28px; margin-bottom: 12px;">🌍</div>
+            <h3 style="font-size: 20px; color: #fff; margin-bottom: 4px;">Europe &amp; Asia</h3>
+            <p style="font-size: 13px; color: #8a8ea0; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">International Operations</p>
+            <p style="font-size: 14px; color: #bcbfcc; line-height: 1.6;">Distributed teams across multiple time zones</p>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.6; margin-top: 8px;">Follow-the-sun engineering and support capabilities. Enabling 24/7 monitoring, global infrastructure management, and round-the-clock threat response for clients worldwide.</p>
+          </div>
+        </div>
       </div>
 
+      <!-- Why NYC Matters -->
       <div class="page-section animate-on-scroll">
-        <h2>Nationwide Coverage</h2>
-        <p>While we have physical offices in three cities, we provide remote IT support and management to organizations across the United States.</p>
+        <h2>Why Being NYC-Born Matters</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 28px;">
+            <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Pressure-Tested</h3>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.7;">If you can keep a Wall Street trading floor running at 99.9% uptime, you can keep anyone running. NYC businesses demand the best — and that standard is baked into our DNA.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 28px;">
+            <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Industry Diversity</h3>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.7;">Finance, healthcare, media, legal, construction, tech — NYC is every industry compressed into five boroughs. We've supported them all, and that cross-industry expertise travels with us everywhere.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 28px;">
+            <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Compliance Capital</h3>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.7;">NYDFS, SOX, HIPAA, SOC 2, CMMC — New York's regulatory environment is among the strictest in the world. We built our compliance practice in the most regulated market in America.</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 28px;">
+            <h3 style="font-size: 18px; color: #fff; margin-bottom: 8px;">Always-On Culture</h3>
+            <p style="font-size: 14px; color: #8a8ea0; line-height: 1.7;">The city that never sleeps raised a company that never stops. Our 24/7 monitoring and 2-minute response time aren't marketing claims — they're survival traits learned in the most demanding market on earth.</p>
+          </div>
+        </div>
       </div>
 
+      <!-- Founder Quote -->
+      <div class="page-section animate-on-scroll" style="text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div style="position: relative; padding: 40px 0;">
+          <div style="font-size: 80px; color: rgba(118, 230, 216, 0.15); line-height: 1; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">"</div>
+          <p style="font-size: 22px; font-weight: 500; color: #fff; line-height: 1.6; margin-top: 20px; font-style: italic;">We started in a small office in Midtown with one client and one belief: that IT should empower businesses, not hold them back. Twenty-five years later, that belief hasn't changed. The scale has.</p>
+          <div style="margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+            <img src="../assets/manuel-ruiz.webp" alt="Manuel Ruiz" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+            <div style="text-align: left;">
+              <p style="font-size: 15px; font-weight: 600; color: #fff; margin: 0;">Manuel Ruiz</p>
+              <p style="font-size: 13px; color: #76e6d8; margin: 0;">Founder &amp; CEO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
       <div class="page-cta">
-        <h2>Ready to get started?</h2>
-        <p>Book a free IT strategy session and see how Intelligent iT can help your organization.</p>
+        <h2>From New York to the World — Let's Talk</h2>
+        <p>Whether you're across the street in Midtown or across the globe, every engagement starts with a conversation. Book a free IT strategy session with our team.</p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <button class="btn btn--teal btn--lg" onclick="openInquiryForm()">Contact Us Today</button>
           <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Book a Call</a>

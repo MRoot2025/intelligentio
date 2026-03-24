@@ -269,7 +269,7 @@
           </ul>
           <div class="pricing-card__differentiator">Affordable &bull; Standards-Aligned &bull; Foundational</div>
           <div class="pricing-card__cta" style="margin-top: 20px;">
-            <a href="locations.html?contact=true" class="btn btn--outline-teal btn--lg">Get a Quote</a>
+            <a href="headquarters.html?contact=true" class="btn btn--outline-teal btn--lg">Get a Quote</a>
           </div>
         </div>
 
@@ -295,7 +295,7 @@
           </ul>
           <div class="pricing-card__differentiator">Strong Security &bull; Advanced Monitoring &bull; Scalable</div>
           <div class="pricing-card__cta" style="margin-top: 20px;">
-            <a href="locations.html?contact=true" class="btn btn--teal btn--lg">Get a Quote</a>
+            <a href="headquarters.html?contact=true" class="btn btn--teal btn--lg">Get a Quote</a>
           </div>
         </div>
 
@@ -321,7 +321,7 @@
           </ul>
           <div class="pricing-card__differentiator">Enterprise-Grade &bull; Compliance Assurance &bull; VIP Response</div>
           <div class="pricing-card__cta" style="margin-top: 20px;">
-            <a href="locations.html?contact=true" class="btn btn--outline-teal btn--lg">Get a Quote</a>
+            <a href="headquarters.html?contact=true" class="btn btn--outline-teal btn--lg">Get a Quote</a>
           </div>
         </div>
 
@@ -434,7 +434,7 @@
         <p>Book a call to get a custom quote tailored to your organization's size and needs.</p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a Call</a>
-          <a href="locations.html?contact=true" class="btn btn--outline-teal btn--lg">Contact Us</a>
+          <a href="headquarters.html?contact=true" class="btn btn--outline-teal btn--lg">Contact Us</a>
         </div>
       </div>
     </div>
@@ -446,7 +446,7 @@
   <script>
     (function () {
       var cards = document.querySelectorAll('.pricing-card');
-      var bottomCtaLink = document.querySelector('.page-cta a[href*="locations.html?contact=true"]');
+      var bottomCtaLink = document.querySelector('.page-cta a[href*="headquarters.html?contact=true"]');
 
       function selectPlan(card) {
         var plan = card.getAttribute('data-plan');
@@ -466,21 +466,21 @@
         var btn = card.querySelector('.pricing-card__cta .btn');
         if (btn) {
           btn.textContent = 'Get a Quote \u2013 ' + plan + ' Plan';
-          btn.href = 'locations.html?contact=true&plan=' + encodeURIComponent(plan);
+          btn.href = 'headquarters.html?contact=true&plan=' + encodeURIComponent(plan);
         }
 
         // Update all card hrefs to include plan param
         cards.forEach(function (c) {
           var b = c.querySelector('.pricing-card__cta .btn');
           if (b && c !== card) {
-            b.href = 'locations.html?contact=true&plan=' + encodeURIComponent(c.getAttribute('data-plan'));
+            b.href = 'headquarters.html?contact=true&plan=' + encodeURIComponent(c.getAttribute('data-plan'));
           }
         });
 
         // Update bottom CTA
         if (bottomCtaLink) {
           bottomCtaLink.textContent = 'Contact Us \u2013 ' + plan + ' Plan';
-          bottomCtaLink.href = 'locations.html?contact=true&plan=' + encodeURIComponent(plan);
+          bottomCtaLink.href = 'headquarters.html?contact=true&plan=' + encodeURIComponent(plan);
         }
       }
 

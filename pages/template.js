@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="about.html" class="dropdown__link">About Us</a>
               <a href="leadership.html" class="dropdown__link">Leadership</a>
               <a href="careers.html" class="dropdown__link">Careers</a>
-              <a href="locations.html" class="dropdown__link">Locations</a>
+              <a href="headquarters.html" class="dropdown__link">Headquarters</a>
               <a href="why-clients-choose-us.html" class="dropdown__link">Why Clients Choose Us</a>
             </div>
           </div>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </nav>
       <div class="header__actions">
-        <a href="locations.html?contact=true" class="btn btn--white btn--sm">Contact Us</a>
+        <a href="headquarters.html?contact=true" class="btn btn--white btn--sm">Contact Us</a>
         <a href="https://outlook.office.com/book/MeetwithTom@intelligentitnyc.com/" target="_blank" rel="noopener" class="btn btn--teal btn--sm">Book a Call</a>
       </div>
       <button class="header__hamburger" id="hamburger" aria-label="Toggle menu">
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="about.html">About Us</a>
             <a href="leadership.html">Leadership</a>
             <a href="careers.html">Careers</a>
-            <a href="locations.html">Locations</a>
+            <a href="headquarters.html">Headquarters</a>
             <a href="why-clients-choose-us.html">Why Clients Choose Us</a>
           </div>
           <div class="footer__col">

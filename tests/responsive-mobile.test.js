@@ -13,7 +13,7 @@ function readFile(filePath) {
 const stylesCSS = readFile(path.join(__dirname, '..', 'styles.css'));
 const pagesCSS = readFile(path.join(__dirname, '..', 'pages', 'pages.css'));
 const indexHTML = readFile(path.join(__dirname, '..', 'index.html'));
-const locationsHTML = readFile(path.join(__dirname, '..', 'pages', 'locations.html'));
+const locationsHTML = readFile(path.join(__dirname, '..', 'pages', 'headquarters.html'));
 
 // ─── Viewport Meta Tag ───
 
@@ -26,7 +26,7 @@ describe('Viewport meta tag', () => {
     expect(viewport.attr('content')).toContain('initial-scale=1');
   });
 
-  test('locations.html has viewport meta tag', () => {
+  test('headquarters.html has viewport meta tag', () => {
     const $ = cheerio.load(locationsHTML);
     const viewport = $('meta[name="viewport"]');
     expect(viewport.length).toBe(1);

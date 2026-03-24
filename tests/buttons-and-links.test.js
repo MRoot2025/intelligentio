@@ -45,7 +45,7 @@ describe('Homepage (index.html)', () => {
     expect(link.attr('target')).toBe('_blank');
   });
 
-  test('no "Book a Call" links point to just locations.html', () => {
+  test('no "Book a Call" links point to just headquarters.html', () => {
     const links = $('a').filter((_, el) => $(el).text().trim() === 'Book a Call');
     links.each((_, el) => {
       expect($(el).attr('href')).not.toMatch(/^pages\/locations\.html$/);
@@ -81,11 +81,11 @@ describe('Homepage (index.html)', () => {
 
 // ─── Locations Page Tests ───
 
-describe('Locations page (pages/locations.html)', () => {
+describe('Locations page (pages/headquarters.html)', () => {
   let $, html;
 
   beforeAll(() => {
-    const filePath = path.join(__dirname, '..', 'pages', 'locations.html');
+    const filePath = path.join(__dirname, '..', 'pages', 'headquarters.html');
     html = fs.readFileSync(filePath, 'utf8');
     $ = cheerio.load(html);
   });
@@ -210,7 +210,7 @@ describe('Generated subpages', () => {
     expect($('.page-hero').length).toBe(1);
   });
 
-  test.each(samplePages)('%s CTA links to locations.html?contact=true', (page) => {
+  test.each(samplePages)('%s CTA links to headquarters.html?contact=true', (page) => {
     const $ = load(path.join(subpageDir, page));
     const ctaLink = $('a').filter((_, el) => $(el).text().trim().includes('Contact Us'));
     if (ctaLink.length) {
@@ -224,11 +224,11 @@ describe('Generated subpages', () => {
     expect(scripts.some(s => $(s).attr('src').includes('template.js'))).toBe(true);
   });
 
-  test.each(samplePages)('%s "Get Started" links to locations.html', (page) => {
+  test.each(samplePages)('%s "Get Started" links to headquarters.html', (page) => {
     const $ = load(path.join(subpageDir, page));
     const link = $('a').filter((_, el) => $(el).text().trim() === 'Get Started');
     if (link.length) {
-      expect(link.attr('href')).toContain('locations.html');
+      expect(link.attr('href')).toContain('headquarters.html');
     }
   });
 });
@@ -259,7 +259,7 @@ describe('Cross-site consistency', () => {
     });
   });
 
-  test('no "Book a Call" links in index.html point to just locations.html', () => {
+  test('no "Book a Call" links in index.html point to just headquarters.html', () => {
     const content = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
     const matches = [...content.matchAll(/href="([^"]*)"[^>]*>\s*Book a Call\s*</g)];
     expect(matches.length).toBeGreaterThan(0);
@@ -268,7 +268,7 @@ describe('Cross-site consistency', () => {
     });
   });
 
-  test('no "Book a Call" links in template.js point to just locations.html', () => {
+  test('no "Book a Call" links in template.js point to just headquarters.html', () => {
     const content = fs.readFileSync(path.join(pagesDir, 'template.js'), 'utf8');
     const matches = [...content.matchAll(/href="([^"]*)"[^>]*>Book a Call</g)];
     expect(matches.length).toBeGreaterThan(0);
@@ -277,8 +277,8 @@ describe('Cross-site consistency', () => {
     });
   });
 
-  test('booking URL appears in locations.html', () => {
-    const content = fs.readFileSync(path.join(pagesDir, 'locations.html'), 'utf8');
+  test('booking URL appears in headquarters.html', () => {
+    const content = fs.readFileSync(path.join(pagesDir, 'headquarters.html'), 'utf8');
     expect(content).toContain(BOOKING_URL);
   });
 });

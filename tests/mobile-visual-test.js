@@ -22,7 +22,7 @@ const pages = [
   { name: 'case-studies', path: '/pages/case-studies.html' },
   { name: 'leadership', path: '/pages/leadership.html' },
   { name: 'careers', path: '/pages/careers.html' },
-  { name: 'locations', path: '/pages/locations.html' },
+  { name: 'locations', path: '/pages/headquarters.html' },
   { name: 'blog', path: '/pages/blog.html' },
 ];
 
