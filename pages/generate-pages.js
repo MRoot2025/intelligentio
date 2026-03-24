@@ -413,7 +413,7 @@ function generatePage(page) {
       }
       sectionsHtml += `        </div>\n`;
       if (section.heading === 'Proven Results') {
-        sectionsHtml += `        <p style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px; text-align: center;">We only onboard 5 new AI-managed clients per month to ensure flawless execution.</p>\n`;
+        sectionsHtml += `        <p style="font-size: 14px; color: #76e6d8; margin-top: 16px; text-align: center;">We only onboard 5 new AI-managed clients per month to ensure flawless execution.</p>\n`;
       }
     }
     sectionsHtml += `      </div>\n`;
