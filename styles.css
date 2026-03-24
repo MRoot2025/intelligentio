@@ -699,9 +699,9 @@ ul { list-style: none; }
 }
 .footer__services-grid a:hover { color: #76e6d8; }
 .footer__columns {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 64px;
 }
 .footer__col h4 {
   font-size: 18px;
