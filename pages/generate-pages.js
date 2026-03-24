@@ -412,6 +412,9 @@ function generatePage(page) {
         sectionsHtml += `          <div class="page-stat"><span class="page-stat__value">${stat.value}</span><span class="page-stat__label">${stat.label}</span></div>\n`;
       }
       sectionsHtml += `        </div>\n`;
+      if (section.heading === 'Proven Results') {
+        sectionsHtml += `        <p style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px; text-align: center;">We only onboard 5 new AI-managed clients per month to ensure flawless execution.</p>\n`;
+      }
     }
     sectionsHtml += `      </div>\n`;
   }
