@@ -210,6 +210,8 @@
     }
     @media (max-width: 768px) {
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      #downtime-calculator [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #calc-total { font-size: 36px !important; }
       .pricing-card { padding: 36px 28px; }
       .pricing-card__name { font-size: 28px; }
       .table-wrapper { -webkit-overflow-scrolling: touch; }
@@ -429,6 +431,101 @@
         </table>
       </div>
 
+      <!-- Downtime Cost Calculator -->
+      <div class="page-section animate-on-scroll" id="downtime-calculator" style="margin-top: 80px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2>What Is Downtime Costing Your Business?</h2>
+          <p style="font-size: 16px; color: #bcbfcc; max-width: 700px; margin: 12px auto 0;">Select your industry and adjust the sliders to see the real financial impact of IT downtime on your organization.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+          <!-- Inputs -->
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px;">
+            <div style="margin-bottom: 24px;">
+              <label for="calc-industry" style="display: block; font-size: 14px; font-weight: 600; color: #dde1ed; margin-bottom: 8px;">Industry</label>
+              <select id="calc-industry" style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 15px; font-family: 'Inter', sans-serif; appearance: none; cursor: pointer; background-image: url(&quot;data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23bcbfcc' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 16px center;">
+                <option value="finance">Finance &amp; Accounting</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="legal">Legal / Professional Services</option>
+                <option value="construction">Construction &amp; Real Estate</option>
+                <option value="marketing">Marketing &amp; Creative Agencies</option>
+                <option value="manufacturing">Manufacturing / Transportation</option>
+                <option value="retail">Retail / E-commerce</option>
+                <option value="education">Education</option>
+                <option value="telecom">Telecommunications</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #dde1ed; margin-bottom: 8px;">Number of Employees: <span id="calc-emp-val" style="color: #76e6d8;">100</span></label>
+              <input type="range" id="calc-employees" min="50" max="500" value="100" step="10" style="width: 100%; accent-color: #76e6d8;">
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #dde1ed; margin-bottom: 8px;">Annual Revenue: <span id="calc-rev-val" style="color: #76e6d8;">$5M</span></label>
+              <input type="range" id="calc-revenue" min="1" max="50" value="5" step="1" style="width: 100%; accent-color: #76e6d8;">
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #dde1ed; margin-bottom: 8px;">Downtime Incidents Per Year: <span id="calc-inc-val" style="color: #76e6d8;">3</span></label>
+              <input type="range" id="calc-incidents" min="1" max="12" value="3" step="1" style="width: 100%; accent-color: #76e6d8;">
+            </div>
+
+            <div style="margin-bottom: 0;">
+              <label style="display: block; font-size: 14px; font-weight: 600; color: #dde1ed; margin-bottom: 8px;">Avg. Hours Per Incident: <span id="calc-hrs-val" style="color: #76e6d8;">2</span></label>
+              <input type="range" id="calc-hours" min="1" max="8" value="2" step="0.5" style="width: 100%; accent-color: #76e6d8;">
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div>
+            <div style="background: linear-gradient(135deg, rgba(118, 230, 216, 0.08) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(118, 230, 216, 0.2); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 20px;">
+              <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #76e6d8; font-weight: 600; margin-bottom: 8px;">Estimated Annual Cost of Downtime</p>
+              <p id="calc-total" style="font-size: 48px; font-weight: 700; color: #fff; margin: 0; line-height: 1.2;">$150,000</p>
+              <p id="calc-industry-label" style="font-size: 14px; color: #8a8ea0; margin-top: 8px;">Finance &amp; Accounting &bull; 100 employees</p>
+            </div>
+
+            <!-- Breakdown -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; text-align: center;">
+                <p style="font-size: 12px; color: #8a8ea0; margin-bottom: 4px;">Lost Productivity</p>
+                <p id="calc-labor" style="font-size: 20px; font-weight: 700; color: #76e6d8; margin: 0;">$33,000</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; text-align: center;">
+                <p style="font-size: 12px; color: #8a8ea0; margin-bottom: 4px;">Revenue Impact</p>
+                <p id="calc-revenue-loss" style="font-size: 20px; font-weight: 700; color: #76e6d8; margin: 0;">$43,000</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; text-align: center;">
+                <p style="font-size: 12px; color: #8a8ea0; margin-bottom: 4px;">Compliance Risk</p>
+                <p id="calc-compliance" style="font-size: 20px; font-weight: 700; color: #76e6d8; margin: 0;">$25,000</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; text-align: center;">
+                <p style="font-size: 12px; color: #8a8ea0; margin-bottom: 4px;">Recovery &amp; Rework</p>
+                <p id="calc-recovery" style="font-size: 20px; font-weight: 700; color: #76e6d8; margin: 0;">$16,500</p>
+              </div>
+            </div>
+
+            <!-- Industry Risk Context -->
+            <div id="calc-context" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px;">
+              <p style="font-size: 13px; font-weight: 600; color: #76e6d8; margin-bottom: 6px;">Industry Risk Snapshot</p>
+              <p id="calc-risk-text" style="font-size: 13px; color: #8a8ea0; line-height: 1.6; margin: 0;">NYDFS penalties up to $250K per violation. SOX non-compliance can trigger SEC scrutiny. Average financial transaction failure costs $150-$500.</p>
+            </div>
+
+            <!-- Source -->
+            <p style="font-size: 11px; color: #6b6f80; margin-top: 12px; text-align: center;">Sources: IBM Cost of a Data Breach 2024, ITIC Hourly Cost of Downtime 2022, Datto State of the Channel 2022, Ponemon Institute</p>
+          </div>
+        </div>
+
+        <!-- CTA under calculator -->
+        <div style="text-align: center; margin-top: 40px;">
+          <p style="font-size: 16px; color: #bcbfcc; margin-bottom: 20px;">Our clients reduce downtime costs by an average of <strong style="color: #76e6d8;">70%</strong> within the first 6 months.</p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="it-assessments.html" class="btn btn--teal btn--lg">Get Your Free IT Risk Assessment</a>
+            <a href="/book/" target="_blank" rel="noopener" class="btn btn--outline-teal btn--lg">Book a Call</a>
+          </div>
+        </div>
+      </div>
+
       <div class="page-cta" style="margin-top: 60px;">
         <h2>Ready to get started?</h2>
         <p>Book a call to get a custom quote tailored to your organization's size and needs.</p>
@@ -497,6 +594,80 @@
       var silverCard = document.querySelector('.pricing-card[data-plan="Silver"]');
       if (silverCard) selectPlan(silverCard);
     })();
+  </script>
+
+  <!-- Downtime Calculator Logic -->
+  <script>
+  (function() {
+    var data = {
+      finance: { label: 'Finance & Accounting', hourly: 55, incidents: 3, hours: 2, multiplier: 2.5, revPct: 0.30, compliance: 25000, risk: 'NYDFS penalties up to $250K per violation. SOX non-compliance triggers SEC scrutiny. PCI DSS fines $5K\u2013$100K/month. Average failed financial transaction costs $150\u2013$500.' },
+      healthcare: { label: 'Healthcare', hourly: 50, incidents: 4, hours: 3, multiplier: 2.8, revPct: 0.25, compliance: 35000, risk: 'HIPAA fines up to $1.5M per violation category. EHR downtime increases medication errors by 25\u201330%. Average HIPAA settlement: $1.5M. ECRI lists EHR outages as a Top 10 Patient Safety Concern.' },
+      legal: { label: 'Legal / Professional Services', hourly: 65, incidents: 3, hours: 2, multiplier: 2.0, revPct: 0.35, compliance: 15000, risk: 'Missed court filing deadlines can result in case dismissal and malpractice claims averaging $250K\u2013$500K. ABA Rule 1.6 requires safeguarding client data. 40% of clients consider switching firms after a disruption.' },
+      construction: { label: 'Construction & Real Estate', hourly: 40, incidents: 4, hours: 3, multiplier: 1.5, revPct: 0.15, compliance: 10000, risk: 'Liquidated damages of $500\u2013$5,000/day for project delays. OSHA penalties up to $156K per willful violation. Field crew idle time costs $50\u2013$75/hr per worker. Safety system failures create compliance exposure.' },
+      marketing: { label: 'Marketing & Creative Agencies', hourly: 45, incidents: 3, hours: 2, multiplier: 1.8, revPct: 0.25, compliance: 5000, risk: 'Missing a campaign launch window can cost $50K\u2013$500K in client penalties and wasted media spend. Creative staff need 23 min to refocus after each interruption. 60% of clients have delivery SLAs with penalty clauses.' },
+      manufacturing: { label: 'Manufacturing / Transportation', hourly: 35, incidents: 5, hours: 3, multiplier: 2.2, revPct: 0.20, compliance: 15000, risk: 'Supply chain disruption cascades to 3\u20135x direct cost over 48 hours. Fleet idle time costs $500\u2013$1,000/vehicle/day. FMCSA ELD violations up to $16K per offense. Production line downtime costs $10K\u2013$50K/hr for SMBs.' },
+      retail: { label: 'Retail / E-commerce', hourly: 30, incidents: 4, hours: 2, multiplier: 2.0, revPct: 0.40, compliance: 8000, risk: 'Cart abandonment spikes to 85\u201390% during outages. 88% of shoppers won\u2019t return after a bad experience. PCI DSS fines $5K\u2013$100K/month. Peak-hour downtime (Black Friday) can cost 10\u201330% of annual revenue.' },
+      education: { label: 'Education', hourly: 35, incidents: 5, hours: 3, multiplier: 1.3, revPct: 0.10, compliance: 5000, risk: 'K-12 schools are the #1 ransomware target. Average recovery cost: $1.35M. FERPA violations risk loss of federal funding ($12K\u2013$16K per student). SIS downtime during enrollment delays operations by days.' },
+      telecom: { label: 'Telecommunications', hourly: 50, incidents: 3, hours: 2, multiplier: 2.5, revPct: 0.30, compliance: 20000, risk: 'SLA breaches trigger 5\u201330% monthly credit per affected customer. FCC fines up to $100K per unreported outage. 35% of customers switch providers after a major outage. NOC emergency response costs $15K\u2013$50K per incident.' }
+    };
+
+    var elIndustry = document.getElementById('calc-industry');
+    var elEmployees = document.getElementById('calc-employees');
+    var elRevenue = document.getElementById('calc-revenue');
+    var elIncidents = document.getElementById('calc-incidents');
+    var elHours = document.getElementById('calc-hours');
+
+    function fmt(n) {
+      if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+      return '$' + Math.round(n).toLocaleString('en-US');
+    }
+
+    function calculate() {
+      var ind = data[elIndustry.value];
+      var emp = parseInt(elEmployees.value);
+      var rev = parseInt(elRevenue.value) * 1000000;
+      var inc = parseInt(elIncidents.value);
+      var hrs = parseFloat(elHours.value);
+
+      // Update display values
+      document.getElementById('calc-emp-val').textContent = emp;
+      document.getElementById('calc-rev-val').textContent = '$' + elRevenue.value + 'M';
+      document.getElementById('calc-inc-val').textContent = inc;
+      document.getElementById('calc-hrs-val').textContent = hrs;
+
+      // Calculations
+      var labor = emp * ind.hourly * hrs * inc;
+      var revLoss = (rev / 2080) * hrs * inc * ind.revPct;
+      var compliance = ind.compliance * (inc / 3);
+      var recovery = labor * 0.5;
+      var total = (labor + revLoss + compliance + recovery) * (ind.multiplier / 2);
+
+      // Update results
+      document.getElementById('calc-total').textContent = fmt(total);
+      document.getElementById('calc-labor').textContent = fmt(labor);
+      document.getElementById('calc-revenue-loss').textContent = fmt(revLoss);
+      document.getElementById('calc-compliance').textContent = fmt(compliance);
+      document.getElementById('calc-recovery').textContent = fmt(recovery);
+      document.getElementById('calc-industry-label').innerHTML = ind.label + ' &bull; ' + emp + ' employees &bull; $' + elRevenue.value + 'M revenue';
+      document.getElementById('calc-risk-text').textContent = ind.risk;
+    }
+
+    function setDefaults() {
+      var ind = data[elIndustry.value];
+      elIncidents.value = ind.incidents;
+      elHours.value = ind.hours;
+      calculate();
+    }
+
+    elIndustry.addEventListener('change', setDefaults);
+    elEmployees.addEventListener('input', calculate);
+    elRevenue.addEventListener('input', calculate);
+    elIncidents.addEventListener('input', calculate);
+    elHours.addEventListener('input', calculate);
+
+    // Initial calculation
+    calculate();
+  })();
   </script>
 </body>
 </html>
