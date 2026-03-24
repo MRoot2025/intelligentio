@@ -717,12 +717,14 @@ ul { list-style: none; }
   padding-top: 28px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
+.footer__bottom-section {
+  text-align: left;
+}
 .footer__bottom-section h4 {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 6px;
   color: #76e6d8;
-  text-align: center;
 }
 .footer__bottom-section a {
   display: block;
