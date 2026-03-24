@@ -722,6 +722,7 @@ ul { list-style: none; }
   font-weight: 500;
   margin-bottom: 6px;
   color: #76e6d8;
+  text-align: center;
 }
 .footer__bottom-section a {
   display: block;
