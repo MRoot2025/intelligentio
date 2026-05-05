@@ -12,8 +12,10 @@ These apply to every project in `MRoot2025/*`. Full text and rationale:
 5. **Batch all questions upfront** — single message with every decision needed; never trickle.
 6. **Maximum delegation** — Claude owns coordination; report outcomes, not process.
 7. **Full QA loop is mandatory close-out** — never ship without UX/UI + code + security + functional audit. Ask "ready to release?" as the last sprint task. Code committed ≠ released.
-8. **Memory discipline** — save feedback memories on corrections AND non-obvious confirmations; never save derivable code patterns.
-9. **Multi-tenant MSP context** — pre-configured GAM/gcloud/Azure tooling; identify tenant first, never assume.
+8. **Research when blocked — don't retry past 2** — after 2 failed attempts on same root cause, spawn research + planning agents in parallel. Use `subagent_type: "debugger"` when available.
+9. **Project CLAUDE.md is binding** — re-check at every decision point (before deploy, after failure, before retry, before PR). Cite the rule when applying. Project rules override universal rules.
+10. **Memory discipline** — save feedback memories on corrections AND non-obvious confirmations; never save derivable code patterns.
+11. **Multi-tenant MSP context** — pre-configured GAM/gcloud/Azure tooling; identify tenant first, never assume.
 
 Project-specific rules below override these where they conflict.
 
