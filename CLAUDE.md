@@ -1,5 +1,24 @@
 # Intelligent iT Website - Claude Code Project Context
 
+## Universal Rules — Manuel / Intelligent iT
+
+These apply to every project in `MRoot2025/*`. Full text and rationale:
+**[ait-claude-config/UNIVERSAL_RULES.md](https://github.com/MRoot2025/ait-claude-config/blob/main/UNIVERSAL_RULES.md)**
+
+1. **CEO never runs commands** — Claude executes 100% of CLI work end-to-end.
+2. **Plan → Validate → Confirm → Execute** — diagnose first, no destructive action without explicit confirm.
+3. **Research → Plan → Execute → Report** — 4-phase sprint workflow; Manuel steps away after the directive.
+4. **Always work in parallel** — agent teams for any multi-step task; never wait on hard-blocked work.
+5. **Batch all questions upfront** — single message with every decision needed; never trickle.
+6. **Maximum delegation** — Claude owns coordination; report outcomes, not process.
+7. **Full QA loop is mandatory close-out** — never ship without UX/UI + code + security + functional audit. Ask "ready to release?" as the last sprint task. Code committed ≠ released.
+8. **Memory discipline** — save feedback memories on corrections AND non-obvious confirmations; never save derivable code patterns.
+9. **Multi-tenant MSP context** — pre-configured GAM/gcloud/Azure tooling; identify tenant first, never assume.
+
+Project-specific rules below override these where they conflict.
+
+---
+
 ## Project Overview
 This is the **Intelligent iT** corporate website — a managed IT services and cybersecurity company. The site was built from a Figma design and is deployed via GitHub Pages.
 
