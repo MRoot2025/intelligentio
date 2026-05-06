@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WP-04 The Compliant AI Gateway | Intelligent iT</title>
+  <meta name="description" content="Multi-tenant LLM governance for regulated MSPs. Per-tenant virtual keys, budgets, audit logs, PII redaction. EU AI Act and HIPAA paths from day one.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="wp.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47"></a>
+      <nav class="header__nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../ai.html" class="nav-link">AI</a>
+        <a href="index.html" class="nav-link" style="color: #76e6d8;">White Papers</a>
+        <a href="../pages/about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header__actions"><a href="../pages/headquarters.html?contact=true" class="btn btn--teal btn--sm">Book a Strategy Call</a></div>
+    </div>
+  </header>
+
+  <section class="wp-hero">
+    <div class="container">
+      <span class="wp-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="../ai.html">AI</a> / <a href="index.html">White Papers</a> / WP-04</span>
+      <span class="wp-eyebrow">WP-04 &middot; AI MSP platform</span>
+      <h1>The Compliant AI Gateway</h1>
+      <p class="wp-lead">Per-tenant virtual keys. Budgets enforced at the edge. Audit logs to satisfy any auditor. Why we built our own LLM gateway instead of buying.</p>
+    </div>
+  </section>
+
+  <main class="wp-body">
+    <div class="container">
+
+      <h2>The bill is real, the governance is fictional</h2>
+
+      <p>Enterprise spend on commercial LLM APIs crossed <strong>$8.4 billion in 2025</strong> and is tracking toward $15 billion by the end of 2026. Most of that spend is going through one of three patterns:</p>
+
+      <ol>
+        <li><strong>Direct API calls from app code</strong>, with the API key in environment variables on whatever runs the request. No cost attribution, no quota enforcement, no audit log.</li>
+        <li><strong>A single shared key behind a thin proxy</strong>. Better hygiene than (1), but no per-tenant boundary, no per-feature budgeting, and a noisy neighbor will exhaust the rate limit at exactly the wrong moment.</li>
+        <li><strong>A commercial gateway like Cloudflare AI Gateway, Portkey, or Kong AI</strong>. Better than (2). Designed for direct enterprise use. Almost none of them are designed for an MSP that needs to <em>resell governed AI to multiple end-clients with chargeback</em>.</li>
+      </ol>
+
+      <p>Multi-tenant MSPs need (4): a gateway that treats each client tenant as a first-class boundary &mdash; with its own virtual keys, budgets, models, region, retention policy, audit log, and PII redaction policy &mdash; and that the MSP itself owns and governs.</p>
+
+      <div class="wp-stats">
+        <div><div class="wp-stat__value">$8.4B</div><div class="wp-stat__label">2025 enterprise LLM spend</div></div>
+        <div><div class="wp-stat__value">$15B</div><div class="wp-stat__label">2026 projection</div></div>
+        <div><div class="wp-stat__value">~73%</div><div class="wp-stat__label">Cost reduction from semantic caching (Redis)</div></div>
+        <div><div class="wp-stat__value">22%</div><div class="wp-stat__label">Of orgs with written GenAI policies</div></div>
+      </div>
+
+      <h2>What a real gateway has to do</h2>
+
+      <p>Concretely, before any production LLM workload should run through it:</p>
+
+      <ul>
+        <li><strong>Virtual keys per tenant</strong>, with a hard ceiling on monthly spend, model whitelist, region whitelist, and rate limit. The tenant cannot exceed their cap. The MSP cannot accidentally bill one client&rsquo;s spend to another.</li>
+        <li><strong>Prompt caching that respects tenant boundaries</strong>. Anthropic, OpenAI, and Bedrock all expose prompt caching primitives that yield meaningful cost wins (~73% reduction on repetitive workloads per Redis benchmarks). They also have well-documented cache-key collision modes that &mdash; if you ignore them &mdash; can leak one tenant&rsquo;s response into another tenant&rsquo;s session.</li>
+        <li><strong>Audit log per request</strong>. Tenant ID, agent ID, model, input token count, output token count, completion-status, cost, latency, and a redacted request body. Streamed to an immutable store with retention policies that match the tenant&rsquo;s industry.</li>
+        <li><strong>PII redaction at the edge</strong>. Before any prompt leaves the gateway, configurable detectors for PII, PHI, payment data, and trade secrets run. Redacted text is what leaves the network. The original is logged in the tenant&rsquo;s store with the same retention policy as their other regulated data.</li>
+        <li><strong>OWASP LLM-class boundary checks</strong>. Prompt injection signatures, jailbreak fingerprints, output-class enforcement (no SSRF URLs, no executable code in chat responses by default).</li>
+        <li><strong>Failover and provider routing</strong>. If Anthropic returns 529 overloaded, the gateway routes to a configured fallback &mdash; OpenAI, Bedrock, Vertex &mdash; with the tenant&rsquo;s explicit consent for cross-provider routing recorded. Many tenants opt out for compliance reasons. The gateway respects that.</li>
+      </ul>
+
+      <h2>Why we built rather than bought</h2>
+
+      <p>We evaluated the major commercial gateways in late 2025 and again in early 2026:</p>
+
+      <ul>
+        <li><strong>Cloudflare AI Gateway</strong>. Fast, well-priced, deeply integrated with Cloudflare&rsquo;s edge. No RBAC. No tenant-scoped workspaces. Audit log is event-stream level, not request level. Built for the product owner, not the MSP reselling it.</li>
+        <li><strong>Portkey</strong>. Strong governance primitives. Sold direct enterprise. The tenant model is "your team", not "your reseller&rsquo;s clients". The pricing structure does not contemplate channel resale.</li>
+        <li><strong>Kong AI Gateway</strong>. Excellent for direct enterprise governance. Operationally heavy. The MSP packaging story is a roadmap item, not a product.</li>
+        <li><strong>LiteLLM (open source)</strong>. The control-plane primitives are right. The edge layer (caching, WAF, rate-limiting closer to the user) is missing. The audit log is good but tenant-scoping requires careful configuration.</li>
+      </ul>
+
+      <p>The decision: combine LiteLLM as the control plane (per-tenant virtual keys, budgets, spend logs) with Cloudflare AI Gateway as the edge layer (prompt caching, WAF, regional egress, rate limit). One control surface, layered correctly. We named the product AiT AI Gateway.</p>
+
+      <div class="wp-callout">
+        <div class="wp-callout__label">The architecture</div>
+        <p>Tenant call &rarr; Cloudflare AI Gateway (cache, WAF, rate limit) &rarr; LiteLLM control plane (virtual key, budget, model whitelist, audit log) &rarr; provider (Anthropic / OpenAI / Bedrock / Vertex). PII redaction sits in front of the control plane. Spend logs land in a tenant-scoped Postgres in Supabase. Anthropic prompt caching cuts repeated-system-prompt cost ~70% in our own internal usage.</p>
+      </div>
+
+      <h2>The cache-poisoning incident that proves the case</h2>
+
+      <p>Six months before we built our own, we ran a thin custom proxy in front of Anthropic for one internal product. Two tenants. Same system prompt prefix. Cache key derived from a hash that did not include tenant ID. A coincidental request shape produced a cache hit across tenants.</p>
+
+      <p>The leak was discovered within minutes by the system that already audited every request. No PII left the boundary; the leaked content was an internal prompt template. We rotated keys, fixed the cache key derivation, and added a tenant-id salt that is now part of every cache derivation. The point is not the bug. The point is that the bug class is real, the audit log is what catches it, and you cannot rely on the upstream vendor to scope caching correctly for your tenants.</p>
+
+      <h2>Compliance from the start</h2>
+
+      <p>The gateway sits at exactly the layer where the new regulatory wave applies most cleanly. EU AI Act Article 50 transparency obligations &mdash; fully applicable 2 August 2026 &mdash; require that AI-generated content be machine-readably marked. The gateway is the right place to insert that marker. NIST AI RMF substantial-compliance posture &mdash; the affirmative defense for TRAIGA fines &mdash; can be evidenced in large part from gateway audit logs (input scoping, output filtering, retention, incident response). Treasury&rsquo;s February 2026 framework that maps NIST onto SOC 2 controls is implemented at the gateway level.</p>
+
+      <p>HIPAA-tier tenants additionally get optional Private AI containers in front of the gateway: PII/PHI redaction running on a dedicated container, no logs leaving the tenant&rsquo;s region. We do not enable this by default because most tenants do not need it. Those that do, get it.</p>
+
+      <h2>What this looks like in practice</h2>
+
+      <p>A 250-person professional services firm signs the MSP agreement. Their requirements: every employee can use Claude and ChatGPT, but no client data may leave the United States, and the legal department needs an audit trail of every prompt that mentions any of forty-three specific client names. Monthly cap: $1,200.</p>
+
+      <p>We provision a tenant in the gateway. Virtual keys are issued for Claude Sonnet 4.6, Claude Haiku 4.5, GPT-4o, and GPT-4o-mini. Models that don&rsquo;t support US-only egress are excluded. PII redaction is set to "match-then-log-then-route". A custom rule fires on the forty-three client names: every match is logged with a tenant-readable hash and surfaced in the legal department&rsquo;s daily digest. Spend hits $980 in week three; the gateway emits a 75% threshold alert; legal reviews two unusual spikes (one was a developer load-testing a prompt; the other was an actual client query). Spend hits $1,200 on the 27th; calls return a structured 429 with a clear "monthly cap reached, contact MSP to raise" message.</p>
+
+      <p>The auditor asks for evidence in February. The Trust Portal exports the SOC 2-aligned report in two clicks.</p>
+
+      <h2>Where this fits</h2>
+
+      <p>AiT AI Gateway is the platform layer beneath everything else. AiTAgent, AiT SOC Sentinel, AiT CRM, AiTBMS &mdash; every product in our portfolio uses the gateway for its LLM calls. The gateway is what makes the rest of the stack <em>governable</em> rather than just functional. Read about the related boundary controls in <a href="wp2-ai-soc-truth.html">WP-02</a> and the audit posture in <a href="wp6-continuous-audit.html">WP-06</a>.</p>
+
+    </div>
+  </main>
+
+  <section class="wp-citations">
+    <div class="container" style="max-width: 760px;">
+      <h3>References</h3>
+      <ul>
+        <li><a href="https://redis.io/blog/llm-token-optimization-speed-up-apps/">Redis</a> &mdash; semantic caching benchmarks</li>
+        <li><a href="https://opper.ai/blog/llm-router-latency-benchmark-2026">Opper.ai</a> &mdash; LLM router latency benchmark 2026</li>
+        <li><a href="https://www.getmaxim.ai/articles/top-ai-gateways-for-semantic-caching-in-2026/">Maxim AI</a> &mdash; top AI gateways for semantic caching 2026</li>
+        <li><a href="https://portkey.ai/alternatives/cloudflare-ai-gateway-alternatives">Portkey vs. Cloudflare AI Gateway</a></li>
+        <li><a href="https://docs.litellm.ai/docs/proxy/">LiteLLM Proxy docs</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">EU AI Act &mdash; regulatory framework</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wp-lead-section">
+    <div class="container">
+      <div class="wp-lead-card">
+        <form class="wp-lead-form" onsubmit="return submitLead(event)">
+          <h2>What does your LLM bill look like?</h2>
+          <p class="wp-lead-card__intro">If you don&rsquo;t know per-tenant or per-feature, that&rsquo;s the conversation. 30-minute call. We&rsquo;ll show you the gateway and your projected savings.</p>
+          <div class="field"><label for="email">Work email</label><input type="email" id="email" name="email" required></div>
+          <div class="field"><label for="company">Company</label><input type="text" id="company" name="company" required></div>
+          <div class="field"><label for="message">Approximate monthly LLM spend (optional)</label><textarea id="message" name="message" rows="2"></textarea></div>
+          <input type="hidden" name="topic_interest" value="ai-gateway">
+          <input type="hidden" name="source_page" value="wp4-compliant-ai-gateway">
+          <div class="wp-lead-card__actions"><button type="submit" class="btn btn--teal btn--lg">Request the call</button><span class="wp-lead-card__note">We reply within one business day.</span></div>
+        </form>
+        <div class="wp-lead-success"><h3>Got it &mdash; we&rsquo;ll be in touch.</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;"><p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT for 50&ndash;500 employee firms.</p></div>
+        <div class="footer__col"><h4 class="footer__heading">AI</h4><ul><li><a href="../ai.html">AI Overview</a></li><li><a href="index.html">White Papers</a></li></ul></div>
+        <div class="footer__col"><h4 class="footer__heading">Connect</h4><ul><li>sales@intelligentitnyc.com</li><li>212-730-1844</li></ul></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="_lead.js"></script>
+</body>
+</html>
