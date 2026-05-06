@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="nav-item">
           <a href="products.html" class="nav-link" style="white-space: nowrap; color: #76e6d8; font-weight: 600;">Products</a>
         </div>
+        <div class="nav-item">
+          <a href="calculator.html" class="nav-link" style="white-space: nowrap;">Calculator</a>
+        </div>
         <div class="nav-item has-dropdown">
           <button class="nav-link">Industries <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
           <div class="dropdown">
