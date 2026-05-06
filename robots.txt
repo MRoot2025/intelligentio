@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# AI/LLM crawlers — explicitly allow per Cloudflare AI Crawler convention (we want to be cited)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://intelligentit.io/sitemap.xml
