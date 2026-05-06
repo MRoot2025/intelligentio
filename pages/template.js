@@ -17,7 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="../ai.html" class="dropdown__link">AI Overview &amp; Capabilities</a>
               <a href="../whitepapers/index.html" class="dropdown__link">White Papers</a>
               <a href="../ai.html#governance" class="dropdown__link">Compliance &amp; Governance</a>
-              <a href="../ai.html#problems" class="dropdown__link">The Five Hard Problems</a>
+              <a href="../ai.html#problems" class="dropdown__link">The Hard Problems</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown" style="position: relative;">
+          <button class="nav-link">Growth <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <div class="dropdown">
+            <div class="dropdown__col">
+              <h4 class="dropdown__heading">Growth Strategy</h4>
+              <a href="../growth.html" class="dropdown__link">Growth Overview</a>
+              <a href="ai-visibility-audit.html" class="dropdown__link" style="color: #76e6d8; font-weight: 600;">Free 30-day AI Audit</a>
+              <a href="ai-seo-geo.html" class="dropdown__link">AI SEO / GEO</a>
+              <a href="reputation-audit.html" class="dropdown__link">Reputation Audit</a>
+              <a href="seo-foundations.html" class="dropdown__link">SEO Foundations</a>
+              <a href="copywriting.html" class="dropdown__link">Copy &amp; Content</a>
+              <a href="web-development.html" class="dropdown__link">Web Apps &amp; Websites</a>
+              <a href="web-analytics.html" class="dropdown__link">Analytics &amp; UX Audit</a>
             </div>
           </div>
         </div>
