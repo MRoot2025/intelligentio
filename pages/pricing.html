@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | Intelligent iT</title>
+  <meta name="description" content="Per-seat platform license. Fixed-price phased implementation. Optional managed-service retainer. Designed for MSPs and ops teams who want one tool that replaces four.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <!-- HubSpot Tracking Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+  <style>
+    /* ===== PRICING PAGE STYLES (page-scoped) ===== */
+    .pricing-intro {
+      margin-bottom: 32px;
+    }
+    .pricing-intro p {
+      font-size: 17px;
+      color: #bcbfcc;
+      max-width: 820px;
+    }
+
+    /* Tier cards grid */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+      align-items: stretch;
+    }
+    .tier-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.15);
+      border-radius: 16px;
+      padding: 32px 26px 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .tier-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(118, 230, 216, 0.4);
+      box-shadow: 0 20px 40px -20px rgba(118, 230, 216, 0.25);
+    }
+    .tier-card--featured {
+      border: 2px solid #76e6d8;
+      box-shadow: 0 20px 50px -20px rgba(118, 230, 216, 0.4);
+      transform: translateY(-6px);
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.10) 0%, rgba(255,255,255,0.02) 100%);
+    }
+    .tier-card--featured:hover {
+      transform: translateY(-10px);
+    }
+    .tier-card__ribbon {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #76e6d8;
+      color: #0b1020;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(118, 230, 216, 0.4);
+    }
+
+    .tier-card__name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      line-height: 1.2;
+    }
+    .tier-card__seats {
+      font-size: 13px;
+      color: #b4becd;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0 0 22px 0;
+    }
+    .tier-card__price {
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+    }
+    .tier-card__price-suffix {
+      font-size: 14px;
+      color: #b4becd;
+      font-weight: 500;
+    }
+    .tier-card__price-alt {
+      font-size: 13px;
+      color: #8a8f9e;
+      margin: 6px 0 22px 0;
+      line-height: 1.4;
+    }
+    .tier-card__price-alt strong {
+      color: #dde1ed;
+      font-weight: 600;
+    }
+
+    .tier-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px 0;
+      flex: 1;
+    }
+    .tier-card__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #dde1ed;
+      line-height: 1.5;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .tier-card__features li:last-child { border-bottom: none; }
+    .tier-card__features li svg {
+      width: 16px;
+      height: 16px;
+      stroke: #76e6d8;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .tier-card__features li strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .tier-card__impl {
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .tier-card__impl-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #8a8f9e;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .tier-card__impl-value {
+      display: block;
+      font-size: 16px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .tier-card__cta {
+      display: block;
+      text-align: center;
+      padding: 13px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .tier-card__cta--outline {
+      background: transparent;
+      color: #76e6d8;
+      border: 1px solid rgba(118, 230, 216, 0.5);
+    }
+    .tier-card__cta--outline:hover {
+      background: rgba(118, 230, 216, 0.1);
+      border-color: #76e6d8;
+    }
+    .tier-card__cta--solid {
+      background: #76e6d8;
+      color: #0b1020;
+      border: 1px solid #76e6d8;
+    }
+    .tier-card__cta--solid:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+    }
+
+    /* Add-ons block */
+    .addons-block {
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.04) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin-top: 16px;
+    }
+    .addons-block h3 {
+      font-size: 22px;
+      color: #ffffff;
+      margin: 0 0 6px 0;
+    }
+    .addons-block__sub {
+      font-size: 14px;
+      color: #b4becd;
+      margin: 0 0 22px 0;
+    }
+    .addons-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 28px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .addons-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .addons-list__name {
+      font-size: 14px;
+      color: #dde1ed;
+      line-height: 1.4;
+    }
+    .addons-list__price {
+      font-size: 14px;
+      font-weight: 700;
+      color: #76e6d8;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* FAQ accordion */
+    .faq-list {
+      margin-top: 16px;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .faq-item__btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: none;
+      border: none;
+      padding: 20px 4px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 600;
+      color: #ffffff;
+      font-family: inherit;
+    }
+    .faq-item__btn:hover { color: #76e6d8; }
+    .faq-item__icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      color: #76e6d8;
+    }
+    .faq-item--open .faq-item__icon { transform: rotate(45deg); }
+    .faq-item__panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item--open .faq-item__panel { max-height: 600px; }
+    .faq-item__panel-inner {
+      padding: 0 4px 22px 4px;
+      font-size: 15px;
+      color: #dde1ed;
+      line-height: 1.65;
+    }
+
+    /* Final CTA strip */
+    .pricing-cta-strip {
+      margin-top: 56px;
+      padding: 44px 32px;
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.10) 0%, rgba(118, 230, 216, 0.03) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.3);
+      border-radius: 18px;
+      text-align: center;
+    }
+    .pricing-cta-strip h2 {
+      font-size: 30px;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+    .pricing-cta-strip p {
+      font-size: 16px;
+      color: #b4becd;
+      margin: 0 0 24px 0;
+    }
+    .pricing-cta-strip__buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pricing-disclaimer {
+      margin-top: 36px;
+      font-size: 12px;
+      color: #8a8f9e;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Wider page-content */
+    .page-content--wide .container {
+      max-width: 1200px;
+    }
+
+    @media (max-width: 1024px) {
+      .tier-grid { grid-template-columns: 1fr; gap: 20px; }
+      .tier-card--featured { transform: none; }
+      .tier-card--featured:hover { transform: translateY(-4px); }
+      .addons-list { grid-template-columns: 1fr; gap: 0; }
+    }
+    @media (max-width: 720px) {
+      .tier-card { padding: 28px 20px 24px; }
+      .tier-card__price { font-size: 32px; }
+      .pricing-cta-strip { padding: 32px 20px; }
+      .pricing-cta-strip h2 { font-size: 24px; }
+      .addons-block { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner">
+      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / Pricing</span>
+      <h1>Pricing that fits the deal you&rsquo;re closing. No surprise renewals.</h1>
+      <p>Per-seat platform license. Fixed-price phased implementation. Optional managed-service retainer. Designed for MSPs and ops teams who want one tool that replaces four.</p>
+      <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a 30-Min Walkthrough</a>
+    </div>
+  </section>
+
+  <main class="page-content page-content--wide">
+    <div class="container">
+
+      <!-- Tier cards -->
+      <div class="page-section animate-on-scroll pricing-intro">
+        <h2>Pick the tier that matches your team.</h2>
+        <p>Three tiers, one platform. Annual commit gets a built-in discount because hosting and Anthropic costs are forecastable when we know you&rsquo;re staying. Switch up any time; switch down at renewal.</p>
+      </div>
+
+      <div class="page-section animate-on-scroll">
+        <div class="tier-grid">
+
+          <!-- Starter -->
+          <div class="tier-card">
+            <h3 class="tier-card__name">Starter</h3>
+            <p class="tier-card__seats">5&ndash;15 users</p>
+            <div class="tier-card__price">$125<span class="tier-card__price-suffix"> / user / mo</span></div>
+            <p class="tier-card__price-alt"><strong>annual</strong> &nbsp;&middot;&nbsp; $145/user/mo month-to-month</p>
+            <ul class="tier-card__features">
+              <li><i data-lucide="check"></i><span>1 tenant</span></li>
+              <li><i data-lucide="check"></i><span><strong>AiTCRM</strong> + <strong>AiTBMS</strong> standard modules</span></li>
+              <li><i data-lucide="check"></i><span>24h email support</span></li>
+              <li><i data-lucide="check"></i><span>100 inbound bills / mo OCR</span></li>
+              <li><i data-lucide="check"></i><span>Bring-your-own Anthropic API key</span></li>
+            </ul>
+            <div class="tier-card__impl">
+              <span class="tier-card__impl-label">Implementation</span>
+              <span class="tier-card__impl-value">$25K &middot; 4 weeks &middot; 1 carrier</span>
+            </div>
+            <a href="/book/" target="_blank" rel="noopener" class="tier-card__cta tier-card__cta--outline">Book a demo</a>
+          </div>
+
+          <!-- Growth (Most Popular) -->
+          <div class="tier-card tier-card--featured">
+            <span class="tier-card__ribbon">Most Popular</span>
+            <h3 class="tier-card__name">Growth</h3>
+            <p class="tier-card__seats">15&ndash;50 users</p>
+            <div class="tier-card__price">$125<span class="tier-card__price-suffix"> / user / mo</span></div>
+            <p class="tier-card__price-alt"><strong>annual</strong> &nbsp;&middot;&nbsp; $145/user/mo month-to-month</p>
+            <ul class="tier-card__features">
+              <li><i data-lucide="check"></i><span>Up to <strong>3 tenants</strong></span></li>
+              <li><i data-lucide="check"></i><span>Everything in Starter, plus:</span></li>
+              <li><i data-lucide="check"></i><span><strong>AiT AI Gateway</strong> + Provider Operations layer (top 3 carriers)</span></li>
+              <li><i data-lucide="check"></i><span>Advanced reporting + Slack/Teams integration</span></li>
+              <li><i data-lucide="check"></i><span><strong>4h phone + chat SLA</strong></span></li>
+              <li><i data-lucide="check"></i><span>1,000 inbound bills / mo OCR</span></li>
+              <li><i data-lucide="check"></i><span>Smartsheet importer included</span></li>
+              <li><i data-lucide="check"></i><span>Anthropic usage included</span></li>
+            </ul>
+            <div class="tier-card__impl">
+              <span class="tier-card__impl-label">Implementation</span>
+              <span class="tier-card__impl-value">$58K &middot; 12 weeks &middot; 3 carriers</span>
+            </div>
+            <a href="/book/" target="_blank" rel="noopener" class="tier-card__cta tier-card__cta--solid">Book a demo</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="tier-card">
+            <h3 class="tier-card__name">Enterprise</h3>
+            <p class="tier-card__seats">50+ users</p>
+            <div class="tier-card__price">Custom</div>
+            <p class="tier-card__price-alt">Pricing scoped in discovery</p>
+            <ul class="tier-card__features">
+              <li><i data-lucide="check"></i><span><strong>Unlimited tenants</strong></span></li>
+              <li><i data-lucide="check"></i><span>Everything in Growth, plus:</span></li>
+              <li><i data-lucide="check"></i><span><strong>AiT SOC Sentinel</strong> + <strong>AiT Trust Portal</strong></span></li>
+              <li><i data-lucide="check"></i><span><strong>AiT AI Services bundle</strong>: Compliant Copilot, Avatar Studio, Voice Concierge</span></li>
+              <li><i data-lucide="check"></i><span>Dedicated solution architect</span></li>
+              <li><i data-lucide="check"></i><span><strong>1h SLA</strong></span></li>
+              <li><i data-lucide="check"></i><span>Quarterly business review with founder</span></li>
+            </ul>
+            <div class="tier-card__impl">
+              <span class="tier-card__impl-label">Implementation</span>
+              <span class="tier-card__impl-value">Starts at $120K</span>
+            </div>
+            <a href="/book/" target="_blank" rel="noopener" class="tier-card__cta tier-card__cta--outline">Talk to founder</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Add-ons -->
+      <div class="page-section animate-on-scroll">
+        <div class="addons-block">
+          <h3>Add-ons &amp; one-time services</h3>
+          <p class="addons-block__sub">Mix and match against any tier. Validated against PSA and CRM-implementation benchmark bands.</p>
+          <ul class="addons-list">
+            <li>
+              <span class="addons-list__name">Provider Ops &mdash; per additional carrier</span>
+              <span class="addons-list__price">$8,000 one-time</span>
+            </li>
+            <li>
+              <span class="addons-list__name">Smartsheet importer (one-shot ETL) <em style="color:#8a8f9e;">&mdash; included in Growth+</em></span>
+              <span class="addons-list__price">$12,000 one-time</span>
+            </li>
+            <li>
+              <span class="addons-list__name">Phase 5+ migration assistance</span>
+              <span class="addons-list__price">$185 / hr T&amp;M</span>
+            </li>
+            <li>
+              <span class="addons-list__name">Managed-service retainer</span>
+              <span class="addons-list__price">$3,500 / mo</span>
+            </li>
+            <li>
+              <span class="addons-list__name">AiT AI Services &mdash; per product</span>
+              <span class="addons-list__price">Quoted individually</span>
+            </li>
+            <li>
+              <span class="addons-list__name">LL97 carbon mitigation consulting</span>
+              <span class="addons-list__price">$250 / hr or fixed-fee</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="page-section animate-on-scroll">
+        <h2>FAQ</h2>
+        <div class="faq-list" id="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>Why is annual cheaper than month-to-month?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                Hosting and Anthropic costs are forecastable on an annual commit. We pass that savings through. If you go month-to-month we have to price for the option that you might leave next quarter, so that line is higher.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>Can I switch tiers mid-contract?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                Yes. Upgrades are pro-rated and effective immediately so you stop being blocked. Downgrades take effect at the next renewal so we&rsquo;re not yanking modules out from under your team mid-quarter.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>Does AiTCRM really replace HubSpot, Smartsheet, RPM Telco, and AppDirect?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                Yes &mdash; for the workflows our customers actually use. Pipeline + deals, project tracking with phases and dependencies, carrier hierarchy and revshare, and AppDirect-style remittance run inside AiTCRM out of the box. Run our <a href="calculator.html" style="color:#76e6d8;">ROI calculator</a> with your current stack to see your number.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>Can I white-label the platform under my brand?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                Yes on Growth and Enterprise. TenantBranding ships every UI surface under your logo, your colors, and your domain. Your customers never see &ldquo;Intelligent iT&rdquo; unless you want them to.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>When should I expect ROI?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                The median Growth-tier customer hits ROI inside 9 months from kickoff. The driver is consolidating four line items into one &mdash; payback usually starts in month 3 once Phase 2 ships and lands cleanly by month 9.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>What&rsquo;s NOT included?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                Two things to know up front. (1) Anthropic API key: bring your own on Starter, included on Growth and Enterprise. (2) Bank connections via Plaid Transfer require a separate KYB review during onboarding &mdash; that&rsquo;s a Plaid policy, not ours.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__btn" aria-expanded="false" type="button">
+              <span>Can we do a custom pilot before signing?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-item__panel">
+              <div class="faq-item__panel-inner">
+                Yes. Book a strategy call and we&rsquo;ll scope a 90-day pilot, priced separately. Pilots are usually 1 tenant, 1 carrier, and one specific workflow you want to prove out before you commit to the full implementation.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Final CTA strip -->
+      <div class="page-section animate-on-scroll">
+        <div class="pricing-cta-strip">
+          <h2>See your number. Then book a walkthrough.</h2>
+          <p>Two minutes with the calculator, thirty minutes with us. No slide deck.</p>
+          <div class="pricing-cta-strip__buttons">
+            <a href="calculator.html" class="btn btn--white btn--lg">See your number &rarr;</a>
+            <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a 30-min walkthrough</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-disclaimer">Pricing as of 2026-05-06. Final pricing finalized in discovery call. Manuel Ruiz, Founder. &copy; Intelligent Group &middot; intelligentit.io</p>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="template.js"></script>
+  <script>
+    // ===== FAQ ACCORDION =====
+    document.addEventListener('DOMContentLoaded', function () {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(function (item) {
+        const btn = item.querySelector('.faq-item__btn');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          const willOpen = !item.classList.contains('faq-item--open');
+          // Single-open behavior: close any other open item first.
+          items.forEach(function (other) {
+            if (other !== item) {
+              other.classList.remove('faq-item--open');
+              const otherBtn = other.querySelector('.faq-item__btn');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+          item.classList.toggle('faq-item--open', willOpen);
+          btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
+      });
+
+      // Initialize Lucide icons after the CDN script + DOM are ready
+      function tryInit() {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        } else {
+          setTimeout(tryInit, 50);
+        }
+      }
+      tryInit();
+    });
+  </script>
+</body>
+</html>
