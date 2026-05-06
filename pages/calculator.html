@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AiTCRM ROI Calculator | Intelligent iT</title>
+  <meta name="description" content="60-second ROI calculator. See what you'd save by replacing Smartsheet + HubSpot + RPM Telco + AppDirect with AiTCRM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <!-- HubSpot Tracking Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+  <style>
+    /* ===== ROI CALCULATOR STYLES (page-scoped) ===== */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 28px;
+      margin-top: 16px;
+      align-items: start;
+    }
+    .calc-panel {
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.15);
+      border-radius: 16px;
+      padding: 28px 26px;
+    }
+    .calc-panel h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      line-height: 1.2;
+    }
+    .calc-panel__sub {
+      font-size: 14px;
+      color: #b4becd;
+      margin: 0 0 24px 0;
+      line-height: 1.4;
+    }
+
+    /* Inputs */
+    .calc-field { margin-bottom: 22px; }
+    .calc-field__label {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #edeff7;
+      margin-bottom: 8px;
+    }
+    .calc-field__value {
+      font-size: 15px;
+      font-weight: 700;
+      color: #76e6d8;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .calc-field__help {
+      font-size: 12px;
+      color: #8a8f9e;
+      margin: 6px 0 0 0;
+      line-height: 1.4;
+    }
+
+    /* Slider */
+    .calc-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      outline: none;
+      cursor: pointer;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #76e6d8;
+      border: 2px solid #0b1020;
+      box-shadow: 0 0 0 1px rgba(118, 230, 216, 0.6), 0 0 12px rgba(118, 230, 216, 0.4);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .calc-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #76e6d8;
+      border: 2px solid #0b1020;
+      box-shadow: 0 0 0 1px rgba(118, 230, 216, 0.6), 0 0 12px rgba(118, 230, 216, 0.4);
+      cursor: pointer;
+    }
+    .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.1); }
+    .calc-slider:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 3px rgba(118, 230, 216, 0.35), 0 0 14px rgba(118, 230, 216, 0.5);
+    }
+
+    /* Results */
+    .calc-result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .calc-result-row:last-of-type { border-bottom: none; }
+    .calc-result-row__label {
+      font-size: 14px;
+      color: #dde1ed;
+      font-weight: 500;
+    }
+    .calc-result-row__value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .calc-result-row--muted .calc-result-row__value { color: #b4becd; font-weight: 600; font-size: 16px; }
+    .calc-result-row--savings .calc-result-row__value { color: #76e6d8; }
+    .calc-result-row--negative .calc-result-row__value { color: #ffc166; }
+
+    .calc-headline {
+      margin-top: 20px;
+      padding: 22px;
+      background: rgba(118, 230, 216, 0.08);
+      border: 1px solid rgba(118, 230, 216, 0.3);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .calc-headline__label {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #76e6d8;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .calc-headline__value {
+      display: block;
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .calc-headline__sub {
+      display: block;
+      font-size: 13px;
+      color: #b4becd;
+      margin-top: 6px;
+    }
+    .calc-headline--negative {
+      background: rgba(255, 193, 102, 0.08);
+      border-color: rgba(255, 193, 102, 0.3);
+    }
+    .calc-headline--negative .calc-headline__label { color: #ffc166; }
+
+    .calc-payback {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .calc-payback__label { font-size: 14px; color: #dde1ed; font-weight: 500; }
+    .calc-payback__value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Bar chart */
+    .calc-chart {
+      margin-top: 24px;
+      padding: 20px 18px 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+    .calc-chart__title {
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #b4becd;
+      font-weight: 600;
+      margin: 0 0 16px 0;
+      text-align: center;
+    }
+    .calc-chart__bars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items: end;
+      height: 160px;
+      margin-bottom: 10px;
+    }
+    .calc-bar-group {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 6px;
+      height: 100%;
+    }
+    .calc-bar {
+      flex: 1;
+      max-width: 36px;
+      border-radius: 6px 6px 0 0;
+      transition: height 0.4s ease;
+      position: relative;
+      min-height: 4px;
+    }
+    .calc-bar--quo {
+      background: linear-gradient(180deg, #ffc166 0%, rgba(255, 193, 102, 0.4) 100%);
+    }
+    .calc-bar--ait {
+      background: linear-gradient(180deg, #76e6d8 0%, rgba(118, 230, 216, 0.4) 100%);
+    }
+    .calc-chart__labels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      font-size: 12px;
+      color: #b4becd;
+      text-align: center;
+      font-weight: 600;
+    }
+    .calc-chart__legend {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: #dde1ed;
+    }
+    .calc-chart__legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .calc-chart__swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+    .calc-chart__swatch--quo { background: #ffc166; }
+    .calc-chart__swatch--ait { background: #76e6d8; }
+
+    .calc-disclaimer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #8a8f9e;
+      line-height: 1.55;
+      text-align: center;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .page-content--wide .container {
+      max-width: 1200px;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (max-width: 720px) {
+      .calc-panel { padding: 22px 18px; }
+      .calc-headline__value { font-size: 32px; }
+      .calc-chart__bars { height: 130px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner">
+      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="products.html">Products</a> / Calculator</span>
+      <h1>See what you&rsquo;d save by replacing 4 systems with 1.</h1>
+      <p>60-second ROI calculator. Slide the inputs, watch the savings update live.</p>
+      <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a 30-Min Walkthrough</a>
+    </div>
+  </section>
+
+  <main class="page-content page-content--wide">
+    <div class="container">
+
+      <div class="page-section animate-on-scroll">
+        <div class="calc-grid">
+
+          <!-- INPUTS -->
+          <div class="calc-panel">
+            <h3>Your inputs</h3>
+            <p class="calc-panel__sub">Drag the sliders to match your situation. Results update instantly.</p>
+
+            <div class="calc-field">
+              <label class="calc-field__label" for="users">
+                <span>Operations users</span>
+                <span class="calc-field__value" id="usersValue">15</span>
+              </label>
+              <input class="calc-slider" type="range" id="users" min="1" max="200" value="15" step="1">
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-field__label" for="spend">
+                <span>Current spend per user / month</span>
+                <span class="calc-field__value" id="spendValue">$250</span>
+              </label>
+              <input class="calc-slider" type="range" id="spend" min="0" max="500" value="250" step="5">
+              <p class="calc-field__help">Smartsheet + HubSpot + RPM Telco + AppDirect typically runs $150&ndash;$300/user/mo.</p>
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-field__label" for="impl">
+                <span>Implementation budget already spent</span>
+                <span class="calc-field__value" id="implValue">$40,000</span>
+              </label>
+              <input class="calc-slider" type="range" id="impl" min="0" max="200000" value="40000" step="1000">
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-field__label" for="carriers">
+                <span>Annual telecom carriers managed</span>
+                <span class="calc-field__value" id="carriersValue">3</span>
+              </label>
+              <input class="calc-slider" type="range" id="carriers" min="1" max="20" value="3" step="1">
+              <p class="calc-field__help">Drives Provider Ops scope.</p>
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-field__label" for="commission">
+                <span>Annual telecom commission revenue</span>
+                <span class="calc-field__value" id="commissionValue">$500,000</span>
+              </label>
+              <input class="calc-slider" type="range" id="commission" min="0" max="2000000" value="500000" step="25000">
+              <p class="calc-field__help">Sizes the opportunity we&rsquo;re protecting.</p>
+            </div>
+          </div>
+
+          <!-- RESULTS -->
+          <div class="calc-panel">
+            <h3>Your projected savings</h3>
+            <p class="calc-panel__sub">Live numbers. AiTCRM vs. status quo.</p>
+
+            <div class="calc-result-row">
+              <span class="calc-result-row__label">Year 1 with AiTCRM</span>
+              <span class="calc-result-row__value" id="y1Ait">$0</span>
+            </div>
+            <div class="calc-result-row">
+              <span class="calc-result-row__label">Year 1 with status quo</span>
+              <span class="calc-result-row__value" id="y1Quo">$0</span>
+            </div>
+            <div class="calc-result-row calc-result-row--savings" id="y1NetRow">
+              <span class="calc-result-row__label">Year 1 net savings</span>
+              <span class="calc-result-row__value" id="y1Net">$0</span>
+            </div>
+            <div class="calc-result-row calc-result-row--muted">
+              <span class="calc-result-row__label">Year 2 ongoing &mdash; AiTCRM (license only)</span>
+              <span class="calc-result-row__value" id="y2Ait">$0</span>
+            </div>
+            <div class="calc-result-row calc-result-row--muted">
+              <span class="calc-result-row__label">Year 2 ongoing &mdash; status quo</span>
+              <span class="calc-result-row__value" id="y2Quo">$0</span>
+            </div>
+
+            <div class="calc-headline" id="cumHeadline">
+              <span class="calc-headline__label">Cumulative 3-year savings</span>
+              <span class="calc-headline__value" id="cumSavings">$0</span>
+              <span class="calc-headline__sub" id="cumSub">vs. continuing on your current stack</span>
+            </div>
+
+            <div class="calc-payback">
+              <span class="calc-payback__label">Payback period</span>
+              <span class="calc-payback__value" id="payback">&mdash;</span>
+            </div>
+
+            <div class="calc-chart">
+              <p class="calc-chart__title">3-year cost comparison</p>
+              <div class="calc-chart__bars">
+                <div class="calc-bar-group">
+                  <div class="calc-bar calc-bar--quo" id="bar-quo-1" style="height: 50%;"></div>
+                  <div class="calc-bar calc-bar--ait" id="bar-ait-1" style="height: 70%;"></div>
+                </div>
+                <div class="calc-bar-group">
+                  <div class="calc-bar calc-bar--quo" id="bar-quo-2" style="height: 30%;"></div>
+                  <div class="calc-bar calc-bar--ait" id="bar-ait-2" style="height: 15%;"></div>
+                </div>
+                <div class="calc-bar-group">
+                  <div class="calc-bar calc-bar--quo" id="bar-quo-3" style="height: 30%;"></div>
+                  <div class="calc-bar calc-bar--ait" id="bar-ait-3" style="height: 15%;"></div>
+                </div>
+              </div>
+              <div class="calc-chart__labels">
+                <span>Year 1</span>
+                <span>Year 2</span>
+                <span>Year 3</span>
+              </div>
+              <div class="calc-chart__legend">
+                <span><i class="calc-chart__swatch calc-chart__swatch--quo"></i>Status quo</span>
+                <span><i class="calc-chart__swatch calc-chart__swatch--ait"></i>AiTCRM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="calc-disclaimer">Calculator uses median benchmarks from comparable PSA + telecom-agency platforms. Your actual savings depend on integration complexity. Final pricing finalized in discovery call.</p>
+      </div>
+
+      <div class="page-cta">
+        <h2>Like what you see?</h2>
+        <p>Book a 30-min walkthrough. We&rsquo;ll show AiTCRM live against a sandbox tenant and answer pricing on the spot.</p>
+        <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a Strategy Call</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="template.js"></script>
+  <script>
+    // ===== ROI CALCULATOR LOGIC =====
+    // Pricing constants (validated GCG pricing research, this session).
+    const LICENSE_PER_USER_PER_MONTH = 125;
+    const IMPLEMENTATION_FIXED = 58000;
+    const SMARTSHEET_ETL = 12000;
+    const PROVIDER_OPS_PER_CARRIER = 8000;
+
+    const fmt = (n) => {
+      const sign = n < 0 ? '-' : '';
+      const abs = Math.abs(Math.round(n));
+      return sign + '$' + abs.toLocaleString('en-US');
+    };
+    const fmtFull = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+    const inputs = {
+      users:      document.getElementById('users'),
+      spend:      document.getElementById('spend'),
+      impl:       document.getElementById('impl'),
+      carriers:   document.getElementById('carriers'),
+      commission: document.getElementById('commission'),
+    };
+    const labels = {
+      users:      document.getElementById('usersValue'),
+      spend:      document.getElementById('spendValue'),
+      impl:       document.getElementById('implValue'),
+      carriers:   document.getElementById('carriersValue'),
+      commission: document.getElementById('commissionValue'),
+    };
+    const out = {
+      y1Ait:    document.getElementById('y1Ait'),
+      y1Quo:    document.getElementById('y1Quo'),
+      y1Net:    document.getElementById('y1Net'),
+      y1NetRow: document.getElementById('y1NetRow'),
+      y2Ait:    document.getElementById('y2Ait'),
+      y2Quo:    document.getElementById('y2Quo'),
+      cumSavings: document.getElementById('cumSavings'),
+      cumSub:     document.getElementById('cumSub'),
+      cumHeadline: document.getElementById('cumHeadline'),
+      payback:    document.getElementById('payback'),
+    };
+    const bars = {
+      quo: [document.getElementById('bar-quo-1'), document.getElementById('bar-quo-2'), document.getElementById('bar-quo-3')],
+      ait: [document.getElementById('bar-ait-1'), document.getElementById('bar-ait-2'), document.getElementById('bar-ait-3')],
+    };
+
+    function recalc() {
+      const users      = parseInt(inputs.users.value, 10);
+      const spend      = parseInt(inputs.spend.value, 10);
+      const impl       = parseInt(inputs.impl.value, 10);
+      const carriers   = parseInt(inputs.carriers.value, 10);
+      const commission = parseInt(inputs.commission.value, 10);
+
+      // Update labels
+      labels.users.textContent      = users.toLocaleString('en-US');
+      labels.spend.textContent      = '$' + spend.toLocaleString('en-US');
+      labels.impl.textContent       = '$' + impl.toLocaleString('en-US');
+      labels.carriers.textContent   = carriers.toLocaleString('en-US');
+      labels.commission.textContent = '$' + commission.toLocaleString('en-US');
+
+      // ----- Math -----
+      const y1Ait = (LICENSE_PER_USER_PER_MONTH * users * 12)
+                  + IMPLEMENTATION_FIXED
+                  + SMARTSHEET_ETL
+                  + (PROVIDER_OPS_PER_CARRIER * carriers);
+      const y1Quo = (spend * users * 12) + impl;
+      const y1Net = y1Quo - y1Ait;
+
+      const y2Ait = LICENSE_PER_USER_PER_MONTH * users * 12;
+      const y2Quo = spend * users * 12;
+
+      const cum3Ait = y1Ait + y2Ait + y2Ait;
+      const cum3Quo = y1Quo + y2Quo + y2Quo;
+      const cumSavings = cum3Quo - cum3Ait;
+
+      // Payback (months from start). Treat AiTCRM up-front costs (impl + ETL +
+      // provider ops) as the gap to recover; ongoing monthly differential =
+      // status-quo spend per month minus AiTCRM license per month. The
+      // already-spent implementation budget on the status-quo side reduces
+      // the up-front gap one-for-one.
+      const upFrontDelta = (IMPLEMENTATION_FIXED + SMARTSHEET_ETL + (PROVIDER_OPS_PER_CARRIER * carriers)) - impl;
+      const monthlyDelta = (spend * users) - (LICENSE_PER_USER_PER_MONTH * users); // savings/month
+      let paybackMonths = null;
+      if (monthlyDelta > 0) {
+        if (upFrontDelta <= 0) {
+          paybackMonths = 1;
+        } else {
+          paybackMonths = Math.ceil(upFrontDelta / monthlyDelta);
+        }
+      }
+
+      // ----- Render -----
+      out.y1Ait.textContent = fmtFull(y1Ait);
+      out.y1Quo.textContent = fmtFull(y1Quo);
+      out.y1Net.textContent = fmt(y1Net);
+      out.y2Ait.textContent = fmtFull(y2Ait) + ' / yr';
+      out.y2Quo.textContent = fmtFull(y2Quo) + ' / yr';
+      out.cumSavings.textContent = fmt(cumSavings);
+
+      // Tone Y1 net row + cumulative headline based on sign
+      out.y1NetRow.classList.toggle('calc-result-row--savings', y1Net >= 0);
+      out.y1NetRow.classList.toggle('calc-result-row--negative', y1Net < 0);
+      out.cumHeadline.classList.toggle('calc-headline--negative', cumSavings < 0);
+      out.cumSub.textContent = cumSavings >= 0
+        ? 'vs. continuing on your current stack'
+        : 'AiTCRM costs more over 3 years at this scale';
+
+      // Payback display
+      if (paybackMonths === null) {
+        out.payback.textContent = 'Not at this scale';
+      } else if (paybackMonths <= 12) {
+        out.payback.textContent = paybackMonths + ' month' + (paybackMonths === 1 ? '' : 's');
+      } else {
+        const years = Math.floor(paybackMonths / 12);
+        const months = paybackMonths % 12;
+        out.payback.textContent = paybackMonths + ' months (' + years + 'y' + (months ? ' ' + months + 'm' : '') + ')';
+      }
+
+      // Bar chart: scale to max value across all 6 bars
+      const allValues = [y1Quo, y1Ait, y2Quo, y2Ait, y2Quo, y2Ait];
+      const maxVal = Math.max(...allValues, 1);
+      const heights = allValues.map(v => Math.max(4, Math.round((v / maxVal) * 100)));
+      bars.quo[0].style.height = heights[0] + '%';
+      bars.ait[0].style.height = heights[1] + '%';
+      bars.quo[1].style.height = heights[2] + '%';
+      bars.ait[1].style.height = heights[3] + '%';
+      bars.quo[2].style.height = heights[4] + '%';
+      bars.ait[2].style.height = heights[5] + '%';
+    }
+
+    Object.values(inputs).forEach(el => {
+      el.addEventListener('input', recalc);
+      el.addEventListener('change', recalc);
+    });
+    recalc();
+
+    // Initialize Lucide icons after the CDN script + DOM are ready
+    document.addEventListener('DOMContentLoaded', function () {
+      function tryInit() {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        } else {
+          setTimeout(tryInit, 50);
+        }
+      }
+      tryInit();
+    });
+  </script>
+</body>
+</html>
