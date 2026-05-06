@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AiT Product Family | Intelligent iT</title>
+  <meta name="description" content="The AiT product family. Built by Intelligent iT. Live in production. Multi-tenant CRM, BMS analytics, security oversight, AI gateway, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <!-- HubSpot Tracking Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+  <style>
+    /* ===== PRODUCTS HUB STYLES (page-scoped) ===== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+    }
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, rgba(118, 230, 216, 0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(118, 230, 216, 0.15);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(118, 230, 216, 0.4);
+      box-shadow: 0 20px 40px -20px rgba(118, 230, 216, 0.25);
+    }
+    .product-card__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(118, 230, 216, 0.1);
+      border: 1px solid rgba(118, 230, 216, 0.2);
+      color: #76e6d8;
+      margin-bottom: 18px;
+    }
+    .product-card__icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: #76e6d8;
+    }
+    .product-card__name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+    .product-card__tagline {
+      font-size: 15px;
+      color: #dde1ed;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+      flex: 1;
+    }
+    .product-card__meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .status-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .status-badge--live {
+      background: rgba(118, 230, 216, 0.12);
+      color: #76e6d8;
+      border-color: rgba(118, 230, 216, 0.35);
+    }
+    .status-badge--live::before { background: #76e6d8; box-shadow: 0 0 6px #76e6d8; }
+    .status-badge--beta {
+      background: rgba(255, 193, 102, 0.12);
+      color: #ffc166;
+      border-color: rgba(255, 193, 102, 0.35);
+    }
+    .status-badge--beta::before { background: #ffc166; }
+    .status-badge--soon {
+      background: rgba(180, 190, 230, 0.10);
+      color: #b4becd;
+      border-color: rgba(180, 190, 230, 0.30);
+    }
+    .status-badge--soon::before { background: #b4becd; }
+    .product-card__links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      width: 100%;
+    }
+    .product-card__demo {
+      font-size: 14px;
+      font-weight: 600;
+      color: #76e6d8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .product-card__demo:hover { color: #ffffff; }
+    .product-card__demo--muted {
+      color: #8a8f9e;
+      cursor: default;
+      pointer-events: none;
+    }
+    .product-card__demo svg { width: 14px; height: 14px; }
+
+    /* Section header tweak for hub */
+    .products-intro {
+      margin-bottom: 32px;
+    }
+    .products-intro p {
+      font-size: 17px;
+      color: #bcbfcc;
+      max-width: 760px;
+    }
+
+    /* Wider page-content for the grid */
+    .page-content--wide .container {
+      max-width: 1200px;
+    }
+
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .products-grid { grid-template-columns: 1fr; gap: 16px; }
+      .product-card { padding: 22px 18px; }
+      .product-card__name { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner">
+      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / Products</span>
+      <h1>The AiT product family. Built by Intelligent iT. Live in production.</h1>
+      <p>Eight products, one platform. The same AI-first engine that powers our managed services is shipped as standalone SaaS for MSPs, building operators, and security teams.</p>
+      <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a 30-Min Walkthrough</a>
+    </div>
+  </section>
+
+  <main class="page-content page-content--wide">
+    <div class="container">
+
+      <div class="page-section animate-on-scroll products-intro">
+        <h2>Pick a product. See it in action.</h2>
+        <p>Every card below links to a live demo where one exists. Tenant-specific products require an intro call &mdash; book a slot and we&rsquo;ll spin up a sandbox.</p>
+      </div>
+
+      <div class="page-section animate-on-scroll">
+        <div class="products-grid">
+
+          <!-- 1. AiTCRM -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="users-round"></i>
+            </div>
+            <h3 class="product-card__name">AiTCRM</h3>
+            <p class="product-card__tagline">Multi-tenant SaaS CRM + ops platform for MSPs. Replaces HubSpot + Smartsheets + RPM Telco.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--live">Live</span>
+            </div>
+            <div class="product-card__links">
+              <a href="https://aitcrm.intelligentit.io" target="_blank" rel="noopener" class="product-card__demo">
+                Open demo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <span class="product-card__demo product-card__demo--muted">/demo/sales-pipeline coming soon</span>
+            </div>
+          </div>
+
+          <!-- 2. AiTBMS -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="building-2"></i>
+            </div>
+            <h3 class="product-card__name">AiTBMS</h3>
+            <p class="product-card__tagline">Vendor-agnostic cloud BMS analytics + control. AI-powered chiller and plant optimization.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--beta">Beta</span>
+            </div>
+            <div class="product-card__links">
+              <a href="https://aitbms.vercel.app" target="_blank" rel="noopener" class="product-card__demo">
+                Open demo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <span class="product-card__demo product-card__demo--muted">/demo walkthroughs coming soon</span>
+            </div>
+          </div>
+
+          <!-- 3. AiTCSG -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="leaf"></i>
+            </div>
+            <h3 class="product-card__name">AiTCSG</h3>
+            <p class="product-card__tagline">WebCTRL LEED + Building Intelligence dashboard. Pilot live at IG HQ Tower.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--beta">Beta</span>
+            </div>
+            <div class="product-card__links">
+              <a href="/book/" target="_blank" rel="noopener" class="product-card__demo">
+                Contact for access
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. AiT Trust Portal -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3 class="product-card__name">AiT Trust Portal</h3>
+            <p class="product-card__tagline">Public landing + per-client security posture dashboard. Show prospects you&rsquo;re audit-ready in one link.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--soon">Coming Q3</span>
+            </div>
+            <div class="product-card__links">
+              <span class="product-card__demo product-card__demo--muted">/demo/posture coming soon</span>
+            </div>
+          </div>
+
+          <!-- 5. AiT SOC Sentinel -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="radar"></i>
+            </div>
+            <h3 class="product-card__name">AiT SOC Sentinel</h3>
+            <p class="product-card__tagline">AI-SOC oversight layer that shadows your MSSP and surfaces blind spots. Trust, but verify.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--soon">Coming Q3</span>
+            </div>
+            <div class="product-card__links">
+              <span class="product-card__demo product-card__demo--muted">/demo/oversight coming soon</span>
+            </div>
+          </div>
+
+          <!-- 6. AiT AI Gateway -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="cpu"></i>
+            </div>
+            <h3 class="product-card__name">AiT AI Gateway</h3>
+            <p class="product-card__tagline">LiteLLM multi-tenant proxy. Per-tenant budgets, PII redaction, and AI safety controls in one box.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--soon">Coming Q3</span>
+            </div>
+            <div class="product-card__links">
+              <span class="product-card__demo product-card__demo--muted">/demo/usage coming soon</span>
+            </div>
+          </div>
+
+          <!-- 7. AiTAgent / AiT Bridge / AiT Teams Bot -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="bot-message-square"></i>
+            </div>
+            <h3 class="product-card__name">AiTAgent / AiT Bridge / AiT Teams Bot</h3>
+            <p class="product-card__tagline">Slack &harr; Teams bridge plus a recursive Drive knowledge agent. Answers from your docs, in your chat.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--live">Live</span>
+            </div>
+            <div class="product-card__links">
+              <a href="/book/" target="_blank" rel="noopener" class="product-card__demo">
+                Contact (tenant-specific)
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 8. AiT AI Services bundle -->
+          <div class="product-card">
+            <div class="product-card__icon" aria-hidden="true">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h3 class="product-card__name">AiT AI Services</h3>
+            <p class="product-card__tagline">Five-SKU bundle: Compliant Copilot, Shadow AI Watch, AI Gateway, Avatar Studio, Voice Concierge.</p>
+            <div class="product-card__meta">
+              <span class="status-badge status-badge--beta">Beta &mdash; Limited</span>
+            </div>
+            <div class="product-card__links">
+              <a href="/book/" target="_blank" rel="noopener" class="product-card__demo">
+                Book a call
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-cta">
+        <h2>Pick a product. Pick a slot. Get a 30-min walkthrough.</h2>
+        <p>One call, one architect, zero sales pitch. We&rsquo;ll show the product live against a sandbox tenant and answer pricing on the spot.</p>
+        <a href="/book/" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Book a Strategy Call</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="template.js"></script>
+  <script>
+    // Initialize Lucide icons after the CDN script + DOM are ready
+    document.addEventListener('DOMContentLoaded', function () {
+      function tryInit() {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+          window.lucide.createIcons();
+        } else {
+          setTimeout(tryInit, 50);
+        }
+      }
+      tryInit();
+    });
+  </script>
+</body>
+</html>
