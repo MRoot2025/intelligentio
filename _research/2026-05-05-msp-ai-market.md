@@ -17,7 +17,7 @@
 | **SentinelOne Purple AI** | Auto-investigation now GA | S1 base | Caught up with CRWD |
 | **Dropzone / Simbian / Anvilogic** | Pure-play AI-SOC startups | Seed/A | Anvilogic surprised analysts |
 
-## Buyer pain points (50–500 employee firm)
+## Buyer pain points (growing-company)
 
 - **Adoption reality lags marketing.** Gartner: AI SOC at "Innovation Trigger", 1–5% market penetration. 17% have prod agents; 60% plan within 24 months.
 - **Governance gap.** 51% cite governance as #1 barrier. Agents enter prod 7–8x faster than governance is built.
