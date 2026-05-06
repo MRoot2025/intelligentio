@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Intelligent iT Blog</title>
+  <link>https://intelligentit.io/pages/blog.html</link>
+  <atom:link href="https://intelligentit.io/pages/blog/rss.xml" rel="self" type="application/rss+xml" />
+  <description>The AI-Native MSP — actionable insights on cybersecurity, compliance, AI operations, and IT strategy.</description>
+  <language>en-US</language>
+  <copyright>Copyright 2026 Intelligent iT</copyright>
+  <lastBuildDate>Wed, 06 May 2026 10:43:24 GMT</lastBuildDate>
+  <generator>Intelligent iT publishing pipeline</generator>
+  <item>
+    <title>Your Brand Is Already Being Quoted by ChatGPT. You Just Don't Know What It's Saying.</title>
+    <link>https://intelligentit.io/pages/blog/geo-ai-search-shift-2026.html</link>
+    <description>Gartner: 25% of search queries shift to AI engines by end of 2026. Forrester: 73% of B2B buyers consult AI before sales. Generative Engine Optimization is the new top of funnel — and most agencies still optimize for Google's 2018 algorithm.</description>
+    <dc:creator>end of</dc:creator>
+    <category>AI &amp;amp; Automation</category>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/geo-ai-search-shift-2026.html</guid>
+  </item>
+  <item>
+    <title>What Is Zero Trust Security and Why Your Business Needs It in 2026</title>
+    <link>https://intelligentit.io/pages/blog/zero-trust-security-guide.html</link>
+    <description>Learn what Zero Trust security is, why traditional perimeter security is obsolete, and how mid-sized businesses can implement a Zero Trust framework in 2026.</description>
+    <dc:creator>Eero Nevaluoto</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/zero-trust-security-guide.html</guid>
+  </item>
+  <item>
+    <title>Voice Deepfake Fraud Hit $2.19B in 2025. What an MSP Should Be Doing About It Now.</title>
+    <link>https://intelligentit.io/pages/blog/voice-deepfake-fraud-msp-response.html</link>
+    <description>Voice deepfake fraud incidents grew 680% YoY in 2025. Cumulative US losses crossed $2.19B. More than 50% of CISOs report a successful deepfake intrusion. Here's the MSP response Intelligent iT is shipping right now.</description>
+    <dc:creator>Manuel Ruiz</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/voice-deepfake-fraud-msp-response.html</guid>
+  </item>
+  <item>
+    <title>SOC 2 Compliance: A Plain-English Guide for Growing Businesses</title>
+    <link>https://intelligentit.io/pages/blog/soc2-compliance-guide.html</link>
+    <description>Everything mid-sized businesses need to know about SOC 2 compliance: the 5 trust service criteria, Type I vs Type II, timeline, costs, and how to get started.</description>
+    <dc:creator>Eero Nevaluoto</dc:creator>
+    <category>Compliance</category>
+    <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/soc2-compliance-guide.html</guid>
+  </item>
+  <item>
+    <title>7 Steps to Protect Your Business from Ransomware in 2026</title>
+    <link>https://intelligentit.io/pages/blog/ransomware-prevention-2026.html</link>
+    <description>Ransomware attacks are more sophisticated than ever. Learn the 7 essential steps mid-sized businesses must take to prevent ransomware attacks in 2026.</description>
+    <dc:creator>Eero Nevaluoto</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/ransomware-prevention-2026.html</guid>
+  </item>
+  <item>
+    <title>Machine Identities Outnumber Humans 45-to-1. Most MSPs Don't Govern Any of Them.</title>
+    <link>https://intelligentit.io/pages/blog/nhi-machine-identity-perimeter-2026.html</link>
+    <description>Cloud Security Alliance: machine identities outnumber humans 45:1 average, 80:1 in cloud-native shops. 78% of orgs have no formal AI-identity policy. Non-Human Identity is the new perimeter — and the market for governance just exploded.</description>
+    <dc:creator>Eero Nevaluoto</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/nhi-machine-identity-perimeter-2026.html</guid>
+  </item>
+  <item>
+    <title>MSP vs. Internal IT Team: Which Is Right for Your Business?</title>
+    <link>https://intelligentit.io/pages/blog/msp-vs-internal-it.html</link>
+    <description>A detailed comparison of managed service providers vs. internal IT teams for mid-sized businesses. Covers cost, scalability, expertise, 24/7 coverage, and the co-managed option.</description>
+    <dc:creator>Manuel Ruiz</dc:creator>
+    <category>IT Strategy</category>
+    <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/msp-vs-internal-it.html</guid>
+  </item>
+  <item>
+    <title>HIPAA Compliance for IT: The Complete 2026 Checklist</title>
+    <link>https://intelligentit.io/pages/blog/hipaa-compliance-checklist.html</link>
+    <description>The complete 2026 HIPAA compliance checklist for IT teams. Covers administrative, physical, and technical safeguards, risk assessments, BAAs, and breach notification requirements.</description>
+    <dc:creator>Eero Nevaluoto</dc:creator>
+    <category>Compliance</category>
+    <pubDate>Thu, 22 Jan 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/hipaa-compliance-checklist.html</guid>
+  </item>
+  <item>
+    <title>78% of Companies Don't Govern Their AI Agents. The 30+ MCP CVEs Make That a Ticking Bomb.</title>
+    <link>https://intelligentit.io/pages/blog/mcp-cve-explosion-agent-governance.html</link>
+    <description>Multi-agent LLM systems fail in production at 41-86% rates per the MAST taxonomy. The MCP transport that wires them has 30+ public CVEs. 78% of organizations don't have any AI-agent governance policy. Here's the gap an MSP can close.</description>
+    <dc:creator>Eero Nevaluoto</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/mcp-cve-explosion-agent-governance.html</guid>
+  </item>
+  <item>
+    <title>EU AI Act Article 50 Goes Live August 2 2026. If You Render Avatar or Voice AI, You're Already Behind.</title>
+    <link>https://intelligentit.io/pages/blog/eu-ai-act-article-50-august-2026.html</link>
+    <description>EU AI Act Article 50 transparency obligations are fully applicable 2 August 2026. The Code of Practice landed in late 2025. Watermarking, provenance ledgers, consent retention — what every MSP serving regulated buyers needs in production by Q3 2026.</description>
+    <dc:creator>Manuel Ruiz</dc:creator>
+    <category>Compliance</category>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/eu-ai-act-article-50-august-2026.html</guid>
+  </item>
+  <item>
+    <title>Vanta Doesn't Run Across Your Client Portfolio. Continuous Audit-as-a-Service Does.</title>
+    <link>https://intelligentit.io/pages/blog/continuous-audit-vs-vanta.html</link>
+    <description>Vanta, Drata, Comp AI, and Delve are excellent direct-to-startup. They aren't designed for an MSP managing client portfolios with multi-tenant evidence segregation. Here's the gap and what we're shipping.</description>
+    <dc:creator>Manuel Ruiz</dc:creator>
+    <category>Compliance</category>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/continuous-audit-vs-vanta.html</guid>
+  </item>
+  <item>
+    <title>How AI Is Transforming IT Operations for Mid-Sized Companies</title>
+    <link>https://intelligentit.io/pages/blog/ai-in-it-operations.html</link>
+    <description>Discover how AI-driven predictive monitoring, automated remediation, and intelligent ticketing are revolutionizing IT operations and delivering measurable ROI for mid-sized businesses.</description>
+    <dc:creator>Manuel Ruiz</dc:creator>
+    <category>AI &amp;amp; Automation</category>
+    <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/ai-in-it-operations.html</guid>
+  </item>
+  <item>
+    <title>The True Cost of IT Downtime: What Every CEO Should Know</title>
+    <link>https://intelligentit.io/pages/blog/true-cost-of-downtime.html</link>
+    <description>IT downtime costs mid-sized businesses far more than they realize. Learn the hidden costs of downtime, how to calculate your risk, and proven prevention strategies.</description>
+    <dc:creator>Tyler Whittall</dc:creator>
+    <category>IT Strategy</category>
+    <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/true-cost-of-downtime.html</guid>
+  </item>
+  <item>
+    <title>5 Cloud Migration Mistakes That Cost Mid-Sized Businesses Thousands</title>
+    <link>https://intelligentit.io/pages/blog/cloud-migration-mistakes.html</link>
+    <description>Avoid the most expensive cloud migration mistakes. Learn the 5 critical errors mid-sized businesses make when moving to the cloud and how to prevent them.</description>
+    <dc:creator>Anthony Senior</dc:creator>
+    <category>Cloud</category>
+    <pubDate>Fri, 30 Jan 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://intelligentit.io/pages/blog/cloud-migration-mistakes.html</guid>
+  </item>
+</channel>
+</rss>
