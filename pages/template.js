@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="copywriting.html" class="dropdown__link">Copy &amp; Content</a>
               <a href="web-development.html" class="dropdown__link">Web Apps &amp; Websites</a>
               <a href="web-analytics.html" class="dropdown__link">Analytics &amp; UX Audit</a>
+              <a href="ait-pulse.html" class="dropdown__link" style="color: #76e6d8;">AiT Pulse</a>
             </div>
           </div>
         </div>
