@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WP-06 Continuous Audit as a Service | Intelligent iT</title>
+  <meta name="description" content="Monthly multi-repo SAST/SCA/UX/market scans, objective-aligned. Findings classified against project objectives by an Anthropic Haiku classifier — reported without humans in the loop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="wp.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47"></a>
+      <nav class="header__nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../ai.html" class="nav-link">AI</a>
+        <a href="index.html" class="nav-link" style="color: #76e6d8;">White Papers</a>
+        <a href="../pages/about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header__actions"><a href="../pages/headquarters.html?contact=true" class="btn btn--teal btn--sm">Book a Strategy Call</a></div>
+    </div>
+  </header>
+
+  <section class="wp-hero">
+    <div class="container">
+      <span class="wp-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="../ai.html">AI</a> / <a href="index.html">White Papers</a> / WP-06</span>
+      <span class="wp-eyebrow">WP-06 &middot; AI security &amp; audit</span>
+      <h1>Continuous Audit as a Service</h1>
+      <p class="wp-lead">Twenty-four codebases. Six tool classes. Monthly cadence. Findings classified against each project&rsquo;s stated objectives. Reported &mdash; not just collected &mdash; with no human in the loop.</p>
+    </div>
+  </section>
+
+  <main class="wp-body">
+    <div class="container">
+
+      <h2>Why "audit" stopped meaning what it used to mean</h2>
+
+      <p>Twenty years ago, audit meant: an external firm visits once a year, asks for screenshots and spreadsheets, and writes a report. Five years ago, it meant: a SaaS like Vanta or Drata pulls API evidence continuously and surfaces gaps to a security team. Today &mdash; for an MSP &mdash; it has to mean something more: every codebase you ship is monitored continuously, every finding is tied to a specific objective, and every regression is reported as it happens.</p>
+
+      <p>The shift is driven by the same regulatory and operational pressures that show up across this paper series. EU AI Act, NIS2, DORA, SEC Climate, NIST AI RMF, TRAIGA, ELVIS, SOC 2 with AI controls. Buyers expect evidence on demand, not annually. Auditors expect retention measured in years, not weeks.</p>
+
+      <p>And almost every existing audit-as-a-service product is sold direct to a single customer. Vanta, Drata, Comp AI, Delve. They are excellent for a single startup proving SOC 2. They are not built for an MSP that needs to run the same posture across <strong>twenty-four of its own products and an arbitrary number of client portfolios</strong>, with multi-tenant evidence segregation and cross-portfolio benchmarking.</p>
+
+      <h2>What we built &mdash; and run on ourselves</h2>
+
+      <p>AiT Audit is a Cloud Run job that fires on the first of every month. In approximately 45 minutes, it does the following for every active codebase under our management:</p>
+
+      <ol>
+        <li><strong>Acquires a project lock</strong> via AiT Coord (see <a href="wp1-agent-coordination.html">WP-01</a>). If a deploy or migration is mid-flight, the audit skips that project this cycle and logs the conflict to the agent-runs table.</li>
+        <li><strong>Clones the repo shallowly</strong> using a fine-grained PAT scoped to the relevant repo set.</li>
+        <li><strong>Runs eight scanners in parallel</strong>: Semgrep (SAST with our centralized rule pack covering OWASP Top 10, Next.js, Clerk RLS, multi-tenant invariants), OSV-Scanner (dependencies), Gitleaks (secrets), Checkov (IaC + GitHub Actions), Knip (unused exports/files/deps), Spectral (OpenAPI lint), and a drift detector that compares the project&rsquo;s lint/SAST/tsconfig against a canonical guardrails registry.</li>
+        <li><strong>Runs DAST on deployed URLs</strong> for repos that expose them: Nuclei templates, Lighthouse CI, axe-core a11y.</li>
+        <li><strong>Classifies every finding</strong> against the project&rsquo;s <code>docs/objectives.md</code> using an Anthropic Haiku classifier with prompt caching. Each finding gets a label: <em>threatens</em>, <em>aligns</em>, <em>adjacent</em>, or <em>out-of-scope</em>. This is the move that turns a scan report from "200 things you might fix" into "the 3 findings that actively threaten your stated quarterly objective."</li>
+        <li><strong>Persists everything</strong> to a Supabase database with row-level security scoped per project: <code>projects</code>, <code>audit_runs</code>, <code>findings</code>, <code>guardrail_violations</code>, <code>market_signals</code>, <code>agent_runs</code>.</li>
+        <li><strong>Renders an IG-branded Markdown report</strong> per project, posts a Block Kit message to the audit Slack channel, sends an email digest, and updates the Trust Portal &ldquo;Audit&rdquo; tab.</li>
+      </ol>
+
+      <p>A companion weekly cron pulls market signals: Hacker News /best filtered by relevance keywords, GitHub trending by topic, NVD CVE feed for our stack components, awesome-list diffs. Each signal is classified against project objectives the same way findings are. The Monday morning digest tells the team what changed in the world that touches what we&rsquo;re building.</p>
+
+      <div class="wp-callout">
+        <div class="wp-callout__label">In production today</div>
+        <p>The first market-intel run wrote 29 real signals to the database in approximately three minutes &mdash; including a Hacker News story titled "Securing a DoD contractor: finding a multi-tenant authorization vulnerability" that mapped directly to objectives in two of our security products. The system is not theoretical. It found something useful on its first run.</p>
+      </div>
+
+      <h2>Why "objective alignment" is the move</h2>
+
+      <p>Every code-quality and security tool produces too many findings. Semgrep alone, on a non-trivial codebase, will surface hundreds of issues. The traditional response is severity filtering: ignore Low, look at High and Critical. This is fine and we do it. But severity is upstream-defined; it does not know what the project is for.</p>
+
+      <p>Reading a project&rsquo;s objectives.md and asking "does this finding threaten Tier-1 objective X" produces a different ranking. A Medium-severity finding on the auth boundary of a multi-tenant SaaS is more important than a High-severity finding in a script that runs once a quarter. The classifier captures that priority. The team gets a pre-triaged list. The reviewer&rsquo;s time goes to decisions, not rediscovery.</p>
+
+      <p>The classifier also does the opposite work. A High-severity finding that&rsquo;s flagged as <em>out-of-scope</em> &mdash; "this Dockerfile lint warning fires on a build script that has never run in production" &mdash; gets surfaced separately so the team can either acknowledge it or correct the misclassification. False-positive triage is a normal step, not a tax.</p>
+
+      <h2>What the centralized guardrails do</h2>
+
+      <p>Every project pulls its lint, SAST, secret-scan, IaC, and OpenAPI rules from a single canonical registry. The audit&rsquo;s drift detector hashes each project&rsquo;s actual config file against the canonical version. Three drift kinds are recognized: <em>missing</em> (config doesn&rsquo;t exist where it should), <em>overridden</em> (config differs and a justified override is documented), and <em>stale-version</em> (config differs and there&rsquo;s no justification &mdash; the project drifted from canonical without anyone deciding to).</p>
+
+      <p>Stale-version drift is its own finding category. The team gets visibility into where guardrails are eroding without being shouted at; the path back to canonical is one PR and a sync script.</p>
+
+      <h2>What this looks like in practice</h2>
+
+      <p>A client signs an MSP agreement that includes "Audit-as-a-Service" as a line item. We bring our 24-codebase posture and apply it to their 8-repo portfolio. Within the first month they receive:</p>
+
+      <ul>
+        <li>The first scan report per repo: SAST findings, dep vulnerabilities, secret-scan results, IaC issues, OpenAPI lint, dead-code map, and an objective-aligned ranking against whatever objectives.md they have (or we co-author one with them at onboarding).</li>
+        <li>A drift report comparing their config to the centralized guardrails &mdash; with a one-PR remediation path.</li>
+        <li>A Trust Portal entry that exposes their audit history to their own auditor on demand. SOC 2 evidence collection for a control family they previously scrambled to assemble annually now exists in retrievable form, dated, signed, retained.</li>
+        <li>A Slack channel where the next month&rsquo;s findings will arrive on the first of the month, and a weekly market-intel digest of what changed in their stack&rsquo;s security and competitive picture.</li>
+      </ul>
+
+      <p>The MSP is doing a hundred dollars of work per repo per month and saving the client thirty thousand dollars of audit-prep labor at year-end. The deliverable is a continuously-current trust posture, not a once-a-year scramble.</p>
+
+      <h2>Why pure-play audit SaaS doesn&rsquo;t cover this</h2>
+
+      <p>Vanta, Drata, Comp AI, and Delve are excellent direct-to-startup products. They are not designed for an MSP managing client portfolios with multi-tenant evidence segregation. Specifically:</p>
+
+      <ul>
+        <li>The MSP cannot give one client&rsquo;s auditor access without giving them a generic dashboard view of unrelated environments.</li>
+        <li>The pricing model assumes one customer per workspace; MSPs end up paying for n workspaces when one would do.</li>
+        <li>Cross-portfolio benchmarking &mdash; "your client&rsquo;s posture is in the 67th percentile of MSPs we serve" &mdash; is structurally absent.</li>
+        <li>Code-level audit (SAST, SCA, drift detection against MSP&rsquo;s own canonical rules) is not the product. They focus on operational evidence; we focus on operational evidence <em>plus</em> the code that produces it.</li>
+      </ul>
+
+      <h2>Where this fits</h2>
+
+      <p>AiT Audit is the operational backbone of the AI portfolio. AiT Coord arbitrates the audits. AiT SOC Sentinel monitors the agent activity that performs them. AiT AI Gateway governs the LLM calls that classify findings. The Trust Portal exposes the results. Every paper in this series ties back to the audit posture; you can read this paper as the engine and the others as the surfaces it powers.</p>
+
+    </div>
+  </main>
+
+  <section class="wp-citations">
+    <div class="container" style="max-width: 760px;">
+      <h3>References</h3>
+      <ul>
+        <li><a href="https://semgrep.dev/docs/">Semgrep documentation</a></li>
+        <li><a href="https://google.github.io/osv-scanner/">OSV-Scanner</a> &mdash; Google&rsquo;s SCA tool</li>
+        <li><a href="https://github.com/gitleaks/gitleaks">Gitleaks</a></li>
+        <li><a href="https://www.checkov.io/">Checkov</a> &mdash; IaC scanning</li>
+        <li><a href="https://knip.dev/">Knip</a></li>
+        <li><a href="https://stoplight.io/open-source/spectral/">Spectral</a> &mdash; OpenAPI lint</li>
+        <li><a href="https://www.helpnetsecurity.com/2026/04/07/comp-ai-open-source-compliance-platform/">Help Net Security</a> &mdash; Comp AI open-source compliance platform</li>
+        <li>Internal: AiT Audit design doc (2026-05) &mdash; available on engagement</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wp-lead-section">
+    <div class="container">
+      <div class="wp-lead-card">
+        <form class="wp-lead-form" onsubmit="return submitLead(event)">
+          <h2>What does your monthly audit look like?</h2>
+          <p class="wp-lead-card__intro">If the answer is "we audit annually" or "Vanta does it" &mdash; that&rsquo;s the conversation. 30-minute call, we walk through Audit-as-a-Service end to end.</p>
+          <div class="field"><label for="email">Work email</label><input type="email" id="email" name="email" required></div>
+          <div class="field"><label for="company">Company</label><input type="text" id="company" name="company" required></div>
+          <div class="field"><label for="message">Repos / posture today (optional)</label><textarea id="message" name="message" rows="2"></textarea></div>
+          <input type="hidden" name="topic_interest" value="continuous-audit">
+          <input type="hidden" name="source_page" value="wp6-continuous-audit">
+          <div class="wp-lead-card__actions"><button type="submit" class="btn btn--teal btn--lg">Request the call</button><span class="wp-lead-card__note">We reply within one business day.</span></div>
+        </form>
+        <div class="wp-lead-success"><h3>Got it &mdash; we&rsquo;ll be in touch.</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;"><p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT for 50&ndash;500 employee firms.</p></div>
+        <div class="footer__col"><h4 class="footer__heading">AI</h4><ul><li><a href="../ai.html">AI Overview</a></li><li><a href="index.html">White Papers</a></li></ul></div>
+        <div class="footer__col"><h4 class="footer__heading">Connect</h4><ul><li>sales@intelligentitnyc.com</li><li>212-730-1844</li></ul></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="_lead.js"></script>
+</body>
+</html>

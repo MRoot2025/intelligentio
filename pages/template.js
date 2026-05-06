@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47">
       </a>
       <nav class="header__nav" id="mainNav">
+        <div class="nav-item has-dropdown" style="position: relative;">
+          <button class="nav-link">AI <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <div class="dropdown">
+            <div class="dropdown__col">
+              <h4 class="dropdown__heading">AI Strategy</h4>
+              <a href="../ai.html" class="dropdown__link">AI Overview &amp; Capabilities</a>
+              <a href="../whitepapers/index.html" class="dropdown__link">White Papers</a>
+              <a href="../ai.html#governance" class="dropdown__link">Compliance &amp; Governance</a>
+              <a href="../ai.html#problems" class="dropdown__link">The Five Hard Problems</a>
+            </div>
+          </div>
+        </div>
         <div class="nav-item has-dropdown">
           <button class="nav-link">Business Outcomes <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
           <div class="dropdown">

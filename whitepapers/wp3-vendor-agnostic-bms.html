@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WP-03 Vendor-Agnostic Building Intelligence | Intelligent iT</title>
+  <meta name="description" content="The BMS market is locked behind controller vendors. AI extracts insight from any of them — WebCTRL, Niagara, Trane. The $14B → $34B opportunity nobody else is building for the MSP channel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="wp.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="../index.html" class="header__logo"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47"></a>
+      <nav class="header__nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../ai.html" class="nav-link">AI</a>
+        <a href="index.html" class="nav-link" style="color: #76e6d8;">White Papers</a>
+        <a href="../pages/about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header__actions"><a href="../pages/headquarters.html?contact=true" class="btn btn--teal btn--sm">Book a Strategy Call</a></div>
+    </div>
+  </header>
+
+  <section class="wp-hero">
+    <div class="container">
+      <span class="wp-hero__breadcrumb"><a href="../index.html">Home</a> / <a href="../ai.html">AI</a> / <a href="index.html">White Papers</a> / WP-03</span>
+      <span class="wp-eyebrow">WP-03 &middot; AI for buildings &amp; IoT</span>
+      <h1>Vendor-Agnostic Building Intelligence</h1>
+      <p class="wp-lead">The BMS market is locked. The AI escape valve is already here &mdash; the channel-friendly multi-tenant version isn&rsquo;t. Yet.</p>
+    </div>
+  </section>
+
+  <main class="wp-body">
+    <div class="container">
+
+      <h2>Where this market actually is</h2>
+
+      <p>The global Building Management Systems market was approximately $14 billion in 2024 and is forecast to reach roughly $34 billion by 2030 &mdash; a compound annual growth rate of about 13%. The growth is real, the dollars are large, and the customer base is fragmented across millions of commercial properties whose mechanical and electrical systems were installed in the last fifty years.</p>
+
+      <p>The systems beneath that growth are not new. WebCTRL (Automated Logic, ALC), Niagara (Tridium / Honeywell), Trane SC+, Siemens Desigo, Distech &mdash; the dominant building-controls platforms have generation-old user interfaces, file-based configuration, and protocols that predate the public internet. Most BMS environments are operated by a facilities team using a Windows workstation that runs an executable from 2014. The vendor lock-in is structural: rip-and-replace is unthinkable in a live building, and APIs are an afterthought.</p>
+
+      <h2>What changed</h2>
+
+      <p>Three things, all in the last 24 months:</p>
+
+      <ol>
+        <li><strong>Modern AI can read trend data and configuration files directly.</strong> A Claude or GPT model can ingest a WebCTRL trend export, a sequence-of-operations PDF, and a control-loop graph &mdash; and produce energy-efficiency recommendations that a controls engineer would have written by hand at 80% accuracy in seconds.</li>
+        <li><strong>Edge collectors are cheap and Cloud Run is reliable.</strong> Putting a small Windows service on a controls server, encrypted-tunneling its trend data to a multi-tenant SaaS, and running fault-detection / setpoint-drift / runtime-anomaly analytics across portfolios of buildings is now a weekend of plumbing, not a six-month integration project.</li>
+        <li><strong>Sustainability reporting is now mandatory in regulated jurisdictions.</strong> SEC Climate Disclosure rules, NYC Local Law 97, Boston BERDO, California SB 253. Building owners need defensible Scope 1/2 numbers per facility per quarter. Spreadsheets do not pass an auditor anymore.</li>
+      </ol>
+
+      <div class="wp-stats">
+        <div><div class="wp-stat__value">$14B</div><div class="wp-stat__label">2024 BMS market</div></div>
+        <div><div class="wp-stat__value">$34B</div><div class="wp-stat__label">2030 BMS market (forecast)</div></div>
+        <div><div class="wp-stat__value">13%</div><div class="wp-stat__label">CAGR 2024–2030</div></div>
+        <div><div class="wp-stat__value">5–25%</div><div class="wp-stat__label">Energy savings from AI fault detection (DOE FDD studies)</div></div>
+      </div>
+
+      <h2>Who&rsquo;s in the market today</h2>
+
+      <p>The competitive landscape splits into three layers:</p>
+
+      <ul>
+        <li><strong>Controller vendors going up-market.</strong> ALC&rsquo;s WebCTRL Cloud, Tridium&rsquo;s Niagara Analytics, Honeywell Forge. These ship with the controllers and lock you into the controller. They are not vendor-agnostic.</li>
+        <li><strong>Independent BMS analytics SaaS.</strong> Facilio, Wattsense, ProptechOS, KGS Buildings (acquired by Carrier). Strong products, all single-tenant or single-portfolio, all sold direct to enterprise property owners. None are channel-built. None have a multi-tenant tenant-scoped agent layer doing fault detection plus writeback control.</li>
+        <li><strong>Security tools</strong>: Tenable OT, Claroty xDome. They monitor BMS networks for intrusion. They do not analyze the BMS for energy efficiency, comfort, or fault detection. Adjacent, not competing.</li>
+      </ul>
+
+      <p>The gap: there is no AI-native, multi-tenant, MSP-channelable BMS analytics product with a writeback path. That is what AiTBMS / AiTCSG is.</p>
+
+      <h2>What we built</h2>
+
+      <p>AiTCSG started as a Stage-3 multi-tenant collector running against the WebCTRL pilot at our HQ Tower in New York. It does three things:</p>
+
+      <ol>
+        <li><strong>Reads anything.</strong> Drivers for WebCTRL trend export, Niagara JACE BACnet, and Trane SC+ ETL pipelines. Adding a new controller family is a one-week integration; we keep the connector code intentionally small.</li>
+        <li><strong>Reasons over what it reads.</strong> Anthropic Claude (configurable to OpenAI or Bedrock) reviews trend data nightly. Faults like simultaneous heating-cooling, terminal-unit setpoint drift, AHU economizer failure, and ventilation under-supply are detected against the building&rsquo;s own historical baseline. The model is grounded in the building&rsquo;s sequence of operations &mdash; not a generic library &mdash; so recommendations are facility-specific.</li>
+        <li><strong>Writes back, gated.</strong> Setpoint changes, schedule adjustments, and zone-rebalancing commands go through a human-in-the-loop approval flow that the facility team controls. Trust Portal exposes every control action with auditor-grade evidence.</li>
+      </ol>
+
+      <p>The pilot at HQ Tower runs on AiTCSG today. The production-grade rebuild lives in MRoot2025/AiTBMS. Both share the multi-tenant Supabase backend, the IG-branded Trust Portal disclosure surface, and AiT Coord for cross-tenant arbitration when one analytics run shouldn&rsquo;t race another building&rsquo;s ingest.</p>
+
+      <div class="wp-callout">
+        <div class="wp-callout__label">The unfair advantage</div>
+        <p>HQ Tower is a real Class A office building running real BMS workloads. We&rsquo;ve been collecting trend data through every season since pilot deployment. The training data and operational reality is not borrowed from a partner. It&rsquo;s ours.</p>
+      </div>
+
+      <h2>Why MSPs win this market, not pure-plays</h2>
+
+      <p>Three reasons:</p>
+
+      <ol>
+        <li><strong>Distribution.</strong> Mid-market property owners already work with their MSP for IT. The relationship and contract structure exist. Selling building intelligence as an extension of that relationship cuts a 9-month enterprise sales cycle to weeks.</li>
+        <li><strong>Trust.</strong> Writeback control over HVAC and lighting touches life safety. Property owners give that authority only to vendors with operational maturity and audit posture. MSPs have both. Pure-play SaaS startups don&rsquo;t.</li>
+        <li><strong>Compliance overlap.</strong> The MSP&rsquo;s SOC 2 already covers Trust Portal evidence collection. Adding a building-controls module to that posture is incremental, not novel.</li>
+      </ol>
+
+      <h2>What this looks like in practice</h2>
+
+      <p>A multi-property real-estate firm operates 11 buildings across the Northeast. Each building has different controls vendors &mdash; six WebCTRL, three Niagara, two Trane. Today they receive 11 separate emailed PDFs from 11 different facilities engineers, each formatted differently, none aggregated.</p>
+
+      <p>AiTCSG deploys collectors to each building over four weeks. Within the first month, the multi-tenant analytics surface ten faults the engineers had missed: a heating coil running simultaneously with cooling on a Trane RTU, an outside-air damper stuck closed on a Niagara-controlled building (failed economizer mode), three buildings running unoccupied schedules during occupied hours. Estimated annualized energy savings across the portfolio in the high six figures &mdash; documented per-building, evidence-archived in Trust Portal, defensible to the auditor.</p>
+
+      <p>The MSP delivering AiTCSG owns the relationship. The building owners own the data. We license the technology.</p>
+
+      <h2>Compliance, ethics, and what we don&rsquo;t do</h2>
+
+      <p>We don&rsquo;t fully automate writeback. Every control change is reviewed by the facility team with at least the operator&rsquo;s name, the model&rsquo;s reasoning, and a rollback path attached. The reasons are obvious: occupant safety, regulatory liability, and the simple fact that a hallucinated setpoint at 3am is a frozen pipe.</p>
+
+      <p>We log every analytics run and every control action with a 7-year retention policy. SEC Climate Disclosure, NYC LL97, BERDO, SB 253 evidence is exportable in the auditor&rsquo;s preferred format with a tag-based query.</p>
+
+      <p>We don&rsquo;t train customer data into shared models. Tenant-isolated embeddings, tenant-isolated finetunes if requested, and a destroy-on-offboarding process that&rsquo;s exercised quarterly.</p>
+
+      <h2>Where this fits</h2>
+
+      <p>AiT for Buildings is one of five capability surfaces in our AI portfolio. It depends on AiT Coord for cross-tenant arbitration, AiT Audit for compliance evidence, and the Trust Portal for client-facing transparency. Read the <a href="wp4-compliant-ai-gateway.html">compliant gateway paper</a> for how the LLM calls themselves are governed in this surface, or the <a href="wp6-continuous-audit.html">continuous audit paper</a> for how the surrounding code is monitored.</p>
+
+    </div>
+  </main>
+
+  <section class="wp-citations">
+    <div class="container" style="max-width: 760px;">
+      <h3>References</h3>
+      <ul>
+        <li><a href="https://facilio.com/blog/best-building-management-software/">Facilio</a> &mdash; competitive BMS software review (2026)</li>
+        <li><a href="https://www.energy.gov/eere/buildings/fault-detection-and-diagnostics-fdd">DOE EERE</a> &mdash; FDD energy savings range</li>
+        <li><a href="https://www.sec.gov/news/press-release/2024-31">SEC Climate Disclosure rules</a></li>
+        <li><a href="https://www.nyc.gov/site/sustainability/codes/local-law-97.page">NYC Local Law 97</a></li>
+        <li>Internal: AiTCSG Stage-3 design + HQ Tower pilot operational data</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wp-lead-section">
+    <div class="container">
+      <div class="wp-lead-card">
+        <form class="wp-lead-form" onsubmit="return submitLead(event)">
+          <h2>What controllers are in your portfolio?</h2>
+          <p class="wp-lead-card__intro">Tell us roughly. We&rsquo;ll spec a 30-day pilot for one building and show you the connector path for the rest.</p>
+          <div class="field"><label for="email">Work email</label><input type="email" id="email" name="email" required></div>
+          <div class="field"><label for="company">Company</label><input type="text" id="company" name="company" required></div>
+          <div class="field"><label for="message">Buildings + controllers (rough)</label><textarea id="message" name="message" rows="2" placeholder="e.g. 4 WebCTRL, 2 Niagara, ~250k sqft total"></textarea></div>
+          <input type="hidden" name="topic_interest" value="bms">
+          <input type="hidden" name="source_page" value="wp3-vendor-agnostic-bms">
+          <div class="wp-lead-card__actions"><button type="submit" class="btn btn--teal btn--lg">Request the call</button><span class="wp-lead-card__note">We reply within one business day.</span></div>
+        </form>
+        <div class="wp-lead-success"><h3>Got it &mdash; we&rsquo;ll be in touch.</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;"><p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT for 50&ndash;500 employee firms.</p></div>
+        <div class="footer__col"><h4 class="footer__heading">AI</h4><ul><li><a href="../ai.html">AI Overview</a></li><li><a href="index.html">White Papers</a></li></ul></div>
+        <div class="footer__col"><h4 class="footer__heading">Connect</h4><ul><li>sales@intelligentitnyc.com</li><li>212-730-1844</li></ul></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="_lead.js"></script>
+</body>
+</html>

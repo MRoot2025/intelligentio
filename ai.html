@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI at Intelligent iT | The AI-Native MSP — Agentic Operations, AI SOC, AI Gateway, Continuous Audit</title>
+  <meta name="description" content="Intelligent iT runs its MSP on the AI we ship. Multi-tenant agent coordination, AI-native SOC, vendor-agnostic building intelligence, compliant LLM gateway, continuous audit. Read our white papers on the hard problems no one else is solving.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <!-- HubSpot Tracking Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+  <style>
+    /* AI page-specific layout — extends styles.css; keep all tokens consistent */
+    .ai-hero { padding: 96px 0 80px; background: linear-gradient(135deg, #1b5ace 0%, #00b19b 100%); position: relative; overflow: hidden; }
+    .ai-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(101, 255, 227, 0.15) 0%, transparent 60%); pointer-events: none; }
+    .ai-hero__inner { position: relative; z-index: 2; max-width: 920px; }
+    .ai-hero h1 { font-size: 64px; line-height: 1.05; font-weight: 600; margin-bottom: 24px; }
+    .ai-hero p.lead { font-size: 22px; line-height: 1.5; color: #edeff7; margin-bottom: 36px; max-width: 760px; }
+    .ai-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .ai-section { padding: 80px 0; }
+    .ai-section--alt { background: #111111; }
+    .ai-section__header { max-width: 820px; margin-bottom: 48px; }
+    .ai-section__eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #76e6d8; margin-bottom: 12px; }
+    .ai-section h2 { font-size: 44px; line-height: 1.1; font-weight: 600; margin-bottom: 20px; }
+    .ai-section p.lead { font-size: 19px; line-height: 1.6; color: #dde1ed; }
+
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px; }
+    .problem-card { background: #191919; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; transition: border-color 0.2s ease, transform 0.2s ease; }
+    .problem-card:hover { border-color: rgba(118,230,216,0.35); transform: translateY(-2px); }
+    .problem-card__num { font-family: 'Inter', monospace; font-size: 13px; color: #76e6d8; font-weight: 600; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .problem-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; line-height: 1.25; }
+    .problem-card p { color: #bcbfcc; font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
+    .problem-card__product { font-size: 13px; color: #76e6d8; font-weight: 500; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    .capability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .cap-card { background: linear-gradient(135deg, #155065, #1e4c4a); border-radius: 16px; padding: 28px; min-height: 240px; display: flex; flex-direction: column; }
+    .cap-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+    .cap-card p.cap-card__sub { font-size: 14px; color: rgba(237,239,247,0.85); margin-bottom: 16px; }
+    .cap-card ul { list-style: none; padding: 0; margin-top: auto; }
+    .cap-card li { font-size: 14px; color: #ffffff; padding: 6px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+    .cap-card li:first-child { border-top: none; }
+    .cap-card li code { font-family: 'Inter', monospace; font-size: 12px; color: #76e6d8; background: rgba(0,0,0,0.25); padding: 2px 6px; border-radius: 4px; margin-right: 6px; }
+
+    .governance-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .gov-pill { background: #191919; border: 1px solid rgba(118,230,216,0.2); border-radius: 12px; padding: 20px; }
+    .gov-pill__title { font-size: 14px; color: #76e6d8; font-weight: 600; margin-bottom: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .gov-pill p { font-size: 14px; color: #dde1ed; line-height: 1.5; }
+
+    .wp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 22px; }
+    .wp-card { background: #191919; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; transition: all 0.2s ease; text-decoration: none; color: inherit; }
+    .wp-card:hover { border-color: rgba(118,230,216,0.35); transform: translateY(-2px); }
+    .wp-card__num { font-size: 12px; color: #76e6d8; font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px; }
+    .wp-card h3 { font-size: 19px; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
+    .wp-card p { color: #bcbfcc; font-size: 14px; line-height: 1.55; flex-grow: 1; margin-bottom: 16px; }
+    .wp-card__cta { font-size: 14px; color: #76e6d8; font-weight: 500; }
+
+    /* Lead-capture form */
+    .leadform-section { background: linear-gradient(135deg, #1b5ace 0%, #00b19b 50%, #0067b1 100%); padding: 80px 0; }
+    .leadform-card { max-width: 720px; margin: 0 auto; background: #0c0c0c; border-radius: 20px; padding: 48px; border: 1px solid rgba(118,230,216,0.2); }
+    .leadform-card h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+    .leadform-card p { color: #dde1ed; font-size: 17px; line-height: 1.55; margin-bottom: 28px; }
+    .leadform .field { display: block; margin-bottom: 18px; }
+    .leadform label { display: block; font-size: 13px; color: #bcbfcc; font-weight: 500; margin-bottom: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .leadform input, .leadform select, .leadform textarea { width: 100%; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #191919; color: #ffffff; font-family: inherit; font-size: 16px; transition: border-color 0.2s; }
+    .leadform input:focus, .leadform select:focus, .leadform textarea:focus { outline: none; border-color: #76e6d8; }
+    .leadform__actions { display: flex; gap: 12px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+    .leadform__note { font-size: 13px; color: #bcbfcc; }
+    .leadform__success { display: none; background: rgba(118,230,216,0.08); border: 1px solid rgba(118,230,216,0.3); border-radius: 12px; padding: 20px; color: #76e6d8; }
+    .leadform.is-submitted .leadform__form { display: none; }
+    .leadform.is-submitted .leadform__success { display: block; }
+
+    @media (max-width: 768px) {
+      .ai-hero h1 { font-size: 38px; }
+      .ai-hero p.lead { font-size: 18px; }
+      .ai-section h2 { font-size: 32px; }
+      .leadform-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/logo-green.png" alt="Intelligent iT" width="170" height="47">
+      </a>
+      <nav class="header__nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pages/products.html" class="nav-link">Products</a>
+        <a href="ai.html" class="nav-link" style="color: #76e6d8;">AI</a>
+        <a href="whitepapers/index.html" class="nav-link">White Papers</a>
+        <a href="pages/about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header__actions">
+        <a href="pages/headquarters.html?contact=true" class="btn btn--teal btn--sm">Book a Strategy Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="ai-hero">
+    <div class="container ai-hero__inner">
+      <span class="ai-section__eyebrow" style="color: rgba(255,255,255,0.85);">The AI-Native MSP</span>
+      <h1>AI that runs your IT — not the other way around.</h1>
+      <p class="lead">Most MSPs talk about AI. We ship the AI we use ourselves to run our own MSP. Twenty-four products. One coordination layer. Continuous audit. Multi-tenant by default. Compliance baked in.</p>
+      <div class="ai-hero__actions">
+        <a href="#problems" class="btn btn--white btn--lg">See the hard problems we solve</a>
+        <a href="whitepapers/index.html" class="btn btn--outline-teal btn--lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">Read the white papers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FIVE HARD PROBLEMS -->
+  <section class="ai-section" id="problems">
+    <div class="container">
+      <div class="ai-section__header">
+        <span class="ai-section__eyebrow">The five hard problems</span>
+        <h2>The problems no one is fully solving — and how we&rsquo;re solving them.</h2>
+        <p class="lead">Every claim on this page maps to a product we&rsquo;ve shipped or are shipping. No vaporware. No prophetic marketing.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-card__num">PROBLEM 01</div>
+          <h3>Multi-agent systems fail in production 41–86% of the time.</h3>
+          <p>Hallucinations cascade across hops. False consensus locks in. The MCP transport that wires it all together has 30+ public CVEs. Specification ambiguity, coordination breakdown, verification gaps &mdash; this is the hard one nobody owns.</p>
+          <p class="problem-card__product">Our answer: <strong>AiT Coord</strong> &mdash; JWT-signed multi-agent orchestrator with per-tenant scoping, idempotent tool calls, and audit trails for every agent invocation.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__num">PROBLEM 02</div>
+          <h3>LLM security is OWASP&rsquo;s LLM01 for a reason &mdash; nothing fully fixes it.</h3>
+          <p>Prompt injection has no general defense. HuggingFace hosts 1.2M models, July 2025 disclosed an attack vector across 1.5M files. Malicious LoRA adapters and supply-chain poisoning are operational, not theoretical.</p>
+          <p class="problem-card__product">Our answer: <strong>AiT SOC Sentinel</strong> &mdash; AI-native SOC that watches the agents themselves: prompt-injection detection, model-supply-chain attestation, anomalous tool-call alerting.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__num">PROBLEM 03</div>
+          <h3>RAG retrieves the wrong document ~40% of the time.</h3>
+          <p>And the LLM still answers confidently and well-formatted. Faithfulness, citation coverage, semantic drift &mdash; these are the binding metrics. Vector indexes go stale silently and your compliance Q&amp;A bot answers against last year&rsquo;s policy doc.</p>
+          <p class="problem-card__product">Our answer: <strong>AiT Knowledgebase Agent</strong> + <strong>Trust Portal</strong> &mdash; citation-bound retrieval, freshness monitoring, and per-tenant index ownership.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__num">PROBLEM 04</div>
+          <h3>Enterprise LLM spend hit $8.4B in 2025. None of it is governed at the MSP layer.</h3>
+          <p>Multi-tenant gateways must enforce per-client quotas, model routing, regional egress, audit logs, and PII redaction. Cloudflare AI Gateway has no RBAC. Portkey is enterprise-direct, not MSP-channel.</p>
+          <p class="problem-card__product">Our answer: <strong>AiT AI Gateway</strong> &mdash; LiteLLM control plane + Cloudflare edge: per-tenant virtual keys, spend logs, prompt caching, regional egress, MSP-resold to your clients.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__num">PROBLEM 05</div>
+          <h3>EU AI Act Article 50 hits Aug 2 2026. TRAIGA already fined $200K/violation.</h3>
+          <p>Watermarking, provenance ledgers, and consent retention are now mandatory for AI-generated content in regulated verticals. NIST AI RMF substantial compliance is the affirmative defense. Most MSPs aren&rsquo;t ready.</p>
+          <p class="problem-card__product">Our answer: <strong>AiT Audit</strong> + <strong>AiT Avatar Studio</strong> + <strong>Trust Portal</strong> &mdash; continuous audit, watermarked outputs, consent archived 7 years per ELVIS/TRAIGA.</p>
+        </div>
+        <div class="problem-card" style="border-color: rgba(118,230,216,0.25);">
+          <div class="problem-card__num">PROBLEM 06 &mdash; THE META-PROBLEM</div>
+          <h3>Most MSPs sell AI. Almost none run on the AI they sell.</h3>
+          <p>If your MSP cannot show you their own production agents, audit trail, and governance posture, ask why. We run our entire 24-project codebase under the same systems we ship to clients. Continuous audit. Multi-tenant. Single pane.</p>
+          <p class="problem-card__product">Our answer: this whole page. Read on, or talk to us about deploying any of it in your environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITY GRID -->
+  <section class="ai-section ai-section--alt" id="capabilities">
+    <div class="container">
+      <div class="ai-section__header">
+        <span class="ai-section__eyebrow">What we ship</span>
+        <h2>Five capability surfaces. Twenty-four products. One coordination layer.</h2>
+        <p class="lead">Every product below is in production or in active build for our own MSP operations. Click through any service for the details, or skip ahead to the white papers.</p>
+      </div>
+      <div class="capability-grid">
+        <div class="cap-card">
+          <h3>Agentic AI Operations</h3>
+          <p class="cap-card__sub">Cross-project orchestration. Slack &amp; Teams bots. Recursive Drive knowledge.</p>
+          <ul>
+            <li><code>AiT Coord</code> JWT-signed multi-agent orchestrator (MCP)</li>
+            <li><code>AiTAgent</code> Slack bot with Drive KB</li>
+            <li><code>AiT Teams Bot</code> Microsoft Teams equivalent</li>
+            <li><code>AiT Bridge</code> Slack &harr; Teams message bridge</li>
+            <li><code>Zendesk-Claude</code> auto-drafted ticket replies</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <h3>AI Security &amp; Audit</h3>
+          <p class="cap-card__sub">SOC oversight. Continuous audit. Multi-vendor MCP for security stack.</p>
+          <ul>
+            <li><code>AiT SOC Sentinel</code> AI-SOC oversight + multi-tenant governance</li>
+            <li><code>AiT Audit</code> monthly cross-project security/quality/UX scans</li>
+            <li><code>AiT Trust Portal</code> customer-facing trust + SOC 2 disclosures</li>
+            <li><code>security-mcp</code> unified MCP for Blackpoint, Trustifi, BSN</li>
+            <li><code>AiTSharePAudit</code> M365 SharePoint permission audit + remediation</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <h3>AI for Buildings &amp; IoT</h3>
+          <p class="cap-card__sub">Vendor-agnostic BMS analytics on top of WebCTRL, Niagara, Trane.</p>
+          <ul>
+            <li><code>AiTBMS</code> production multi-tenant BMS analytics + control</li>
+            <li><code>AiTCSG</code> pilot Stage-3 multi-tenant collector</li>
+            <li>BMS-AI white paper: read why this market is ours to lose</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <h3>AI Sales &amp; Customer Surface</h3>
+          <p class="cap-card__sub">CRM with AI-drafted outreach. Avatar &amp; voice agents. Sales-enablement audit.</p>
+          <ul>
+            <li><code>AiT CRM</code> AI-powered CRM (Front Row Group reference impl)</li>
+            <li><code>AiT Pulse</code> sales-enablement audit (AI-SEO + email + web + reputation)</li>
+            <li><code>AiT Avatar Studio</code> white-label avatar video (HeyGen + Tavus + ElevenLabs)</li>
+            <li><code>AiT Voice Concierge</code> voice agents (Retell + Twilio + ElevenLabs)</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <h3>AI MSP Platform</h3>
+          <p class="cap-card__sub">The plumbing other MSPs are missing.</p>
+          <ul>
+            <li><code>AiT AI Gateway</code> LiteLLM + Cloudflare edge, per-tenant virtual keys</li>
+            <li><code>AiTWatchdog</code> outage alerts + monthly security newsletter</li>
+            <li><code>AiTTeamTailor</code> Teamtailor + Cronofy + Workspace integration</li>
+            <li><code>Intelligent View</code> SaaS dashboard scaffold + design system</li>
+            <li><code>itadmin</code> MSP admin tooling (GAM, Gmail, M365, GCP playbooks)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE & GOVERNANCE -->
+  <section class="ai-section" id="governance">
+    <div class="container">
+      <div class="ai-section__header">
+        <span class="ai-section__eyebrow">Compliance &amp; governance</span>
+        <h2>Built for the regulatory wave that hits in 90 days.</h2>
+        <p class="lead">EU AI Act Article 50 takes full effect 2 August 2026. TRAIGA is already enforceable at $200,000 per violation. Our products are designed around the standards your auditors will ask about, not around the ones in vendor marketing decks.</p>
+      </div>
+      <div class="governance-row">
+        <div class="gov-pill">
+          <div class="gov-pill__title">EU AI Act Art. 50</div>
+          <p>Watermarked outputs and machine-readable provenance on every avatar &amp; voice render. Consent ledger archived 7 years. Code of Practice tracking included.</p>
+        </div>
+        <div class="gov-pill">
+          <div class="gov-pill__title">NIST AI RMF</div>
+          <p>Substantial-compliance posture mapped to 230 control objectives. Treasury Feb 2026 framework cross-referenced to SOC 2 controls in our Trust Portal.</p>
+        </div>
+        <div class="gov-pill">
+          <div class="gov-pill__title">TRAIGA (Texas HB 149)</div>
+          <p>Affirmative-defense documentation auto-generated from our Audit system. Continuous evidence collection &mdash; not annual scrambles.</p>
+        </div>
+        <div class="gov-pill">
+          <div class="gov-pill__title">SOC 2 + ISO 42001</div>
+          <p>AI-specific control families surfaced via Trust Portal. Drummond, Schellman, A-LIGN attestations supported.</p>
+        </div>
+        <div class="gov-pill">
+          <div class="gov-pill__title">ELVIS Act / Right of Publicity</div>
+          <p>Synthesia explicitly excluded from our stack (their ToS bans white-label resale). Signed consent video archived per state-by-state retention rules.</p>
+        </div>
+        <div class="gov-pill">
+          <div class="gov-pill__title">OWASP LLM Top 10</div>
+          <p>Sentinel SOC monitors every LLM01–LLM10 attack class against your tenants. Every agent action audit-logged with rule-id correlation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHITE PAPERS -->
+  <section class="ai-section ai-section--alt" id="whitepapers">
+    <div class="container">
+      <div class="ai-section__header">
+        <span class="ai-section__eyebrow">White papers</span>
+        <h2>Six deep dives on the hard problems &mdash; with the receipts.</h2>
+        <p class="lead">Each paper ties back to a product we&rsquo;re running in production. No gated downloads. No marketing fluff. Read them all.</p>
+      </div>
+      <div class="wp-grid">
+        <a class="wp-card" href="whitepapers/wp1-agent-coordination.html">
+          <div class="wp-card__num">WP-01</div>
+          <h3>Cross-Project Agent Coordination &mdash; how an MSP runs 24 codebases on one orchestrator</h3>
+          <p>The unsolved hard problem of agent-to-agent arbitration. Why MAST&rsquo;s 41&ndash;86% failure rate is what you should fear most. The JWT-signed MCP coord pattern we built and run.</p>
+          <span class="wp-card__cta">Read &rarr;</span>
+        </a>
+        <a class="wp-card" href="whitepapers/wp2-ai-soc-truth.html">
+          <div class="wp-card__num">WP-02</div>
+          <h3>AI-Native MSP Security &mdash; from rules to reasoning in the SOC</h3>
+          <p>Why traditional SIEM/EDR fall short for agent-driven attack surface. How LLMs and SecOps complement (and don&rsquo;t replace) each other. The 2026 AI-SOC market scan.</p>
+          <span class="wp-card__cta">Read &rarr;</span>
+        </a>
+        <a class="wp-card" href="whitepapers/wp3-vendor-agnostic-bms.html">
+          <div class="wp-card__num">WP-03</div>
+          <h3>Vendor-Agnostic Building Intelligence &mdash; 50-year-old controls meet modern AI</h3>
+          <p>The BMS market is locked. AI extracts insight from any controller &mdash; WebCTRL, Niagara, Trane. The $14B&rarr;$34B opportunity nobody else is building for the MSP channel.</p>
+          <span class="wp-card__cta">Read &rarr;</span>
+        </a>
+        <a class="wp-card" href="whitepapers/wp4-compliant-ai-gateway.html">
+          <div class="wp-card__num">WP-04</div>
+          <h3>The Compliant AI Gateway &mdash; multi-tenant LLM governance for regulated MSPs</h3>
+          <p>Per-tenant virtual keys, budgets, audit logs, PII redaction. EU AI Act and HIPAA paths from day one. Why we built our own instead of buying.</p>
+          <span class="wp-card__cta">Read &rarr;</span>
+        </a>
+        <a class="wp-card" href="whitepapers/wp5-synthetic-identity.html">
+          <div class="wp-card__num">WP-05</div>
+          <h3>Synthetic Identity Risk &mdash; avatar/voice agents and the rise of consent-archived AI</h3>
+          <p>Voice deepfake fraud up 680% YoY. Article 50 watermarking effective 2 Aug 2026. ELVIS/TRAIGA consent retention. Why we banned Synthesia from our stack.</p>
+          <span class="wp-card__cta">Read &rarr;</span>
+        </a>
+        <a class="wp-card" href="whitepapers/wp6-continuous-audit.html">
+          <div class="wp-card__num">WP-06</div>
+          <h3>Continuous Audit as a Service &mdash; monthly multi-repo scans, objective-aligned</h3>
+          <p>Automated security, quality, UX, and competitive-intel scans across every repo we ship. Findings persisted, classified against project objectives, and reported &mdash; without humans in the loop.</p>
+          <span class="wp-card__cta">Read &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE -->
+  <section class="leadform-section" id="connect">
+    <div class="container">
+      <div class="leadform-card leadform" id="leadForm">
+        <div class="leadform__form">
+          <h2>Talk to an architect.</h2>
+          <p>Skip the demo carousel. Get a 30-minute call with whoever is going to build the thing in your environment &mdash; not a sales engineer reading from a deck.</p>
+          <form id="hsLeadForm" onsubmit="return submitLead(event)">
+            <div class="field">
+              <label for="lf_email">Work email</label>
+              <input type="email" id="lf_email" name="email" required placeholder="you@yourcompany.com">
+            </div>
+            <div class="field">
+              <label for="lf_company">Company</label>
+              <input type="text" id="lf_company" name="company" required>
+            </div>
+            <div class="field">
+              <label for="lf_topic">What&rsquo;s the most relevant topic?</label>
+              <select id="lf_topic" name="topic_interest" required>
+                <option value="">&mdash; select &mdash;</option>
+                <option value="agent-coordination">Multi-agent operations / orchestration</option>
+                <option value="ai-soc">AI-native SOC / security oversight</option>
+                <option value="bms">Vendor-agnostic building intelligence</option>
+                <option value="ai-gateway">Compliant LLM gateway / governance</option>
+                <option value="synthetic-identity">Avatar / voice agents / synthetic identity</option>
+                <option value="continuous-audit">Continuous audit / multi-repo hygiene</option>
+                <option value="general">General AI strategy</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="lf_notes">What are you trying to solve? (optional)</label>
+              <textarea id="lf_notes" name="message" rows="3" placeholder="One sentence is fine."></textarea>
+            </div>
+            <input type="hidden" name="source_page" value="ai-pillar">
+            <div class="leadform__actions">
+              <button type="submit" class="btn btn--teal btn--lg">Request the call</button>
+              <span class="leadform__note">No marketing list. We reply within one business day.</span>
+            </div>
+          </form>
+        </div>
+        <div class="leadform__success">
+          <h3 style="margin-bottom: 8px;">Got it &mdash; we&rsquo;ll be in touch.</h3>
+          <p style="margin: 0;">Manuel or one of the IG architects will reach out within one business day. Meanwhile, the white papers are linked above.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <img src="assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;">
+          <p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT services and cybersecurity for 50&ndash;500 employee firms. Headquartered in New York City.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">AI Strategy</h4>
+          <ul>
+            <li><a href="ai.html">AI Overview</a></li>
+            <li><a href="whitepapers/index.html">White Papers</a></li>
+            <li><a href="pages/products.html">Products</a></li>
+            <li><a href="ai.html#governance">Compliance &amp; Governance</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Services</h4>
+          <ul>
+            <li><a href="pages/managed-soc.html">Managed SOC</a></li>
+            <li><a href="pages/ai-workflow-automation.html">AI Workflow Automation</a></li>
+            <li><a href="pages/fully-managed-it.html">Fully Managed IT</a></li>
+            <li><a href="pages/co-managed-it.html">Co-Managed IT</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Company</h4>
+          <ul>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/leadership.html">Leadership</a></li>
+            <li><a href="pages/careers.html">Careers</a></li>
+            <li><a href="pages/headquarters.html">Headquarters</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Connect</h4>
+          <ul>
+            <li>sales@intelligentitnyc.com</li>
+            <li>212-730-1844</li>
+            <li><a href="pages/headquarters.html?contact=true">Book a call</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LEAD CAPTURE: HubSpot Forms API -->
+  <script>
+    // Posts to HubSpot Forms API. Portal ID is from the existing tracking pixel (242795522).
+    // Form ID needs to be created once in HubSpot dashboard (one form, all WPs reuse it via the topic_interest hidden field).
+    // Until the form ID is set, the submit handler falls back to a mailto: that opens the user's email client.
+    const HUBSPOT_PORTAL_ID = '242795522';
+    const HUBSPOT_FORM_ID = ''; // TODO: paste form GUID from HubSpot dashboard
+
+    async function submitLead(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const fields = [
+        { objectTypeId: '0-1', name: 'email',   value: data.get('email') },
+        { objectTypeId: '0-1', name: 'company', value: data.get('company') },
+        { objectTypeId: '0-1', name: 'topic_interest', value: data.get('topic_interest') },
+        { objectTypeId: '0-1', name: 'message', value: data.get('message') || '' },
+        { objectTypeId: '0-1', name: 'source_page', value: data.get('source_page') }
+      ];
+
+      if (HUBSPOT_FORM_ID) {
+        try {
+          const res = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fields, context: { pageUri: window.location.href, pageName: document.title } })
+          });
+          if (!res.ok) throw new Error('HubSpot rejected: ' + res.status);
+        } catch (err) {
+          console.error('HubSpot submit failed', err);
+          // Fall back so we never lose a lead
+          window.location.href = `mailto:sales@intelligentitnyc.com?subject=AI%20strategy%20call%20%E2%80%94%20${encodeURIComponent(data.get('topic_interest'))}&body=${encodeURIComponent('Email: ' + data.get('email') + '\nCompany: ' + data.get('company') + '\n\n' + (data.get('message') || ''))}`;
+          return false;
+        }
+      } else {
+        // Form ID not yet configured — fall back to mailto so leads still arrive
+        window.location.href = `mailto:sales@intelligentitnyc.com?subject=AI%20strategy%20call%20%E2%80%94%20${encodeURIComponent(data.get('topic_interest'))}&body=${encodeURIComponent('Email: ' + data.get('email') + '\nCompany: ' + data.get('company') + '\n\n' + (data.get('message') || ''))}`;
+        return false;
+      }
+      document.getElementById('leadForm').classList.add('is-submitted');
+      return false;
+    }
+  </script>
+</body>
+</html>
