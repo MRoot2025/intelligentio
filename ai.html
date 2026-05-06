@@ -119,43 +119,31 @@
   <section class="ai-section" id="problems">
     <div class="container">
       <div class="ai-section__header">
-        <span class="ai-section__eyebrow">The five hard problems</span>
+        <span class="ai-section__eyebrow">The hard problems</span>
         <h2>The problems no one is fully solving — and how we&rsquo;re solving them.</h2>
         <p class="lead">Every claim on this page maps to a product we&rsquo;ve shipped or are shipping. No vaporware. No prophetic marketing.</p>
       </div>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="problem-card__num">PROBLEM 01</div>
-          <h3>Multi-agent systems fail in production 41–86% of the time.</h3>
-          <p>Hallucinations cascade across hops. False consensus locks in. The MCP transport that wires it all together has 30+ public CVEs. Specification ambiguity, coordination breakdown, verification gaps &mdash; this is the hard one nobody owns.</p>
-          <p class="problem-card__product">Our answer: <strong>AiT Coord</strong> &mdash; JWT-signed multi-agent orchestrator with per-tenant scoping, idempotent tool calls, and audit trails for every agent invocation.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__num">PROBLEM 02</div>
-          <h3>LLM security is OWASP&rsquo;s LLM01 for a reason &mdash; nothing fully fixes it.</h3>
-          <p>Prompt injection has no general defense. HuggingFace hosts 1.2M models, July 2025 disclosed an attack vector across 1.5M files. Malicious LoRA adapters and supply-chain poisoning are operational, not theoretical.</p>
-          <p class="problem-card__product">Our answer: <strong>AiT SOC Sentinel</strong> &mdash; AI-native SOC that watches the agents themselves: prompt-injection detection, model-supply-chain attestation, anomalous tool-call alerting.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-card__num">PROBLEM 03</div>
           <h3>RAG retrieves the wrong document ~40% of the time.</h3>
           <p>And the LLM still answers confidently and well-formatted. Faithfulness, citation coverage, semantic drift &mdash; these are the binding metrics. Vector indexes go stale silently and your compliance Q&amp;A bot answers against last year&rsquo;s policy doc.</p>
           <p class="problem-card__product">Our answer: <strong>AiT Knowledgebase Agent</strong> + <strong>Trust Portal</strong> &mdash; citation-bound retrieval, freshness monitoring, and per-tenant index ownership.</p>
         </div>
         <div class="problem-card">
-          <div class="problem-card__num">PROBLEM 04</div>
+          <div class="problem-card__num">PROBLEM 02</div>
           <h3>Enterprise LLM spend hit $8.4B in 2025. None of it is governed at the MSP layer.</h3>
           <p>Multi-tenant gateways must enforce per-client quotas, model routing, regional egress, audit logs, and PII redaction. Cloudflare AI Gateway has no RBAC. Portkey is enterprise-direct, not MSP-channel.</p>
           <p class="problem-card__product">Our answer: <strong>AiT AI Gateway</strong> &mdash; LiteLLM control plane + Cloudflare edge: per-tenant virtual keys, spend logs, prompt caching, regional egress, MSP-resold to your clients.</p>
         </div>
         <div class="problem-card">
-          <div class="problem-card__num">PROBLEM 05</div>
+          <div class="problem-card__num">PROBLEM 03</div>
           <h3>EU AI Act Article 50 hits Aug 2 2026. TRAIGA already fined $200K/violation.</h3>
           <p>Watermarking, provenance ledgers, and consent retention are now mandatory for AI-generated content in regulated verticals. NIST AI RMF substantial compliance is the affirmative defense. Most MSPs aren&rsquo;t ready.</p>
           <p class="problem-card__product">Our answer: <strong>AiT Audit</strong> + <strong>AiT Avatar Studio</strong> + <strong>Trust Portal</strong> &mdash; continuous audit, watermarked outputs, consent archived 7 years per ELVIS/TRAIGA.</p>
         </div>
         <div class="problem-card" style="border-color: rgba(118,230,216,0.25);">
-          <div class="problem-card__num">PROBLEM 06 &mdash; THE META-PROBLEM</div>
+          <div class="problem-card__num">PROBLEM 04 &mdash; THE META-PROBLEM</div>
           <h3>Most MSPs sell AI. Almost none run on the AI they sell.</h3>
           <p>If your MSP cannot show you their own production agents, audit trail, and governance posture, ask why. We run our entire 24-project codebase under the same systems we ship to clients. Continuous audit. Multi-tenant. Single pane.</p>
           <p class="problem-card__product">Our answer: this whole page. Read on, or talk to us about deploying any of it in your environment.</p>
@@ -271,22 +259,10 @@
     <div class="container">
       <div class="ai-section__header">
         <span class="ai-section__eyebrow">White papers</span>
-        <h2>Six deep dives on the hard problems &mdash; with the receipts.</h2>
+        <h2>Deep dives on the hard problems &mdash; with the receipts.</h2>
         <p class="lead">Each paper ties back to a product we&rsquo;re running in production. No gated downloads. No marketing fluff. Read them all.</p>
       </div>
       <div class="wp-grid">
-        <a class="wp-card" href="whitepapers/wp1-agent-coordination.html">
-          <div class="wp-card__num">WP-01</div>
-          <h3>Cross-Project Agent Coordination &mdash; how an MSP runs 24 codebases on one orchestrator</h3>
-          <p>The unsolved hard problem of agent-to-agent arbitration. Why MAST&rsquo;s 41&ndash;86% failure rate is what you should fear most. The JWT-signed MCP coord pattern we built and run.</p>
-          <span class="wp-card__cta">Read &rarr;</span>
-        </a>
-        <a class="wp-card" href="whitepapers/wp2-ai-soc-truth.html">
-          <div class="wp-card__num">WP-02</div>
-          <h3>AI-Native MSP Security &mdash; from rules to reasoning in the SOC</h3>
-          <p>Why traditional SIEM/EDR fall short for agent-driven attack surface. How LLMs and SecOps complement (and don&rsquo;t replace) each other. The 2026 AI-SOC market scan.</p>
-          <span class="wp-card__cta">Read &rarr;</span>
-        </a>
         <a class="wp-card" href="whitepapers/wp3-vendor-agnostic-bms.html">
           <div class="wp-card__num">WP-03</div>
           <h3>Vendor-Agnostic Building Intelligence &mdash; 50-year-old controls meet modern AI</h3>
@@ -335,8 +311,6 @@
               <label for="lf_topic">What&rsquo;s the most relevant topic?</label>
               <select id="lf_topic" name="topic_interest" required>
                 <option value="">&mdash; select &mdash;</option>
-                <option value="agent-coordination">Multi-agent operations / orchestration</option>
-                <option value="ai-soc">AI-native SOC / security oversight</option>
                 <option value="bms">Vendor-agnostic building intelligence</option>
                 <option value="ai-gateway">Compliant LLM gateway / governance</option>
                 <option value="synthetic-identity">Avatar / voice agents / synthetic identity</option>
@@ -369,7 +343,7 @@
       <div class="footer__grid">
         <div class="footer__col">
           <img src="assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;">
-          <p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT services and cybersecurity for 50&ndash;500 employee firms. Headquartered in New York City.</p>
+          <p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT services and cybersecurity. Headquartered in New York City.</p>
         </div>
         <div class="footer__col">
           <h4 class="footer__heading">AI Strategy</h4>

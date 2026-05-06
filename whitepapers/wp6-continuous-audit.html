@@ -50,7 +50,7 @@
       <p>AiT Audit is a Cloud Run job that fires on the first of every month. In approximately 45 minutes, it does the following for every active codebase under our management:</p>
 
       <ol>
-        <li><strong>Acquires a project lock</strong> via AiT Coord (see <a href="wp1-agent-coordination.html">WP-01</a>). If a deploy or migration is mid-flight, the audit skips that project this cycle and logs the conflict to the agent-runs table.</li>
+        <li><strong>Acquires a project lock</strong> via AiT Coord, our internal multi-agent orchestrator. If a deploy or migration is mid-flight, the audit skips that project this cycle and logs the conflict to the agent-runs table.</li>
         <li><strong>Clones the repo shallowly</strong> using a fine-grained PAT scoped to the relevant repo set.</li>
         <li><strong>Runs eight scanners in parallel</strong>: Semgrep (SAST with our centralized rule pack covering OWASP Top 10, Next.js, Clerk RLS, multi-tenant invariants), OSV-Scanner (dependencies), Gitleaks (secrets), Checkov (IaC + GitHub Actions), Knip (unused exports/files/deps), Spectral (OpenAPI lint), and a drift detector that compares the project&rsquo;s lint/SAST/tsconfig against a canonical guardrails registry.</li>
         <li><strong>Runs DAST on deployed URLs</strong> for repos that expose them: Nuclei templates, Lighthouse CI, axe-core a11y.</li>
@@ -148,7 +148,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__col"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;"><p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT for 50&ndash;500 employee firms.</p></div>
+        <div class="footer__col"><img src="../assets/logo-green.png" alt="Intelligent iT" width="170" height="47" style="margin-bottom: 16px;"><p style="color: #bcbfcc; font-size: 14px; max-width: 260px;">AI-powered managed IT and cybersecurity.</p></div>
         <div class="footer__col"><h4 class="footer__heading">AI</h4><ul><li><a href="../ai.html">AI Overview</a></li><li><a href="index.html">White Papers</a></li></ul></div>
         <div class="footer__col"><h4 class="footer__heading">Connect</h4><ul><li>sales@intelligentitnyc.com</li><li>212-730-1844</li></ul></div>
       </div>
