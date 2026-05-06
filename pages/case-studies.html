@@ -1,506 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Studies | Intelligent iT</title>
-  <meta name="description" content="Explore real-world case studies from companies (50-500 employees) that cut IT support tickets by over 70% and achieved 99.9% uptime through our AI-powered IT platform.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="pages.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
-  <style>
-    /* ===== CASE STUDIES PAGE STYLES ===== */
-    .cases-library .container {
-      max-width: 1280px;
-    }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Case Studies | Intelligent iT</title>
+ <meta name="description" content="Explore real-world case studies from companies that cut IT support tickets by over 70% and achieved 99.9% uptime through our AI-powered IT platform.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="../styles.css">
+ <link rel="stylesheet" href="pages.css">
+ <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+ <style>
+ /* ===== CASE STUDIES PAGE STYLES ===== */
+.cases-library.container {
+ max-width: 1280px;
+ }
 
-    .cases-filter {
-      margin-bottom: 48px;
-    }
+.cases-filter {
+ margin-bottom: 48px;
+ }
 
-    .cases-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
+.cases-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 28px;
+ }
 
-    .case-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-    .case-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(118, 230, 216, 0.25);
-    }
+.case-card {
+ background: rgba(255,255,255,0.03);
+ border: 1px solid rgba(255,255,255,0.06);
+ border-radius: 16px;
+ overflow: hidden;
+ transition: all 0.3s;
+ display: flex;
+ flex-direction: column;
+ }
+.case-card:hover {
+ transform: translateY(-4px);
+ border-color: rgba(118, 230, 216, 0.25);
+ }
 
-    .case-card__header {
-      position: relative;
-      padding: 32px 24px 28px;
-      min-height: 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-    .case-card__header--compliance {
-      background: linear-gradient(135deg, #1b3a6b 0%, #155065 100%);
-    }
-    .case-card__header--cybersecurity {
-      background: linear-gradient(135deg, #1b3a6b 0%, #0f4c5c 100%);
-    }
-    .case-card__header--cloud {
-      background: linear-gradient(135deg, #155065 0%, #0f4c5c 100%);
-    }
-    .case-card__header--managed-it {
-      background: linear-gradient(135deg, #155065 0%, #00b19b 100%);
-    }
+.case-card__header {
+ position: relative;
+ padding: 32px 24px 28px;
+ min-height: 120px;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ }
+.case-card__header--compliance {
+ background: linear-gradient(135deg, #1b3a6b 0%, #155065 100%);
+ }
+.case-card__header--cybersecurity {
+ background: linear-gradient(135deg, #1b3a6b 0%, #0f4c5c 100%);
+ }
+.case-card__header--cloud {
+ background: linear-gradient(135deg, #155065 0%, #0f4c5c 100%);
+ }
+.case-card__header--managed-it {
+ background: linear-gradient(135deg, #155065 0%, #00b19b 100%);
+ }
 
-    .case-card__watermark {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      opacity: 0.15;
-      object-fit: contain;
-    }
+.case-card__watermark {
+ position: absolute;
+ top: 16px;
+ right: 16px;
+ width: 36px;
+ height: 36px;
+ opacity: 0.15;
+ object-fit: contain;
+ }
 
-    .case-card__industry {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 4px;
-    }
+.case-card__industry {
+ display: inline-block;
+ font-size: 11px;
+ font-weight: 600;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ color: rgba(255,255,255,0.8);
+ margin-bottom: 4px;
+ }
 
-    .case-card__size {
-      font-size: 11px;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 10px;
-    }
+.case-card__size {
+ font-size: 11px;
+ color: rgba(255,255,255,0.55);
+ margin-bottom: 10px;
+ }
 
-    .case-card__title {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.35;
-      color: #ffffff;
-    }
+.case-card__title {
+ font-size: 18px;
+ font-weight: 600;
+ line-height: 1.35;
+ color: #ffffff;
+ }
 
-    .case-card__body {
-      padding: 20px 24px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+.case-card__body {
+ padding: 20px 24px 24px;
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ }
 
-    .case-card__desc {
-      font-size: 14px;
-      color: #bcbfcc;
-      line-height: 1.6;
-      margin-bottom: 16px;
-      flex: 1;
-    }
+.case-card__desc {
+ font-size: 14px;
+ color: #bcbfcc;
+ line-height: 1.6;
+ margin-bottom: 16px;
+ flex: 1;
+ }
 
-    .case-card__metric {
-      font-size: 20px;
-      font-weight: 700;
-      color: #76e6d8;
-      margin-bottom: 20px;
-    }
+.case-card__metric {
+ font-size: 20px;
+ font-weight: 700;
+ color: #76e6d8;
+ margin-bottom: 20px;
+ }
 
-    .case-card__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.case-card__footer {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ }
 
-    .case-card__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 50px;
-      letter-spacing: 0.3px;
-      background: rgba(118, 230, 216, 0.12);
-      color: #76e6d8;
-    }
-    .case-card__badge svg {
-      width: 14px;
-      height: 14px;
-    }
+.case-card__badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ font-size: 12px;
+ font-weight: 600;
+ padding: 5px 12px;
+ border-radius: 50px;
+ letter-spacing: 0.3px;
+ background: rgba(118, 230, 216, 0.12);
+ color: #76e6d8;
+ }
+.case-card__badge svg {
+ width: 14px;
+ height: 14px;
+ }
 
-    .case-card__download {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #76e6d8;
-      transition: color 0.3s;
-    }
-    .case-card__download:hover {
-      color: #5dd2c3;
-    }
-    .case-card__download svg {
-      width: 16px;
-      height: 16px;
-    }
+.case-card__download {
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ font-size: 14px;
+ font-weight: 500;
+ color: #76e6d8;
+ transition: color 0.3s;
+ }
+.case-card__download:hover {
+ color: #5dd2c3;
+ }
+.case-card__download svg {
+ width: 16px;
+ height: 16px;
+ }
 
-    .cases-count {
-      font-size: 15px;
-      color: #bcbfcc;
-      margin-bottom: 24px;
-    }
-    .cases-count span {
-      color: #76e6d8;
-      font-weight: 600;
-    }
+.cases-count {
+ font-size: 15px;
+ color: #bcbfcc;
+ margin-bottom: 24px;
+ }
+.cases-count span {
+ color: #76e6d8;
+ font-weight: 600;
+ }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .cases-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 768px) {
-      .cases-filter .tabs__nav--pills {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        justify-content: flex-start;
-        scrollbar-width: none;
-      }
-      .cases-filter .tabs__nav--pills::-webkit-scrollbar { display: none; }
-    }
-    @media (max-width: 640px) {
-      .cases-grid {
-        grid-template-columns: 1fr;
-      }
-      .case-card__header {
-        min-height: 100px;
-        padding: 24px 20px 20px;
-      }
-      .case-card__body {
-        padding: 16px 20px 20px;
-      }
-      .case-card__metric {
-        font-size: 18px;
-      }
-      .case-card__industry {
-        font-size: 12px;
-      }
-      .case-card__size {
-        font-size: 12px;
-      }
-      .case-card__badge {
-        font-size: 12px;
-      }
-    }
-  </style>
-  <!-- HubSpot Tracking Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+ /* Responsive */
+ @media (max-width: 1024px) {
+.cases-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+ @media (max-width: 768px) {
+.cases-filter.tabs__nav--pills {
+ flex-wrap: nowrap;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ justify-content: flex-start;
+ scrollbar-width: none;
+ }
+.cases-filter.tabs__nav--pills::-webkit-scrollbar { display: none; }
+ }
+ @media (max-width: 640px) {
+.cases-grid {
+ grid-template-columns: 1fr;
+ }
+.case-card__header {
+ min-height: 100px;
+ padding: 24px 20px 20px;
+ }
+.case-card__body {
+ padding: 16px 20px 20px;
+ }
+.case-card__metric {
+ font-size: 18px;
+ }
+.case-card__industry {
+ font-size: 12px;
+ }
+.case-card__size {
+ font-size: 12px;
+ }
+.case-card__badge {
+ font-size: 12px;
+ }
+ }
+ </style>
+ <!-- HubSpot Tracking Code -->
+ <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
 </head>
 <body>
-  <header class="header" id="site-header"></header>
+ <header class="header" id="site-header"></header>
 
-  <section class="page-hero">
-    <div class="page-hero__bg"></div>
-    <div class="container page-hero__inner">
-      <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <span style="color: rgba(255,255,255,0.7);">Resources</span> / Case Studies</span>
-      <h1>Real Results from Real Businesses</h1>
-      <p>See how companies with 50-500 employees are using AI-powered IT to cut costs, eliminate downtime, pass audits, and scale without adding headcount. These are real outcomes from real organizations.</p>
-    </div>
-  </section>
+ <section class="page-hero">
+ <div class="page-hero__bg"></div>
+ <div class="container page-hero__inner">
+ <span class="page-hero__breadcrumb"><a href="../index.html">Home</a> / <span style="color: rgba(255,255,255,0.7);">Resources</span> / Case Studies</span>
+ <h1>Real Results from Real Businesses</h1>
+ <p>See how companies are using AI-powered IT to cut costs, eliminate downtime, pass audits, and scale without adding headcount. These are real outcomes from real organizations.</p>
+ </div>
+ </section>
 
-  <main class="page-content cases-library">
-    <div class="container">
+ <main class="page-content cases-library">
+ <div class="container">
 
-      <div class="page-section animate-on-scroll">
-        <div style="font-size: 14px; color: #8a8ea0; border-left: 3px solid rgba(118, 230, 216, 0.3); padding-left: 16px; line-height: 1.7;">
-          <p style="font-style: italic; margin-bottom: 12px;">These case studies represent composite engagements drawn from real client work. Company names have been withheld by request to protect client confidentiality.</p>
-          <p style="margin-bottom: 0;"><strong style="color: #bcbfcc;">Methodology:</strong> Each case study is constructed from anonymized data collected across active managed service engagements during 2024&ndash;2026. Metrics such as uptime, ticket volume, resolution time, and cost savings are measured using our RMM and PSA platforms (ConnectWise, Datto) and verified through monthly client reporting. Aggregate statistics represent weighted averages across our managed client base. Industry benchmarks are sourced from Gartner, IBM Cost of a Data Breach Report 2024, and Verizon 2024 DBIR where cited.</p>
-        </div>
-      </div>
+ <div class="page-section animate-on-scroll">
+ <div style="font-size: 14px; color: #8a8ea0; border-left: 3px solid rgba(118, 230, 216, 0.3); padding-left: 16px; line-height: 1.7;">
+ <p style="font-style: italic; margin-bottom: 12px;">These case studies represent composite engagements drawn from real client work. Company names have been withheld by request to protect client confidentiality.</p>
+ <p style="margin-bottom: 0;"><strong style="color: #bcbfcc;">Methodology:</strong> Each case study is constructed from anonymized data collected across active managed service engagements during 2024&ndash;2026. Metrics such as uptime, ticket volume, resolution time, and cost savings are measured using our RMM and PSA platforms (ConnectWise, Datto) and verified through monthly client reporting. Aggregate statistics represent weighted averages across our managed client base. Industry benchmarks are sourced from Gartner, IBM Cost of a Data Breach Report 2024, and Verizon 2024 DBIR where cited.</p>
+ </div>
+ </div>
 
-      <!-- Filter Tabs -->
-      <div class="cases-filter animate-on-scroll">
-        <nav class="tabs__nav tabs__nav--pills" id="case-filters">
-          <button class="tabs__btn active" data-filter="all">All</button>
-          <button class="tabs__btn" data-filter="managed-it">Managed IT</button>
-          <button class="tabs__btn" data-filter="cybersecurity">Cybersecurity</button>
-          <button class="tabs__btn" data-filter="compliance">Compliance</button>
-          <button class="tabs__btn" data-filter="cloud">Cloud & Infrastructure</button>
-        </nav>
-        <p class="cases-count"><span id="case-count">8</span> case studies available</p>
-      </div>
+ <!-- Filter Tabs -->
+ <div class="cases-filter animate-on-scroll">
+ <nav class="tabs__nav tabs__nav--pills" id="case-filters">
+ <button class="tabs__btn active" data-filter="all">All</button>
+ <button class="tabs__btn" data-filter="managed-it">Managed IT</button>
+ <button class="tabs__btn" data-filter="cybersecurity">Cybersecurity</button>
+ <button class="tabs__btn" data-filter="compliance">Compliance</button>
+ <button class="tabs__btn" data-filter="cloud">Cloud & Infrastructure</button>
+ </nav>
+ <p class="cases-count"><span id="case-count">8</span> case studies available</p>
+ </div>
 
-      <!-- Case Study Cards Grid -->
-      <div class="cases-grid" id="cases-grid">
+ <!-- Case Study Cards Grid -->
+ <div class="cases-grid" id="cases-grid">
 
-        <!-- CS01: Financial Services Compliance -->
-        <div class="case-card animate-on-scroll" data-category="compliance">
-          <div class="case-card__header case-card__header--compliance">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Finance</span>
-            <span class="case-card__size">120 employees</span>
-            <h3 class="case-card__title">Wealth Management Firm Passes NYDFS Audit with Zero Deficiencies</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">A 120-person wealth management firm needed to meet strict NYDFS cybersecurity regulations. Intelligent iT implemented a compliance-first IT framework that automated evidence collection and continuous monitoring, resulting in a flawless audit.</p>
-            <div class="case-card__metric">75% reduction in audit prep time</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs01-financial-services-compliance.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS01: Financial Services Compliance -->
+ <div class="case-card animate-on-scroll" data-category="compliance">
+ <div class="case-card__header case-card__header--compliance">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Finance</span>
+ <span class="case-card__size">120 employees</span>
+ <h3 class="case-card__title">Wealth Management Firm Passes NYDFS Audit with Zero Deficiencies</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">A 120-person wealth management firm needed to meet strict NYDFS cybersecurity regulations. Intelligent iT implemented a compliance-first IT framework that automated evidence collection and continuous monitoring, resulting in a flawless audit.</p>
+ <div class="case-card__metric">75% reduction in audit prep time</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs01-financial-services-compliance.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS02: Healthcare HIPAA Security -->
-        <div class="case-card animate-on-scroll" data-category="cybersecurity">
-          <div class="case-card__header case-card__header--cybersecurity">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Healthcare</span>
-            <span class="case-card__size">85 employees</span>
-            <h3 class="case-card__title">Healthcare Practice Achieves HIPAA Compliance in 90 Days</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">An 85-employee healthcare practice faced mounting HIPAA compliance gaps and recurring downtime. Intelligent iT deployed a secure, HIPAA-aligned infrastructure with 24/7 SOC monitoring that achieved near-perfect uptime from day one.</p>
-            <div class="case-card__metric">99.9% uptime achieved</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs02-healthcare-hipaa-security.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS02: Healthcare HIPAA Security -->
+ <div class="case-card animate-on-scroll" data-category="cybersecurity">
+ <div class="case-card__header case-card__header--cybersecurity">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Healthcare</span>
+ <span class="case-card__size">85 employees</span>
+ <h3 class="case-card__title">Healthcare Practice Achieves HIPAA Compliance in 90 Days</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">An 85-employee healthcare practice faced mounting HIPAA compliance gaps and recurring downtime. Intelligent iT deployed a secure, HIPAA-aligned infrastructure with 24/7 SOC monitoring that achieved near-perfect uptime from day one.</p>
+ <div class="case-card__metric">99.9% uptime achieved</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs02-healthcare-hipaa-security.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS03: Law Firm Cloud Migration -->
-        <div class="case-card animate-on-scroll" data-category="cloud">
-          <div class="case-card__header case-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Legal</span>
-            <span class="case-card__size">85 employees</span>
-            <h3 class="case-card__title">Law Firm Migrates to Cloud with Zero Business Disruption</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">An 85-person law firm needed to move off aging on-premise servers without interrupting billable work. Intelligent iT executed a phased cloud migration over a single weekend, cutting infrastructure costs while improving performance and reliability.</p>
-            <div class="case-card__metric">35% cost reduction</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs03-law-firm-cloud-migration.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS03: Law Firm Cloud Migration -->
+ <div class="case-card animate-on-scroll" data-category="cloud">
+ <div class="case-card__header case-card__header--cloud">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Legal</span>
+ <span class="case-card__size">85 employees</span>
+ <h3 class="case-card__title">Law Firm Migrates to Cloud with Zero Business Disruption</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">An 85-person law firm needed to move off aging on-premise servers without interrupting billable work. Intelligent iT executed a phased cloud migration over a single weekend, cutting infrastructure costs while improving performance and reliability.</p>
+ <div class="case-card__metric">35% cost reduction</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs03-law-firm-cloud-migration.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS04: Marketing Agency Scalability -->
-        <div class="case-card animate-on-scroll" data-category="managed-it">
-          <div class="case-card__header case-card__header--managed-it">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Marketing</span>
-            <span class="case-card__size">50 &rarr; 200 employees</span>
-            <h3 class="case-card__title">Marketing Agency Scales 50 to 200 Employees Without Adding IT Staff</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">A fast-growing marketing agency quadrupled headcount in under two years. Intelligent iT provided fully managed IT with automated onboarding and AI-driven helpdesk support, eliminating the need to hire a single internal IT employee.</p>
-            <div class="case-card__metric">4x growth, zero IT hires</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs04-marketing-agency-scalability.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS04: Marketing Agency Scalability -->
+ <div class="case-card animate-on-scroll" data-category="managed-it">
+ <div class="case-card__header case-card__header--managed-it">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Marketing</span>
+ <span class="case-card__size">50 &rarr; 200 employees</span>
+ <h3 class="case-card__title">Marketing Agency Scales 50 to 200 Employees Without Adding IT Staff</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">A fast-growing marketing agency quadrupled headcount in under two years. Intelligent iT provided fully managed IT with automated onboarding and AI-driven helpdesk support, eliminating the need to hire a single internal IT employee.</p>
+ <div class="case-card__metric">4x growth, zero IT hires</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs04-marketing-agency-scalability.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS05: Construction Field Ops -->
-        <div class="case-card animate-on-scroll" data-category="managed-it">
-          <div class="case-card__header case-card__header--managed-it">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Construction</span>
-            <span class="case-card__size">180 employees</span>
-            <h3 class="case-card__title">Construction Firm Connects 15 Job Sites Securely</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">A 180-employee construction company struggled with unreliable connectivity across dispersed job sites. Intelligent iT deployed secure SD-WAN and centralized device management to unify all 15 locations under a single, monitored network.</p>
-            <div class="case-card__metric">100% site connectivity</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs05-construction-field-ops.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS05: Construction Field Ops -->
+ <div class="case-card animate-on-scroll" data-category="managed-it">
+ <div class="case-card__header case-card__header--managed-it">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Construction</span>
+ <span class="case-card__size">180 employees</span>
+ <h3 class="case-card__title">Construction Firm Connects 15 Job Sites Securely</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">A 180-employee construction company struggled with unreliable connectivity across dispersed job sites. Intelligent iT deployed secure SD-WAN and centralized device management to unify all 15 locations under a single, monitored network.</p>
+ <div class="case-card__metric">100% site connectivity</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs05-construction-field-ops.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS06: Accounting Ransomware Prevention -->
-        <div class="case-card animate-on-scroll" data-category="cybersecurity">
-          <div class="case-card__header case-card__header--cybersecurity">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Accounting</span>
-            <span class="case-card__size">95 employees</span>
-            <h3 class="case-card__title">AI SOC Stops Ransomware Attack Before a Single File Is Encrypted</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">A 95-person accounting firm was targeted by a sophisticated ransomware attack during tax season. Intelligent iT's AI-powered SOC detected the anomalous behavior and automatically isolated the threat before any files were compromised.</p>
-            <div class="case-card__metric">Attack stopped in &lt;3 minutes</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs06-accounting-ransomware-prevention.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS06: Accounting Ransomware Prevention -->
+ <div class="case-card animate-on-scroll" data-category="cybersecurity">
+ <div class="case-card__header case-card__header--cybersecurity">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Accounting</span>
+ <span class="case-card__size">95 employees</span>
+ <h3 class="case-card__title">AI SOC Stops Ransomware Attack Before a Single File Is Encrypted</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">A 95-person accounting firm was targeted by a sophisticated ransomware attack during tax season. Intelligent iT's AI-powered SOC detected the anomalous behavior and automatically isolated the threat before any files were compromised.</p>
+ <div class="case-card__metric">Attack stopped in &lt;3 minutes</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs06-accounting-ransomware-prevention.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS07: Professional Services Managed IT -->
-        <div class="case-card animate-on-scroll" data-category="managed-it">
-          <div class="case-card__header case-card__header--managed-it">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Professional Services</span>
-            <span class="case-card__size">150 employees</span>
-            <h3 class="case-card__title">Consulting Firm Reduces IT Tickets by 70% with AI Helpdesk</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">A 150-employee consulting firm was overwhelmed by repetitive IT support requests. Intelligent iT deployed an AI-powered helpdesk that autonomously resolves common issues, freeing staff to focus on client work instead of waiting on IT.</p>
-            <div class="case-card__metric">70% ticket reduction</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs07-professional-services-managed-it.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS07: Professional Services Managed IT -->
+ <div class="case-card animate-on-scroll" data-category="managed-it">
+ <div class="case-card__header case-card__header--managed-it">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Professional Services</span>
+ <span class="case-card__size">150 employees</span>
+ <h3 class="case-card__title">Consulting Firm Reduces IT Tickets by 70% with AI Helpdesk</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">A 150-employee consulting firm was overwhelmed by repetitive IT support requests. Intelligent iT deployed an AI-powered helpdesk that autonomously resolves common issues, freeing staff to focus on client work instead of waiting on IT.</p>
+ <div class="case-card__metric">70% ticket reduction</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs07-professional-services-managed-it.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-        <!-- CS08: Transportation Network Modernization -->
-        <div class="case-card animate-on-scroll" data-category="cloud">
-          <div class="case-card__header case-card__header--cloud">
-            <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
-            <span class="case-card__industry">Transportation</span>
-            <span class="case-card__size">220 employees</span>
-            <h3 class="case-card__title">Transportation Company Modernizes IT Across 8 Locations</h3>
-          </div>
-          <div class="case-card__body">
-            <p class="case-card__desc">A 220-employee transportation company with aging infrastructure across eight locations needed a complete modernization. Intelligent iT standardized the environment with cloud-first architecture, delivering dramatic uptime and cost improvements.</p>
-            <div class="case-card__metric">99.9% uptime, 30% cost savings</div>
-            <div class="case-card__footer">
-              <span class="case-card__badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-                Case Study
-              </span>
-              <a href="../assets/case-studies/cs08-transportation-network-modernization.pdf" target="_blank" class="case-card__download">
-                Download PDF
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+ <!-- CS08: Transportation Network Modernization -->
+ <div class="case-card animate-on-scroll" data-category="cloud">
+ <div class="case-card__header case-card__header--cloud">
+ <img src="../assets/logo-green.png" alt="" class="case-card__watermark">
+ <span class="case-card__industry">Transportation</span>
+ <span class="case-card__size">220 employees</span>
+ <h3 class="case-card__title">Transportation Company Modernizes IT Across 8 Locations</h3>
+ </div>
+ <div class="case-card__body">
+ <p class="case-card__desc">A 220-employee transportation company with aging infrastructure across eight locations needed a complete modernization. Intelligent iT standardized the environment with cloud-first architecture, delivering dramatic uptime and cost improvements.</p>
+ <div class="case-card__metric">99.9% uptime, 30% cost savings</div>
+ <div class="case-card__footer">
+ <span class="case-card__badge">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+ Case Study
+ </span>
+ <a href="../assets/case-studies/cs08-transportation-network-modernization.pdf" target="_blank" class="case-card__download">
+ Download PDF
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </a>
+ </div>
+ </div>
+ </div>
 
-      </div><!-- /cases-grid -->
+ </div><!-- /cases-grid -->
 
-      <!-- Proven Results Stats -->
-      <div class="page-section animate-on-scroll" style="margin-top: 80px;">
-        <h2>Proven Results Across Every Engagement</h2>
-        <div class="page-stats">
-          <div class="page-stat"><span class="page-stat__value">99.9%</span><span class="page-stat__label">measured uptime across all managed infrastructure</span></div>
-          <div class="page-stat"><span class="page-stat__value">70%</span><span class="page-stat__label">average reduction in IT support tickets</span></div>
-          <div class="page-stat"><span class="page-stat__value">&lt;3 min</span><span class="page-stat__label">average threat containment time</span></div>
-          <div class="page-stat"><span class="page-stat__value">35%</span><span class="page-stat__label">average infrastructure cost savings</span></div>
-        </div>
-        <p style="font-size: 12px; color: #6b6f80; margin-top: 20px; text-align: center;">Aggregate statistics based on weighted averages across active managed service engagements (2024&ndash;2026), measured via ConnectWise and Datto RMM/PSA platforms. Individual client results may vary based on environment complexity and engagement scope.</p>
-      </div>
+ <!-- Proven Results Stats -->
+ <div class="page-section animate-on-scroll" style="margin-top: 80px;">
+ <h2>Proven Results Across Every Engagement</h2>
+ <div class="page-stats">
+ <div class="page-stat"><span class="page-stat__value">99.9%</span><span class="page-stat__label">measured uptime across all managed infrastructure</span></div>
+ <div class="page-stat"><span class="page-stat__value">70%</span><span class="page-stat__label">average reduction in IT support tickets</span></div>
+ <div class="page-stat"><span class="page-stat__value">&lt;3 min</span><span class="page-stat__label">average threat containment time</span></div>
+ <div class="page-stat"><span class="page-stat__value">35%</span><span class="page-stat__label">average infrastructure cost savings</span></div>
+ </div>
+ <p style="font-size: 12px; color: #6b6f80; margin-top: 20px; text-align: center;">Aggregate statistics based on weighted averages across active managed service engagements (2024&ndash;2026), measured via ConnectWise and Datto RMM/PSA platforms. Individual client results may vary based on environment complexity and engagement scope.</p>
+ </div>
 
-      <!-- CTA Section -->
-      <div class="page-cta" style="margin-top: 80px;">
-        <h2>Ready to See These Results in Your Business?</h2>
-        <p>Every case study starts with a conversation. Book a free IT strategy session and discover what AI-powered managed IT can do for your organization.</p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="headquarters.html?contact=true" class="btn btn--teal btn--lg">Book a Call</a>
-          <a href="headquarters.html" class="btn btn--outline btn--lg">Contact Us</a>
-        </div>
-      </div>
+ <!-- CTA Section -->
+ <div class="page-cta" style="margin-top: 80px;">
+ <h2>Ready to See These Results in Your Business?</h2>
+ <p>Every case study starts with a conversation. Book a free IT strategy session and discover what AI-powered managed IT can do for your organization.</p>
+ <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+ <a href="headquarters.html?contact=true" class="btn btn--teal btn--lg">Book a Call</a>
+ <a href="headquarters.html" class="btn btn--outline btn--lg">Contact Us</a>
+ </div>
+ </div>
 
-    </div>
-  </main>
+ </div>
+ </main>
 
-  <footer class="footer" id="site-footer"></footer>
+ <footer class="footer" id="site-footer"></footer>
 
-  <script src="template.js"></script>
-  <script>
-    // ===== Case Study Filter Logic =====
-    (function() {
-      var filterBtns = document.querySelectorAll('#case-filters .tabs__btn');
-      var cards = document.querySelectorAll('.case-card');
-      var countEl = document.getElementById('case-count');
+ <script src="template.js"></script>
+ <script>
+ // ===== Case Study Filter Logic =====
+ (function() {
+ var filterBtns = document.querySelectorAll('#case-filters.tabs__btn');
+ var cards = document.querySelectorAll('.case-card');
+ var countEl = document.getElementById('case-count');
 
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          // Update active tab
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
+ filterBtns.forEach(function(btn) {
+ btn.addEventListener('click', function() {
+ // Update active tab
+ filterBtns.forEach(function(b) { b.classList.remove('active'); });
+ btn.classList.add('active');
 
-          var filter = btn.getAttribute('data-filter');
-          var visibleCount = 0;
+ var filter = btn.getAttribute('data-filter');
+ var visibleCount = 0;
 
-          cards.forEach(function(card) {
-            var categories = card.getAttribute('data-category').split(' ');
-            if (filter === 'all' || categories.indexOf(filter) !== -1) {
-              card.style.display = '';
-              visibleCount++;
-            } else {
-              card.style.display = 'none';
-            }
-          });
+ cards.forEach(function(card) {
+ var categories = card.getAttribute('data-category').split(' ');
+ if (filter === 'all' || categories.indexOf(filter) !== -1) {
+ card.style.display = '';
+ visibleCount++;
+ } else {
+ card.style.display = 'none';
+ }
+ });
 
-          countEl.textContent = visibleCount;
-        });
-      });
-    })();
-  </script>
+ countEl.textContent = visibleCount;
+ });
+ });
+ })();
+ </script>
 </body>
 </html>
