@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Identities Outnumber Humans 45-to-1. Most MSPs Don't Govern Any of Them. | Intelligent iT Blog</title>
+  <meta name="description" content="Cloud Security Alliance: machine identities outnumber humans 45:1 average, 80:1 in cloud-native shops. 78% of orgs have no formal AI-identity policy. Non-Human Identity is the new perimeter — and the market for governance just exploded.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../pages.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+  <style>
+    .article { max-width: 760px; margin: 0 auto; }
+    .article h2 { font-size: 28px; font-weight: 600; margin: 40px 0 16px; }
+    .article h3 { font-size: 22px; font-weight: 600; margin: 28px 0 12px; }
+    .article p { font-size: 17px; color: #edeff7; line-height: 1.8; margin-bottom: 20px; }
+    .article ul, .article ol { margin: 16px 0 20px 24px; }
+    .article li { font-size: 17px; color: #edeff7; line-height: 1.7; margin-bottom: 8px; }
+    .article-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 32px; flex-wrap: wrap; }
+    .article-meta__tag { background: rgba(118,230,216,0.15); color: #76e6d8; padding: 4px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+    .article-meta__date, .article-meta__author { font-size: 14px; color: #bcbfcc; }
+    .article-cta { background: linear-gradient(135deg, #155065, #1e4c4a); border-radius: 16px; padding: 32px; margin: 40px 0; }
+    .article-cta h3 { margin-top: 0; color: #fff; }
+    .blog-header { background: #0b0e18; border-bottom: 1px solid rgba(118,230,216,0.1); padding: 16px 0; }
+    .blog-header .container { display: flex; align-items: center; justify-content: space-between; }
+    .blog-header__logo img { height: 40px; width: auto; }
+    .blog-header__nav { display: flex; gap: 24px; align-items: center; }
+    .blog-header__nav a { color: #bcbfcc; text-decoration: none; font-size: 14px; font-weight: 500; }
+    .blog-header__nav a:hover { color: #76e6d8; }
+    .blog-footer { background: #0b0e18; border-top: 1px solid rgba(118,230,216,0.1); padding: 32px 0; text-align: center; }
+    .blog-footer p { color: #8a8ea0; font-size: 13px; margin: 8px 0; }
+    .blog-footer a { color: #76e6d8; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="blog-header"><div class="container">
+    <a href="../../index.html" class="blog-header__logo"><img src="../../assets/logo-green.png" alt="Intelligent iT"></a>
+    <nav class="blog-header__nav">
+      <a href="../blog.html">Blog</a>
+      <a href="../../ai.html">AI</a>
+      <a href="../../growth.html">Growth</a>
+      <a href="../headquarters.html?contact=true" class="btn btn--teal btn--sm">Contact Us</a>
+    </nav>
+  </div></header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner">
+      <span class="page-hero__breadcrumb"><a href="../../index.html">Home</a> / <a href="../blog.html">Blog</a> / NHI &amp; Machine Identity</span>
+      <h1>Machine Identities Outnumber Humans 45-to-1. Most MSPs Don&rsquo;t Govern Any of Them.</h1>
+    </div>
+  </section>
+
+  <main class="page-content"><div class="container"><div class="article">
+    <div class="article-meta">
+      <span class="article-meta__tag">Cybersecurity</span>
+      <span class="article-meta__date">May 5, 2026</span>
+      <span class="article-meta__author" style="color: #76e6d8;">By Eero Nevaluoto</span>
+    </div>
+
+    <p>Pull a count of every active access token, API key, service-account credential, OAuth grant, and Cloud-Run-job identity in your environment. Then count your employees. The first number is, on average, <strong>45 times larger than the second</strong>. In cloud-native shops it&rsquo;s 80:1.</p>
+
+    <p>Those numbers come from the Cloud Security Alliance&rsquo;s 2026 NHI &amp; AI Security report. The same report finds that <strong>78% of organizations have no formal policy</strong> for AI-identity creation, scoping, or deprovisioning. <strong>92% don&rsquo;t trust their legacy IAM</strong> to govern AI agents. A new vendor category &mdash; Non-Human Identity (NHI) governance &mdash; emerged in the last six months: Astrix, Entro, GitGuardian, Aembit, Oasis Security each raised significant Series A or B rounds in Q1 2026.</p>
+
+    <p>The category is real because the gap is real. And almost none of those vendors sell through MSPs. Their customers are direct enterprise security teams. The mid-market firms an MSP serves are buying nothing.</p>
+
+    <h2>Why this matters now and not last year</h2>
+
+    <p>The reason the ratio is changing isn&rsquo;t that humans are leaving. It&rsquo;s that AI agents are arriving. Each agent has its own identity. Most have multiple identities &mdash; one for the model API, one for each tool the agent calls, one for the storage layer, one for the audit log. A single multi-step agent workflow can spawn 20+ machine identities for what looks like a single business action. None of those identities is a human. None of them rotates on the schedule your IAM expects. Most of them outlive the engineer who created them.</p>
+
+    <p>Compounding factors specific to 2026:</p>
+
+    <ul>
+      <li>Anthropic&rsquo;s MCP standard accelerated agent-tool wiring. There are now over 17,000 indexed MCP servers, each typically requiring its own credential to connect.</li>
+      <li>30+ public CVEs against MCP since GA, several involving JWT leakage from stdio-mode servers that defaulted to no authentication.</li>
+      <li>EU AI Act Article 50 (effective 2 August 2026) and TRAIGA (enforceable since 1 January 2026) raised the documentation requirements for AI-system identity and access controls.</li>
+      <li>The 2026 SEC cybersecurity disclosure rules require timely reporting of material incidents &mdash; and a breached machine identity that exfiltrates data is, by every reasonable read, material.</li>
+    </ul>
+
+    <h2>What governance actually means here</h2>
+
+    <p>Some of this work is straightforward. Inventory every machine identity, label it (which agent, which tenant, which workflow), set rotation policy, set expiry, log every authentication, alert on anomalous behavior. The hard part is operating that across the dozens of platforms a typical mid-market environment uses: Microsoft Graph, Google Workspace, AWS, Azure, GCP, every SaaS, every CI/CD pipeline, every internal tool.</p>
+
+    <p>That&rsquo;s an MSP problem more than a single-vendor problem. Astrix and Oasis cover meaningful slices, but neither sells the integration with the M365, NinjaOne, BlackPoint, SentinelOne, and Mosyle stack that a 50-500 employee firm actually runs. The MSP fills that gap by stitching the pieces together and operating them as a single coherent system.</p>
+
+    <h2>What we&rsquo;re shipping at Intelligent iT</h2>
+
+    <p>Two products in our AiT family are the operational answer.</p>
+
+    <p>AiT Coord is the cross-project agent orchestrator. Every agent acting on a managed environment authenticates via a short-lived JWT signed with an RS256 key in Google Secret Manager. Tenant ID is a claim. The orchestrator verifies on every call. Every agent action lands in an audit table with idempotency keys. NHI sprawl &mdash; the perimeter problem 78% of organizations admit they don&rsquo;t govern &mdash; collapses to one verifiable signing key per environment.</p>
+
+    <p>AiT SOC Sentinel watches the agents themselves. Anomalous tool-call patterns generate investigative alerts. Cross-tenant attempts trigger immediate kill-switches. Privilege-escalation requests outside business hours route to designated on-call. The OWASP LLM Top 10 attack classes have specific detection rules tied to them, with the alert fanning out to the same SOC pipeline that already handles your endpoint and email security.</p>
+
+    <p>Together: tenant-scoped identity, audit-trailed every-call, kill-switchable in seconds, integrated with the rest of the security stack we already manage for the client. That&rsquo;s the MSP-channel version of NHI governance, and we run it on our own MSP first.</p>
+
+    <h2>What you should ask your current MSP this week</h2>
+
+    <ol>
+      <li>How many active machine identities are in my tenant right now &mdash; not approximately, exactly?</li>
+      <li>What&rsquo;s the rotation schedule for each, and where is the audit log of the last rotation?</li>
+      <li>If a single identity is compromised, what&rsquo;s the kill-switch latency and how do I trigger it?</li>
+      <li>How do you detect cross-tenant access attempts, and where would the alert fire?</li>
+      <li>Show me the OWASP LLM Top 10 detection rules wired to my SOC.</li>
+    </ol>
+
+    <p>If the answer to question one is "approximately" rather than a number, the rest of the answers follow predictably.</p>
+
+    <div class="article-cta">
+      <h3>NHI governance is part of our AI-native MSP stack</h3>
+      <p>It runs on the same Trust Portal your auditors use. One pane, one set of credentials managed correctly, one set of metrics that move. Free 30-minute architect call to walk it.</p>
+      <p style="margin-bottom: 0;"><a href="../../ai.html" class="btn btn--teal">See the AI security stack &rarr;</a></p>
+    </div>
+
+    <h2>The bottom line</h2>
+
+    <p>The perimeter moved. It&rsquo;s no longer the firewall, no longer the endpoint, no longer the email gateway. It&rsquo;s the credential graph: tens of thousands of machine identities a typical 50-500 employee firm doesn&rsquo;t know it has. NHI governance is the new table-stakes work, and the market just split into vendors who sell direct (won&rsquo;t serve mid-market) and MSPs who can stitch the pieces together. We&rsquo;re the second category. We run it on ourselves first.</p>
+  </div></div></main>
+
+  <footer class="blog-footer"><div class="container">
+    <p>&copy; 2026 Intelligent iT &middot; Headquartered in New York City &middot; <a href="../headquarters.html?contact=true">Get a free consultation</a></p>
+  </div></footer>
+</body>
+</html>

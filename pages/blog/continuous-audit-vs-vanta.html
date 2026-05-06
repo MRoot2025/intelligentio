@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanta Doesn't Run Across Your Client Portfolio. Continuous Audit-as-a-Service Does. | Intelligent iT Blog</title>
+  <meta name="description" content="Vanta, Drata, Comp AI, and Delve are excellent direct-to-startup. They aren't designed for an MSP managing client portfolios with multi-tenant evidence segregation. Here's the gap and what we're shipping.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../pages.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242795522.js"></script>
+  <style>
+    .article { max-width: 760px; margin: 0 auto; }
+    .article h2 { font-size: 28px; font-weight: 600; margin: 40px 0 16px; }
+    .article h3 { font-size: 22px; font-weight: 600; margin: 28px 0 12px; }
+    .article p { font-size: 17px; color: #edeff7; line-height: 1.8; margin-bottom: 20px; }
+    .article ul, .article ol { margin: 16px 0 20px 24px; }
+    .article li { font-size: 17px; color: #edeff7; line-height: 1.7; margin-bottom: 8px; }
+    .article-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 32px; flex-wrap: wrap; }
+    .article-meta__tag { background: rgba(118,230,216,0.15); color: #76e6d8; padding: 4px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+    .article-meta__date, .article-meta__author { font-size: 14px; color: #bcbfcc; }
+    .article-cta { background: linear-gradient(135deg, #155065, #1e4c4a); border-radius: 16px; padding: 32px; margin: 40px 0; }
+    .article-cta h3 { margin-top: 0; color: #fff; }
+    .blog-header { background: #0b0e18; border-bottom: 1px solid rgba(118,230,216,0.1); padding: 16px 0; }
+    .blog-header .container { display: flex; align-items: center; justify-content: space-between; }
+    .blog-header__logo img { height: 40px; width: auto; }
+    .blog-header__nav { display: flex; gap: 24px; align-items: center; }
+    .blog-header__nav a { color: #bcbfcc; text-decoration: none; font-size: 14px; font-weight: 500; }
+    .blog-header__nav a:hover { color: #76e6d8; }
+    .blog-footer { background: #0b0e18; border-top: 1px solid rgba(118,230,216,0.1); padding: 32px 0; text-align: center; }
+    .blog-footer p { color: #8a8ea0; font-size: 13px; margin: 8px 0; }
+    .blog-footer a { color: #76e6d8; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="blog-header"><div class="container">
+    <a href="../../index.html" class="blog-header__logo"><img src="../../assets/logo-green.png" alt="Intelligent iT"></a>
+    <nav class="blog-header__nav">
+      <a href="../blog.html">Blog</a>
+      <a href="../../ai.html">AI</a>
+      <a href="../../growth.html">Growth</a>
+      <a href="../headquarters.html?contact=true" class="btn btn--teal btn--sm">Contact Us</a>
+    </nav>
+  </div></header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner">
+      <span class="page-hero__breadcrumb"><a href="../../index.html">Home</a> / <a href="../blog.html">Blog</a> / Continuous audit vs. Vanta</span>
+      <h1>Vanta Doesn&rsquo;t Run Across Your Client Portfolio. Continuous Audit-as-a-Service Does.</h1>
+    </div>
+  </section>
+
+  <main class="page-content"><div class="container"><div class="article">
+    <div class="article-meta">
+      <span class="article-meta__tag">Compliance</span>
+      <span class="article-meta__date">May 5, 2026</span>
+      <span class="article-meta__author" style="color: #76e6d8;">By Manuel Ruiz</span>
+    </div>
+
+    <p>I want to start by saying something nice about Vanta, because the comparison ahead is going to sound critical and the criticism is structural rather than personal. Vanta is an excellent product. So is Drata. So is Comp AI. So is Delve. If you&rsquo;re a startup pursuing your first SOC 2 attestation, hiring one of those vendors is a defensible default and most of our clients have used one of them at some point.</p>
+
+    <p>But every one of those products is designed around a single primary tenant: the customer who buys the workspace. They are not designed for an MSP that needs to run continuous compliance posture across a portfolio of client environments &mdash; with multi-tenant evidence segregation, cross-portfolio benchmarking, and code-level audit hooked into the same fabric. That gap is what we&rsquo;re shipping AiT Audit and AiT Trust Portal to fill.</p>
+
+    <h2>What an MSP actually needs from continuous audit</h2>
+
+    <p>The compliance landscape changed under us in 2026. EU AI Act Article 50 effective August 2. TRAIGA enforceable since January 1 with $200,000-per-violation penalties. The Treasury&rsquo;s February 2026 framework mapping NIST AI RMF onto SOC 2 controls. Sector overlays from financial regulators. NIS2 transposition rolling through EU member states. The uniform answer to all of those is the same: continuous evidence collection, retained for years, exportable to whichever auditor is asking, in whichever format they want.</p>
+
+    <p>"Continuous" is the word that breaks the existing tooling for an MSP context. Specifically:</p>
+
+    <ul>
+      <li>The MSP cannot give one client&rsquo;s auditor access without giving them a generic dashboard view of unrelated client environments. Multi-tenant evidence segregation is required at the access-control layer, not the workspace layer.</li>
+      <li>The pricing model assumes one customer per workspace. MSPs end up paying for n workspaces when the right model is one workspace with n tenant slices.</li>
+      <li>Cross-portfolio benchmarking is structurally absent. Telling a client "your posture is in the 67th percentile of the MSPs we serve" is a real conversation we have, and the existing tools can&rsquo;t feed that conversation.</li>
+      <li>Code-level audit &mdash; SAST, SCA, drift detection against a canonical rule set, OpenAPI lint, secrets scanning &mdash; is not the product. The existing vendors focus on operational evidence; we focus on operational evidence <em>plus</em> the code that produces it.</li>
+    </ul>
+
+    <h2>What we&rsquo;re shipping</h2>
+
+    <p>AiT Audit is a Cloud Run job that fires monthly across every codebase under our management. In approximately 45 minutes per cycle, it runs eight scanners per repository: Semgrep (with our centralized OWASP + Next.js + Clerk-RLS + multi-tenant rule set), OSV-Scanner for dependencies, Gitleaks for secrets, Checkov for IaC, Knip for dead code, Spectral for OpenAPI, Nuclei plus Lighthouse plus axe-core for deployed-URL scans, and a drift detector that compares each project&rsquo;s lint and SAST configs against the canonical guardrail set. Findings persist to a Supabase database with row-level security scoped per project, then route through an Anthropic Haiku classifier that aligns each finding to the project&rsquo;s stated objectives. The result is not "200 things to maybe fix." It&rsquo;s "the 3 findings that actively threaten your stated quarterly objective."</p>
+
+    <p>A companion weekly cron pulls market signals &mdash; Hacker News /best filtered by relevance keywords, GitHub trending by topic, NVD CVE feed for stack components, awesome-list git diffs &mdash; and classifies each against project objectives the same way findings are. The Monday morning digest tells the team what changed in the world that touches what we&rsquo;re building. The first such run wrote 29 real signals to the database, including a Hacker News story titled "Securing a DoD contractor: finding a multi-tenant authorization vulnerability" that mapped directly to objectives in two of our security products. The system found something useful on its first run.</p>
+
+    <p>AiT Trust Portal exposes this surface to the client. Every audit run, every finding, every remediation, every guardrail violation is queryable by the client&rsquo;s designated auditor with row-level security enforcing tenant scope. Evidence collection for a SOC 2 control family that previously required an annual scramble now exists in retrievable form, dated, signed, retained for the policy period.</p>
+
+    <h2>What this means for an existing client</h2>
+
+    <p>A typical engagement looks like this: the client has eight repositories, mostly built by a previous agency or in-house team that has since rotated through people. Vanta has been running for a year and produces a tidy dashboard for the SOC 2 attestation, but no one on the team can answer a basic question like "do all eight repos enforce the same authentication boundary on their tRPC endpoints." Within the first month of an AiT Audit engagement, that question has an evidenced answer (yes / no / partially, with line numbers), and the gap closes through code changes our engineers ship in the same sprint.</p>
+
+    <p>The MSP delivering this is doing about a hundred dollars of work per repo per month and saving the client thirty thousand dollars of audit-prep labor at year-end. The deliverable is a continuously-current trust posture, not a once-a-year scramble. That&rsquo;s the structural shift.</p>
+
+    <div class="article-cta">
+      <h3>Read the deep dive</h3>
+      <p>White paper WP-06 explains the AiT Audit toolchain, schema, and the Anthropic-classifier objective-alignment pattern in full operational detail.</p>
+      <p style="margin-bottom: 0;"><a href="../../whitepapers/wp6-continuous-audit.html" class="btn btn--teal">Read WP-06: Continuous Audit as a Service &rarr;</a></p>
+    </div>
+
+    <h2>The bottom line</h2>
+
+    <p>Vanta and Drata are good products for direct startup buyers. They are not the MSP-channel answer to the 2026 compliance wave, and pretending they are leaves you with a posture that crumbles under any audit that goes deeper than the dashboard. The MSPs serving mid-market clients need a continuous-audit fabric that runs across portfolios, segregates evidence by tenant, integrates code-level findings, and exposes the result to client auditors directly. That&rsquo;s what we built. That&rsquo;s what we&rsquo;re running. That&rsquo;s the wedge.</p>
+  </div></div></main>
+
+  <footer class="blog-footer"><div class="container">
+    <p>&copy; 2026 Intelligent iT &middot; Headquartered in New York City &middot; <a href="../headquarters.html?contact=true">Get a free consultation</a></p>
+  </div></footer>
+</body>
+</html>
