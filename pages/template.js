@@ -99,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <a href="products.html" class="nav-link" style="white-space: nowrap; color: #76e6d8; font-weight: 600;">Products</a>
         </div>
         <div class="nav-item">
+          <a href="pricing.html" class="nav-link" style="white-space: nowrap;">Pricing</a>
+        </div>
+        <div class="nav-item">
           <a href="calculator.html" class="nav-link" style="white-space: nowrap;">Calculator</a>
         </div>
         <div class="nav-item has-dropdown">
